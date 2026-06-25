@@ -4,7 +4,7 @@ set -euo pipefail
 
 DEPLOY_DIR="${DEPLOY_DIR:-/opt/mazuri-odoo}"
 REPO_URL="${REPO_URL:-https://github.com/timothylidede/odoo.git}"
-BRANCH="${BRANCH:-cursor/odoo-deploy-3671}"
+BRANCH="${BRANCH:-18.0}"
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq

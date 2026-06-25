@@ -1,7 +1,9 @@
 # Mazuri Odoo test instance
 
-**Droplet:** `mazuri-odoo` — `64.23.144.200` (sfo3)  
-**URL:** http://64.23.144.200:8069  
+**Host:** GCP `vendai-gcp-1` — `35.202.115.233` (co-located with PocketBase + FastAPI)  
+**URL:** http://35.202.115.233:8069
+
+> Previous DO droplet `mazuri-odoo` (`64.23.144.200`) was decommissioned.  
 **Database:** `mazuri`
 
 ## Login
