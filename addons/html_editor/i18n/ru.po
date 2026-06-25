@@ -8,13 +8,14 @@
 # Ilya Rozhkov, 2024
 # Wil Odoo, 2025
 # "Anastasiia Koroleva (koan)" <koan@odoo.com>, 2025.
+# Weblate <noreply-mt-weblate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 20:47+0000\n"
-"PO-Revision-Date: 2025-08-13 14:06+0000\n"
-"Last-Translator: \"Anastasiia Koroleva (koan)\" <koan@odoo.com>\n"
+"POT-Creation-Date: 2026-04-10 18:38+0000\n"
+"PO-Revision-Date: 2026-05-09 09:16+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Russian <https://translate.odoo.com/projects/odoo-18/"
 "html_editor/ru/>\n"
 "Language: ru\n"
@@ -22,9 +23,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || ("
-"n%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Weblate 5.12.2\n"
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Weblate 5.17\n"
 
 #. module: html_editor
 #. odoo-javascript
@@ -42,8 +43,8 @@ msgstr ""
 #: code:addons/html_editor/static/src/main/media/image_description.xml:0
 msgid "'Title tag' is shown as a tooltip when you hover the picture."
 msgstr ""
-"тег \"Заголовок\" отображается в виде всплывающей подсказки при наведении на"
-" изображение."
+"тег \"Заголовок\" отображается в виде всплывающей подсказки при наведении на "
+"изображение."
 
 #. module: html_editor
 #. odoo-javascript
@@ -122,13 +123,15 @@ msgstr "Принимает"
 #: code:addons/html_editor/controllers/main.py:0
 msgid "Action %s is not a window action, link preview is not available"
 msgstr ""
+"Данное действие ( %s) не является действием окна, поэтому предпросмотр "
+"ссылки недоступен"
 
 #. module: html_editor
 #. odoo-python
 #: code:addons/html_editor/controllers/main.py:0
 msgid ""
-"Action %s not found, link preview is not available, please check your url is"
-" correct"
+"Action %s not found, link preview is not available, please check your url is "
+"correct"
 msgstr ""
 "Действие %s не найдено, предпросмотр ссылки недоступен. Пожалуйста, "
 "убедитесь, что указан верный URL"
@@ -852,12 +855,6 @@ msgstr "Заголовок 6"
 #. module: html_editor
 #. odoo-javascript
 #: code:addons/html_editor/static/src/main/media/media_dialog/video_selector.js:0
-msgid "Hide Dailymotion logo"
-msgstr "Скрыть логотип Dailymotion"
-
-#. module: html_editor
-#. odoo-javascript
-#: code:addons/html_editor/static/src/main/media/media_dialog/video_selector.js:0
 msgid "Hide fullscreen button"
 msgstr "Скрыть полноэкранную кнопку"
 
@@ -866,12 +863,6 @@ msgstr "Скрыть полноэкранную кнопку"
 #: code:addons/html_editor/static/src/main/media/media_dialog/video_selector.js:0
 msgid "Hide player controls"
 msgstr "Скрыть управление плеера"
-
-#. module: html_editor
-#. odoo-javascript
-#: code:addons/html_editor/static/src/main/media/media_dialog/video_selector.js:0
-msgid "Hide sharing button"
-msgstr "Скрыть кнопку шаринга"
 
 #. module: html_editor
 #. odoo-javascript
@@ -1090,6 +1081,12 @@ msgstr "Вставьте свою подпись"
 
 #. module: html_editor
 #. odoo-javascript
+#: code:addons/html_editor/static/src/main/media/media_dialog/video_selector.xml:0
+msgid "Instagram"
+msgstr "Instagram"
+
+#. module: html_editor
+#. odoo-javascript
 #: code:addons/html_editor/static/src/main/link/link_popover.xml:0
 msgid "Label"
 msgstr "Метка"
@@ -1129,8 +1126,7 @@ msgstr "Ссылка копируется в буфер обмена."
 #. odoo-python
 #: code:addons/html_editor/controllers/main.py:0
 msgid ""
-"Link preview is not available because %s, please check if your url is "
-"correct"
+"Link preview is not available because %s, please check if your url is correct"
 msgstr ""
 "Предпросмотр ссылки недоступен из-за %s. Пожалуйста, убедитесь, что указан "
 "верный URL"
@@ -1194,7 +1190,7 @@ msgstr "Отсутствующий файл"
 
 #. module: html_editor
 #. odoo-javascript
-#: code:addons/html_editor/static/src/main/powerbox/powerbox_plugin.js:0
+#: code:addons/html_editor/static/src/main/powerbox/search_powerbox_plugin.js:0
 msgid "More options"
 msgstr "Дополнительные параметры"
 
@@ -1978,12 +1974,6 @@ msgstr "Для создания вложения необходимо указа
 
 #. module: html_editor
 #. odoo-javascript
-#: code:addons/html_editor/static/src/main/media/media_dialog/video_selector.xml:0
-msgid "Youku"
-msgstr "Youku"
-
-#. module: html_editor
-#. odoo-javascript
 #: code:addons/html_editor/static/src/others/embedded_components/core/video/video.xml:0
 msgid "Your browser does not support iframe."
 msgstr "Ваш браузер не поддерживает iframe."
@@ -2053,3 +2043,18 @@ msgstr "или"
 #: code:addons/html_editor/static/src/main/media/media_dialog/video_selector.xml:0
 msgid "videos"
 msgstr "видео"
+
+#. module: html_editor
+#. odoo-javascript
+#: code:addons/html_editor/static/src/main/table/table_picker.xml:0
+msgid "x"
+msgstr "x"
+
+#~ msgid "Hide Dailymotion logo"
+#~ msgstr "Скрыть логотип Dailymotion"
+
+#~ msgid "Hide sharing button"
+#~ msgstr "Скрыть кнопку шаринга"
+
+#~ msgid "Youku"
+#~ msgstr "Youku"

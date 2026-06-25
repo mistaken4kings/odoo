@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* spreadsheet
+# * spreadsheet
 #
 # Translators:
 # Tiffany Chang, 2024
@@ -8,19 +8,23 @@
 # Wil Odoo, 2025
 # Rasareeyar Lappiam, 2025
 #
+# Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
+# Nusara Boonma <nuboo@odoo.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 18:39+0000\n"
-"PO-Revision-Date: 2024-09-25 09:41+0000\n"
-"Last-Translator: Rasareeyar Lappiam, 2025\n"
-"Language-Team: Thai (https://app.transifex.com/odoo/teams/41243/th/)\n"
+"POT-Creation-Date: 2026-04-24 17:39+0000\n"
+"PO-Revision-Date: 2026-06-09 22:09+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"Language-Team: Thai <https://translate.odoo.com/projects/odoo-18/spreadsheet/"
+"th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -34,25 +38,25 @@ msgstr "สตริง อาจว่างเปล่า หรืออ้�
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "% Running total"
-msgstr ""
+msgstr "% Rยอดรวมสะสม"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "% difference from"
-msgstr ""
+msgstr "% dความแตกต่างจาก"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "% of"
-msgstr ""
+msgstr "% oของ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "% of column total"
-msgstr ""
+msgstr "% oของยอดรวมคอลัมน์"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -252,34 +256,21 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(0) Exact match. \n"
-"        (-1) Return next smaller item if no match. \n"
-"        (1) Return next greater item if no match. \n"
-"        (2) Wildcard match."
+"(0) Exact match.         (-1) Return next smaller item if no match.         "
+"(1) Return next greater item if no match.         (2) Wildcard match."
 msgstr ""
-"(0) ตรงทั้งหมด\n"
-"       (-1) กลับรายการเล็กถัดไปหากไม่มีการจับคู่\n"
-"       (1) ส่งคืนไอเท็มที่ใหญ่กว่าถัดไปหากไม่มีการจับคู่\n"
-"       (2) การจับคู่ไวด์การ์ด"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(1) Search starting at first item. \n"
-"      (-1) Search starting at last item. \n"
-"      (2) Perform a binary search that relies on lookup_array being sorted "
-"in ascending order. If not sorted, invalid results will be returned. \n"
-"      (-2) Perform a binary search that relies on lookup_array being sorted "
-"in descending order. If not sorted, invalid results will be returned.\n"
-"      "
+"(1) Search starting at first item.       (-1) Search starting at last "
+"item.       (2) Perform a binary search that relies on lookup_array being "
+"sorted in ascending order. If not sorted, invalid results will be "
+"returned.       (-2) Perform a binary search that relies on lookup_array "
+"being sorted in descending order. If not sorted, invalid results will be "
+"returned.      "
 msgstr ""
-"(1) ค้นหาโดยเริ่มจากรายการแรก\n"
-"(-1) ค้นหาเริ่มต้นที่รายการสุดท้าย\n"
-"(2) ทำการค้นหาแบบไบนารี่โดยอาศัย lookup_array ซึ่งเรียงลำดับจากน้อยไปหามาก "
-"หากไม่เรียงลำดับ ผลลัพธ์ที่ไม่ถูกต้องจะถูกส่งกลับ\n"
-"(-2) ทำการค้นหาแบบไบนารี่โดยอาศัย lookup_array เรียงลำดับจากมากไปน้อย หากไม่เรียงลำดับ "
-"ผลลัพธ์ที่ไม่ถูกต้องจะถูกส่งกลับ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -340,6 +331,12 @@ msgstr "2 คอลัมน์"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "2 rows"
 msgstr "2 แถว"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "A"
+msgstr "A"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -580,6 +577,12 @@ msgstr "ค่าสัมบูรณ์ของตัวเลข"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid "Access Error"
+msgstr "การเข้าถึงผิดพลาด"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Access to the clipboard denied by the browser. Please enable clipboard "
@@ -598,7 +601,7 @@ msgstr "การบัญชี"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Accounting format"
-msgstr ""
+msgstr "รูปแบบการบัญชี"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -983,16 +986,6 @@ msgstr "ช่วงที่มีวันที่สอดคล้องก
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "An unexpected error occurred during the image transfer"
 msgstr "เกิดข้อผิดพลาดที่ไม่คาดคิดระหว่างการถ่ายโอนรูปภาพ"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"An unexpected error occurred while pasting content.\n"
-"          This is probably due to a spreadsheet version mismatch."
-msgstr ""
-"เกิดข้อผิดพลาดที่ไม่คาดคิดขณะวางเนื้อหา\n"
-"          อาจเป็นเพราะเวอร์ชันสเปรดชีตไม่ตรงกัน"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1604,12 +1597,6 @@ msgstr "ไม่สามารถซ่อนแถวทั้งหมดข
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Cannot multiply matrices : incompatible matrices size."
-msgstr "ไม่สามารถคูณเมทริกซ์ : ขนาดเมทริกซ์ที่เข้ากันไม่ได้"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Cannot open the link because the linked sheet is hidden."
 msgstr "ไม่สามารถเปิดลิงก์ได้ เนื่องจากชีตที่ลิงก์ถูกซ่อนอยู่"
 
@@ -1928,6 +1915,12 @@ msgstr "เปรียบเทียบค่าตัวเลขสองค
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "Compute from totals"
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Compute the Matthews correlation coefficient of a dataset."
 msgstr "คำนวณค่าสัมประสิทธิ์สหสัมพันธ์ของแมทธิวส์ของชุดข้อมูล"
@@ -2023,7 +2016,8 @@ msgstr "ยืนยัน"
 msgid ""
 "Consider using a dynamic pivot formula: %s. Or re-insert the static pivot "
 "from the Data menu."
-msgstr "ลองใช้สูตรจุดหมุนแบบไดนามิก: %s หรือแทรกจุดหมุนแบบคงที่จากเมนูข้อมูลอีกครั้ง"
+msgstr ""
+"ลองใช้สูตร pivot แบบไดนามิก: %s หรือแทรก pivot แบบคงที่จากเมนูข้อมูลอีกครั้ง"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3025,8 +3019,6 @@ msgid "Doughnut"
 msgstr "โดนัท"
 
 #. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.js:0
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
 msgid "Download"
 msgstr "ดาวน์โหลด"
@@ -3560,32 +3552,23 @@ msgstr "ฟังก์ชัน [[FUNCTION_NAME]] ไม่พบผลลั�
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
-"pairs."
-msgstr "ฟังก์ชัน [[FUNCTION_NAME]] คาดว่า criteria_range และเกณฑ์จะจับคู่กัน"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range to have the same dimension"
-msgstr "ฟังก์ชัน [[FUNCTION_NAME]] คาดว่า criteria_range จะมีมิติเดียวกัน"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
-msgstr "ฟังก์ชัน [[FUNCTION_NAME]] ต้องการค่าตัวเลขสำหรับ %s แต่ได้รับ %s"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
-"invertible"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a boolean."
 msgstr ""
-"ฟังก์ชัน [[FUNCTION_NAME]] ข้อผิดพลาดเมทริกซ์กลับด้าน "
-"เฉพาะเมทริกซ์จัตุรัสเท่านั้นที่สามารถกลับด้านได้"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a string."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"Function [[FUNCTION_NAME]] expects number values for %s, but got an empty "
+"value."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4001,11 +3984,8 @@ msgstr "ในการประเมิน [[FUNCTION_NAME]] ไม่พบ '
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must be "
-"equal to the \n"
-"        number of rows of the second matrix (%s)."
+"equal to the         number of rows of the second matrix (%s)."
 msgstr ""
-"ใน [[FUNCTION_NAME]] จำนวนคอลัมน์ของเมทริกซ์แรก (%s) จะต้องเท่ากับ\n"
-"       จำนวนแถวของเมทริกซ์ตัวที่สอง (%s)"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5158,6 +5138,12 @@ msgstr "วันที่คูปองถัดไปหลังจากว
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "No"
+msgstr "ไม่"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "No Color"
 msgstr "ไม่มีสี"
@@ -5278,7 +5264,7 @@ msgstr "จำนวน"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Number formatting"
-msgstr ""
+msgstr "การจัดรูปแบบตัวเลข"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5452,7 +5438,7 @@ msgstr "รูปแบบการทาสี"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Parser"
-msgstr ""
+msgstr "Parser"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6661,7 +6647,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Stacked bar chart"
-msgstr ""
+msgstr "แผนภูมิแท่งซ้อนทับ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6673,7 +6659,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Stacked line chart"
-msgstr ""
+msgstr "แผนภูมิเส้นซ้อนทับ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -7784,6 +7770,14 @@ msgstr "การเพิ่มครั้งแรก"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"The first and second arguments of [[FUNCTION_NAME]] must be non-empty "
+"matrices."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The first column index of the columns to be returned."
 msgstr "ดัชนีคอลัมน์แรกของคอลัมน์ที่จะถูกส่งกลับ"
 
@@ -8309,7 +8303,7 @@ msgstr "ค่าสูงสุดต้องเป็นตัวเลข"
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/chart/odoo_menu/figure_component.js:0
+#: code:addons/spreadsheet/static/src/helpers/helpers.js:0
 msgid ""
 "The menu linked to this chart doesn't have an corresponding action. Please "
 "link the chart to another menu."
@@ -10046,12 +10040,6 @@ msgstr "ค่าหรือค่าที่จะต่อท้ายโด
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "The value should be a scalar or a 1x1 matrix"
-msgstr "ค่าควรเป็นสเกลาร์หรือเมทริกซ์ 1x1"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The value the function returns if logical_expression is FALSE."
 msgstr "ค่าที่ฟังก์ชันส่งคืนหาก logic_expression เป็น FALSE"
 
@@ -10753,11 +10741,8 @@ msgstr "การเปลี่ยนแปลงค่าจากค่าค
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
-"expect a number or a range."
+msgid "Value for parameter %s is missing in [[FUNCTION_NAME]]."
 msgstr ""
-"ค่าสำหรับพารามิเตอร์ %d หายไป ในขณะที่ฟังก์ชัน [[FUNCTION_NAME]] คาดว่าจะเป็นตัวเลขหรือช่วง"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11118,13 +11103,9 @@ msgstr "ว่าจะแบ่งข้อความรอบตัวอั
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether or not to remove empty text messages from the split results. The "
-"default behavior is to treat \n"
-"        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
-"values are added between consecutive delimiters."
+"default behavior is to treat         consecutive delimiters as one (if "
+"TRUE). If FALSE, empty cells values are added between consecutive delimiters."
 msgstr ""
-"ไม่ว่าจะลบข้อความว่างออกจากผลลัพธ์การแยกหรือไม่ ลักษณะการทำงานเริ่มต้นคือให้ถือว่า\n"
-"       ตัวคั่นที่อยู่ติดกันเป็นหนึ่งเดียว (ถ้าเป็น TRUE) ถ้าเป็น FALSE "
-"ระบบจะเพิ่มค่าเซลล์ว่างระหว่างตัวคั่นที่อยู่ติดกัน"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11138,11 +11119,8 @@ msgstr "ไม่ว่าการชำระเงินจะครบกำ
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether the array should be scanned by column. True scans the array by "
-"column and false (default) \n"
-"      scans the array by row."
+"column and false (default)       scans the array by row."
 msgstr ""
-"ควรสแกนอาร์เรย์ตามคอลัมน์หรือไม่ True สแกนอาร์เรย์ตามคอลัมน์ และ false (ค่าเริ่มต้น) \n"
-"     สแกนอาร์เรย์ตามแถว"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11293,6 +11271,12 @@ msgstr "ปีถึงวัน"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "Yes"
+msgstr "ใช่"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You can't merge cells inside of an existing filter."
 msgstr "คุณไม่สามารถผสานเซลล์ภายในตัวกรองที่มีอยู่ได้"
@@ -11302,6 +11286,21 @@ msgstr "คุณไม่สามารถผสานเซลล์ภาย
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You cannot create overlapping tables."
 msgstr "คุณไม่สามารถสร้างตารางที่ทับซ้อนกันได้"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"You copied content from a different version of the application. Only text "
+"content will be pasted."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid ""
+"You don't have the rights to export data. Please contact an Administrator."
+msgstr "คุณไม่มีสิทธิ์ในการส่งออกข้อมูล โปรดติดต่อผู้ดูแลระบบ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11324,14 +11323,16 @@ msgstr "[[FUNCTION_NAME]] ประเมินค่าแถวที่อย
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
-msgstr "[[FUNCTION_NAME]] คาดว่าช่วงที่ไม่ว่างเปล่าสำหรับพารามิเตอร์ทั้งสอง"
+msgid "[[FUNCTION_NAME]] expects number values."
+msgstr "[[FUNCTION_NAME]] ต้องการค่าตัวเลข"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects number values."
-msgstr "[[FUNCTION_NAME]] ต้องการค่าตัวเลข"
+msgid ""
+"[[FUNCTION_NAME]] expects the provided values of %(argName)s to be a non-"
+"empty matrix."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11362,12 +11363,6 @@ msgstr "[[FUNCTION_NAME]] มีขนาดช่วงไม่ตรงกั
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "[[FUNCTION_NAME]] has no valid input data."
 msgstr "[[FUNCTION_NAME]] ไม่มีการป้อนข้อมูลที่ถูกต้อง"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
-msgstr "[[FUNCTION_NAME]] ต้องมีอย่างน้อยสองค่าสำหรับพารามิเตอร์ทั้งสอง"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11577,6 +11572,12 @@ msgstr "พรุ่งนี้"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
+msgid "x"
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "yesterday"
 msgstr "เมื่อวาน"
@@ -11586,3 +11587,105 @@ msgstr "เมื่อวาน"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "zero"
 msgstr ""
+
+#~ msgid ""
+#~ "(0) Exact match. \n"
+#~ "        (-1) Return next smaller item if no match. \n"
+#~ "        (1) Return next greater item if no match. \n"
+#~ "        (2) Wildcard match."
+#~ msgstr ""
+#~ "(0) ตรงทั้งหมด\n"
+#~ "       (-1) กลับรายการเล็กถัดไปหากไม่มีการจับคู่\n"
+#~ "       (1) ส่งคืนไอเท็มที่ใหญ่กว่าถัดไปหากไม่มีการจับคู่\n"
+#~ "       (2) การจับคู่ไวด์การ์ด"
+
+#~ msgid ""
+#~ "(1) Search starting at first item. \n"
+#~ "      (-1) Search starting at last item. \n"
+#~ "      (2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in ascending order. If not sorted, invalid results will be "
+#~ "returned. \n"
+#~ "      (-2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in descending order. If not sorted, invalid results will be "
+#~ "returned.\n"
+#~ "      "
+#~ msgstr ""
+#~ "(1) ค้นหาโดยเริ่มจากรายการแรก\n"
+#~ "(-1) ค้นหาเริ่มต้นที่รายการสุดท้าย\n"
+#~ "(2) ทำการค้นหาแบบไบนารี่โดยอาศัย lookup_array ซึ่งเรียงลำดับจากน้อยไปหามาก "
+#~ "หากไม่เรียงลำดับ ผลลัพธ์ที่ไม่ถูกต้องจะถูกส่งกลับ\n"
+#~ "(-2) ทำการค้นหาแบบไบนารี่โดยอาศัย lookup_array เรียงลำดับจากมากไปน้อย "
+#~ "หากไม่เรียงลำดับ ผลลัพธ์ที่ไม่ถูกต้องจะถูกส่งกลับ"
+
+#~ msgid ""
+#~ "An unexpected error occurred while pasting content.\n"
+#~ "          This is probably due to a spreadsheet version mismatch."
+#~ msgstr ""
+#~ "เกิดข้อผิดพลาดที่ไม่คาดคิดขณะวางเนื้อหา\n"
+#~ "          อาจเป็นเพราะเวอร์ชันสเปรดชีตไม่ตรงกัน"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
+#~ "pairs."
+#~ msgstr "ฟังก์ชัน [[FUNCTION_NAME]] คาดว่า criteria_range และเกณฑ์จะจับคู่กัน"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range to have the same "
+#~ "dimension"
+#~ msgstr "ฟังก์ชัน [[FUNCTION_NAME]] คาดว่า criteria_range จะมีมิติเดียวกัน"
+
+#~ msgid ""
+#~ "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must "
+#~ "be equal to the \n"
+#~ "        number of rows of the second matrix (%s)."
+#~ msgstr ""
+#~ "ใน [[FUNCTION_NAME]] จำนวนคอลัมน์ของเมทริกซ์แรก (%s) จะต้องเท่ากับ\n"
+#~ "       จำนวนแถวของเมทริกซ์ตัวที่สอง (%s)"
+
+#~ msgid ""
+#~ "Whether or not to remove empty text messages from the split results. The "
+#~ "default behavior is to treat \n"
+#~ "        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
+#~ "values are added between consecutive delimiters."
+#~ msgstr ""
+#~ "ไม่ว่าจะลบข้อความว่างออกจากผลลัพธ์การแยกหรือไม่ ลักษณะการทำงานเริ่มต้นคือให้ถือว่า\n"
+#~ "       ตัวคั่นที่อยู่ติดกันเป็นหนึ่งเดียว (ถ้าเป็น TRUE) ถ้าเป็น FALSE "
+#~ "ระบบจะเพิ่มค่าเซลล์ว่างระหว่างตัวคั่นที่อยู่ติดกัน"
+
+#~ msgid ""
+#~ "Whether the array should be scanned by column. True scans the array by "
+#~ "column and false (default) \n"
+#~ "      scans the array by row."
+#~ msgstr ""
+#~ "ควรสแกนอาร์เรย์ตามคอลัมน์หรือไม่ True สแกนอาร์เรย์ตามคอลัมน์ และ false (ค่าเริ่มต้น) \n"
+#~ "     สแกนอาร์เรย์ตามแถว"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
+#~ msgstr "ฟังก์ชัน [[FUNCTION_NAME]] ต้องการค่าตัวเลขสำหรับ %s แต่ได้รับ %s"
+
+#~ msgid ""
+#~ "Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
+#~ "expect a number or a range."
+#~ msgstr ""
+#~ "ค่าสำหรับพารามิเตอร์ %d หายไป ในขณะที่ฟังก์ชัน [[FUNCTION_NAME]] "
+#~ "คาดว่าจะเป็นตัวเลขหรือช่วง"
+
+#~ msgid "Cannot multiply matrices : incompatible matrices size."
+#~ msgstr "ไม่สามารถคูณเมทริกซ์ : ขนาดเมทริกซ์ที่เข้ากันไม่ได้"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
+#~ "invertible"
+#~ msgstr ""
+#~ "ฟังก์ชัน [[FUNCTION_NAME]] ข้อผิดพลาดเมทริกซ์กลับด้าน "
+#~ "เฉพาะเมทริกซ์จัตุรัสเท่านั้นที่สามารถกลับด้านได้"
+
+#~ msgid "The value should be a scalar or a 1x1 matrix"
+#~ msgstr "ค่าควรเป็นสเกลาร์หรือเมทริกซ์ 1x1"
+
+#~ msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
+#~ msgstr "[[FUNCTION_NAME]] คาดว่าช่วงที่ไม่ว่างเปล่าสำหรับพารามิเตอร์ทั้งสอง"
+
+#~ msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
+#~ msgstr "[[FUNCTION_NAME]] ต้องมีอย่างน้อยสองค่าสำหรับพารามิเตอร์ทั้งสอง"

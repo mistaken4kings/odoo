@@ -26,6 +26,9 @@ class AccountEdiXmlUblTr(models.AbstractModel):
             prefix, year, number = parts[0], parts[1], parts[2].zfill(9)
             return f"{prefix.upper()}{year}{number}"
 
+        if invoice._l10n_tr_nilvera_einvoice_check_negative_lines():
+            raise UserError(_("Nilvera portal cannot process negative quantity nor negative price on invoice lines"))
+
         # EXTENDS account.edi.xml.ubl_21
         vals = super()._export_invoice_vals(invoice)
 
@@ -102,6 +105,18 @@ class AccountEdiXmlUblTr(models.AbstractModel):
             },
             'id': partner.vat,
         })
+
+        official_categories = partner.category_id._get_l10n_tr_official_categories()
+        for category in partner.category_id:
+            if category.parent_id not in official_categories:
+                continue
+            vals.append({
+                'id_attrs': {
+                    'schemeID': category.parent_id.name,
+                },
+                'id': category.name,
+            })
+
         return vals
 
     def _get_partner_address_vals(self, partner):
@@ -256,6 +271,8 @@ class AccountEdiXmlUblTr(models.AbstractModel):
         # EXTENDS account.edi.xml.ubl_21
         line_item_vals = super()._get_invoice_line_item_vals(line, taxes_vals)
         line_item_vals['classified_tax_category_vals'] = False
+        # standard_item_identification_vals not supported in UBL TR
+        line_item_vals.pop('standard_item_identification_vals')
         return line_item_vals
 
     def _get_additional_document_reference_list(self, invoice):
@@ -275,6 +292,7 @@ class AccountEdiXmlUblTr(models.AbstractModel):
         for vals in vals_list:
             vals.pop('allowance_charge_reason_code', None)
             vals['currency_dp'] = 2
+            vals['multiplier_factor'] = line.discount / 100 if line.discount else 0
         return vals_list
 
     def _get_invoice_line_price_vals(self, line):
@@ -314,9 +332,9 @@ class AccountEdiXmlUblTr(models.AbstractModel):
         })
         return partner_vals
 
-    def _import_fill_invoice_form(self, invoice, tree, qty_factor):
+    def _import_fill_invoice(self, invoice, tree, qty_factor):
         # EXTENDS account.edi.xml.ubl_20
-        logs = super()._import_fill_invoice_form(invoice, tree, qty_factor)
+        logs = super()._import_fill_invoice(invoice, tree, qty_factor)
 
         # ==== Nilvera UUID ====
         if uuid_node := tree.findtext('./{*}UUID'):

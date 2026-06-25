@@ -292,6 +292,15 @@ class Ewaybill(models.Model):
         self.ensure_one()
         return self._get_gst_treatment()[1] in ('overseas', 'special_economic_zone')
 
+    @api.model
+    def _get_default_help_message(self, status):
+        return self.env._(
+            "Somehow this E-waybill has been %s in the government portal before. "
+            "You can verify by checking the details into the government "
+            "(https://ewaybillgst.gov.in/Others/EBPrintnew.aspx)",
+            status
+        )
+
     def _check_configuration(self):
         error_message = []
         methods_to_check = [
@@ -410,7 +419,7 @@ class Ewaybill(models.Model):
         self._handle_internal_warning_if_present(ewaybill_error.error_json)
         error_message = ewaybill_error.get_all_error_message()
         blocking_level = "error"
-        if "404" in ewaybill_error.error_codes:
+        if "access_error" in ewaybill_error.error_codes:
             blocking_level = "warning"
         self._write_error(error_message, blocking_level)
 
@@ -483,8 +492,10 @@ class Ewaybill(models.Model):
         return fields.Datetime.to_string(utc_time)
 
     @api.model
-    def _get_partner_state_code(self, partner):
-        return int(partner.state_id.l10n_in_tin) if partner.country_id.code == "IN" else 99
+    def _get_partner_state_code(self, partner, is_to_state=False):
+        if partner.country_id.code != "IN" or (is_to_state and partner.l10n_in_gst_treatment == "special_economic_zone"):
+            return 99
+        return int(partner.state_id.l10n_in_tin)
 
     def _l10n_in_tax_details(self):
         tax_details = {
@@ -525,9 +536,9 @@ class Ewaybill(models.Model):
         AccountEDI = self.env['account.edi.format']
         product = line.product_id
         line_details = {
-            "productName": product.name,
+            "productName": product.name[:100],
             "hsnCode": AccountEDI._l10n_in_edi_extract_digits(product.l10n_in_hsn_code),
-            "productDesc": product.name,
+            "productDesc": line.description_picking[:100] if line.description_picking else "",
             "quantity": line.quantity,
             "qtyUnit": line.product_uom.l10n_in_code and line.product_uom.l10n_in_code.split("-")[
                 0] or "OTH",
@@ -576,7 +587,7 @@ class Ewaybill(models.Model):
 
         def prepare_details(key_paired_function, partner_detail):
             return {
-                f"{place}{key}": fun(partner)
+                f"{place}{key}": fun(partner, place) if key == "StateCode" else fun(partner)
                 for key, fun in key_paired_function
                 for place, partner in partner_detail
             }
@@ -593,13 +604,13 @@ class Ewaybill(models.Model):
                 ),
                 "transDistance": str(self.distance),
                 "docNo": self.document_number,
-                "docDate": (self.document_date or fields.Datetime.now()).strftime("%d/%m/%Y"),
+                "docDate": fields.Date.context_today(self.with_context(tz='Asia/Kolkata'), self.document_date).strftime("%d/%m/%Y"),
                 # bill details
                 **prepare_details(
                     key_paired_function={
                         'Gstin': lambda p: p.commercial_partner_id.vat or "URP",
                         'TrdName': lambda p: p.commercial_partner_id.name,
-                        'StateCode': self._get_partner_state_code,
+                        'StateCode': lambda p, place: self._get_partner_state_code(p, is_to_state=place == 'to'),
                     }.items(),
                     partner_detail={'from': self.partner_bill_from_id, 'to': self.partner_bill_to_id}.items()
                 ),

@@ -99,13 +99,18 @@ class Meeting(models.Model):
         return res
 
     def _check_modify_event_permission(self, values):
-        # Check if event modification attempt by attendee is valid to avoid duplicate events creation.
-        for event in self:
-            # Edge case: when restarting the synchronization, guests can write 'need_sync=True' on events.
-            google_sync_restart = values.get('need_sync') and len(values)
-            if not google_sync_restart and (event.guests_readonly and self.env.user.id != event.user_id.id):
-                raise ValidationError(_("The following event can only be updated by the organizer "
-                                        "according to the event permissions set on Google Calendar."))
+        """ Check if event modification attempt by attendee is valid to avoid duplicate events creation. """
+        # Edge case: when restarting the synchronization, guests can write 'need_sync=True' on events.
+        google_sync_restart = values.get('need_sync') and len(values)
+        # Edge case 2: when resetting an account, we must be able to erase the event's google_id.
+        skip_event_permission = self.env.context.get('skip_event_permission', False)
+        if google_sync_restart or skip_event_permission:
+            return
+        if any(event.guests_readonly and self.env.user.id != event.user_id.id for event in self):
+            raise ValidationError(
+                _("The following event can only be updated by the organizer "
+                "according to the event permissions set on Google Calendar.")
+            )
 
     def _skip_send_mail_status_update(self):
         """If a google calendar is not syncing with the user, don't send a mail."""
@@ -205,23 +210,27 @@ class Meeting(models.Model):
             existing_attendees = event.attendee_ids
         attendees_by_emails = {tools.email_normalize(a.email): a for a in existing_attendees}
         partners = self._get_sync_partner(emails)
-        for attendee in zip(emails, partners, google_attendees):
-            email = attendee[0]
-            if email in attendees_by_emails:
+        partners_by_email = {(p.email_normalized or p.email): p for p in partners}
+        for google_attendee in google_attendees:
+            attendee_email = google_attendee.get('email')
+            attendee_email_normalized = tools.email_normalize(attendee_email)
+            if attendee_email in attendees_by_emails:
                 # Update existing attendees
-                attendee_commands += [(1, attendees_by_emails[email].id, {'state': attendee[2].get('responseStatus')})]
+                attendee_commands += [(1, attendees_by_emails[attendee_email].id, {'state': google_attendee.get('responseStatus')})]
             else:
                 # Create new attendees
-                if attendee[2].get('self'):
+                if google_attendee.get('self'):
                     partner = self.env.user.partner_id
-                elif attendee[1]:
-                    partner = attendee[1]
+                elif partners_by_email.get(attendee_email_normalized):
+                    partner = partners_by_email[attendee_email_normalized]
+                elif partners_by_email.get(attendee_email):
+                    partner = partners_by_email[attendee_email]
                 else:
                     continue
-                attendee_commands += [(0, 0, {'state': attendee[2].get('responseStatus'), 'partner_id': partner.id})]
+                attendee_commands += [(0, 0, {'state': google_attendee.get('responseStatus'), 'partner_id': partner.id})]
                 partner_commands += [(4, partner.id)]
-                if attendee[2].get('displayName') and not partner.name:
-                    partner.name = attendee[2].get('displayName')
+                if google_attendee.get('displayName') and not partner.name:
+                    partner.name = google_attendee.get('displayName')
         for odoo_attendee in attendees_by_emails.values():
             # Remove old attendees but only if it does not correspond to the current user.
             email = tools.email_normalize(odoo_attendee.email)

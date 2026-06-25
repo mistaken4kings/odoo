@@ -17,13 +17,14 @@
 # Martin Trigaux, 2024
 # Anders Wallenquist <anders.wallenquist@vertel.se>, 2024
 # Jakob Krabbe <jakob.krabbe@vertel.se>, 2024, 2025.
+# Weblate <noreply-mt-weblate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 18:39+0000\n"
-"PO-Revision-Date: 2025-08-25 06:40+0000\n"
-"Last-Translator: Jakob Krabbe <jakob.krabbe@vertel.se>\n"
+"POT-Creation-Date: 2026-04-24 17:39+0000\n"
+"PO-Revision-Date: 2026-06-09 22:08+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Swedish <https://translate.odoo.com/projects/odoo-18/"
 "spreadsheet/sv/>\n"
 "Language: sv\n"
@@ -31,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -266,37 +267,21 @@ msgstr "%s matcher i alla ark"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(0) Exact match. \n"
-"        (-1) Return next smaller item if no match. \n"
-"        (1) Return next greater item if no match. \n"
-"        (2) Wildcard match."
+"(0) Exact match.         (-1) Return next smaller item if no match.         "
+"(1) Return next greater item if no match.         (2) Wildcard match."
 msgstr ""
-"(0) Exakt matchning.\n"
-"        (-1) Returnerar nästa mindre artikel om ingen matchning.\n"
-"        (1) Returnerar nästa större objekt om ingen matchning.\n"
-"        (2) Matchning med jokertecken."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(1) Search starting at first item. \n"
-"      (-1) Search starting at last item. \n"
-"      (2) Perform a binary search that relies on lookup_array being sorted "
-"in ascending order. If not sorted, invalid results will be returned. \n"
-"      (-2) Perform a binary search that relies on lookup_array being sorted "
-"in descending order. If not sorted, invalid results will be returned.\n"
-"      "
+"(1) Search starting at first item.       (-1) Search starting at last "
+"item.       (2) Perform a binary search that relies on lookup_array being "
+"sorted in ascending order. If not sorted, invalid results will be "
+"returned.       (-2) Perform a binary search that relies on lookup_array "
+"being sorted in descending order. If not sorted, invalid results will be "
+"returned.      "
 msgstr ""
-"(1) Sökningen börjar vid första objektet.\n"
-"      (-1) Sök med början på det sista objektet.\n"
-"      (2) Utför en binär sökning som är beroende av att lookup_array är "
-"sorterad i stigande ordning. Om den inte är sorterad kommer ogiltiga "
-"resultat att returneras.\n"
-"      (-2) Utför en binär sökning som förlitar sig på att lookup_array "
-"sorteras i fallande ordning. Om den inte är sorterad kommer ogiltiga "
-"resultat att returneras.\n"
-"      "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -357,6 +342,12 @@ msgstr "2 kolumner"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "2 rows"
 msgstr "2 rader"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "A"
+msgstr "A"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -614,6 +605,12 @@ msgstr "Absolut värde"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Absolute value of a number."
 msgstr "Absolut värde för ett tal."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid "Access Error"
+msgstr "Åtkomstfel"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1052,17 +1049,6 @@ msgstr "Ett intervall med datum som motsvarar kassaflödena i cashflow_amounts."
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "An unexpected error occurred during the image transfer"
 msgstr "Ett oväntat fel inträffade under bildöverföringen"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"An unexpected error occurred while pasting content.\n"
-"          This is probably due to a spreadsheet version mismatch."
-msgstr ""
-"Ett oväntat fel uppstod när du klistrade in innehåll.\n"
-"          Detta beror förmodligen på att kalkylbladets version inte stämmer "
-"överens."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1693,12 +1679,6 @@ msgstr "Det går inte att dölja alla rader i ett ark."
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Cannot multiply matrices : incompatible matrices size."
-msgstr "Kan inte multiplicera matriser: inkompatibel matrisstorlek."
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Cannot open the link because the linked sheet is hidden."
 msgstr "Det går inte att öppna länken eftersom det länkade arket är dolt."
 
@@ -2016,6 +1996,12 @@ msgstr "Komma"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Compare two numeric values, returning 1 if they're equal."
 msgstr "Jämför två numeriska värden och returnerar 1 om de är lika."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "Compute from totals"
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2923,7 +2909,7 @@ msgstr "Dimensionerna stämmer inte överens med pivotdefinitionen"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Discard all changes"
-msgstr "Kassera alla ändringar"
+msgstr "Avbryt alla ändringar"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3142,8 +3128,6 @@ msgid "Doughnut"
 msgstr "Doughnut"
 
 #. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.js:0
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
 msgid "Download"
 msgstr "Ladda ner"
@@ -3687,37 +3671,23 @@ msgstr "Funktionen [[FUNCTION_NAME]] gav inget resultat."
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
-"pairs."
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a boolean."
 msgstr ""
-"Funktionen [[FUNCTION_NAME]] förväntar sig att criteria_range och criterion "
-"ska vara i par."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range to have the same dimension"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a string."
 msgstr ""
-"Funktionen [[FUNCTION_NAME]] förväntar sig att criteria_range har samma "
-"dimension"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
-msgstr ""
-"Funktion [[FUNCTION_NAME]] förväntar sig talvärden för %s, men fick ett %s."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
-"invertible"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got an empty "
+"value."
 msgstr ""
-"Funktion [[FUNCTION_NAME]] invertera matris fel, endast kvadratiska matriser "
-"är inverterbara"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4138,12 +4108,8 @@ msgstr "I utvärderingen av [[FUNCTION_NAME]] kan inte '%s' hittas inom '%s'."
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must be "
-"equal to the \n"
-"        number of rows of the second matrix (%s)."
+"equal to the         number of rows of the second matrix (%s)."
 msgstr ""
-"I [[FUNCTION_NAME]] måste antalet kolumner i den första matrisen (%s) vara "
-"lika med\n"
-"        antalet rader i den andra matrisen (%s)."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5308,6 +5274,12 @@ msgstr "Ny pivot"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Next coupon date after the settlement date."
 msgstr "Nästa kupongdag efter avräkningsdagen."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "No"
+msgstr "Nej"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -7997,6 +7969,14 @@ msgstr "Det första tillägget."
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"The first and second arguments of [[FUNCTION_NAME]] must be non-empty "
+"matrices."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The first column index of the columns to be returned."
 msgstr "Det första kolumnindexet för de kolumner som ska returneras."
 
@@ -8563,7 +8543,7 @@ msgstr "Maxpunkten måste vara ett tal"
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/chart/odoo_menu/figure_component.js:0
+#: code:addons/spreadsheet/static/src/helpers/helpers.js:0
 msgid ""
 "The menu linked to this chart doesn't have an corresponding action. Please "
 "link the chart to another menu."
@@ -10376,12 +10356,6 @@ msgstr "Värdet eller värdena som ska läggas till med hjälp av avgränsare."
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "The value should be a scalar or a 1x1 matrix"
-msgstr "Värdet ska vara en skalär eller en 1x1-matris"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The value the function returns if logical_expression is FALSE."
 msgstr "Det värde som funktionen returnerar om logical_expression är FALSK."
 
@@ -11103,12 +11077,8 @@ msgstr "Värdeförändring från nyckelvärde"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
-"expect a number or a range."
+msgid "Value for parameter %s is missing in [[FUNCTION_NAME]]."
 msgstr ""
-"Värdet för parametern %d saknas, medan funktionen [[FUNCTION_NAME]] "
-"förväntar sig ett tal eller ett intervall."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11470,14 +11440,9 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether or not to remove empty text messages from the split results. The "
-"default behavior is to treat \n"
-"        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
-"values are added between consecutive delimiters."
+"default behavior is to treat         consecutive delimiters as one (if "
+"TRUE). If FALSE, empty cells values are added between consecutive delimiters."
 msgstr ""
-"Om tomma textmeddelanden ska tas bort från splitresultaten eller inte. "
-"Standardbeteendet är att behandla\n"
-"        på varandra följande avgränsare som en (om SANT). Om FALSK läggs "
-"tomma cellvärden till mellan på varandra följande avgränsare."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11492,12 +11457,8 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether the array should be scanned by column. True scans the array by "
-"column and false (default) \n"
-"      scans the array by row."
+"column and false (default)       scans the array by row."
 msgstr ""
-"Om matrisen ska skannas per kolumn. True skannar matrisen efter kolumn och "
-"false (standard)\n"
-"      skannar matrisen per rad."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11657,6 +11618,12 @@ msgstr "År till dags dato"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "Yes"
+msgstr "Ja"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You can't merge cells inside of an existing filter."
 msgstr "Du kan inte slå samman celler inuti ett befintligt filter."
@@ -11666,6 +11633,21 @@ msgstr "Du kan inte slå samman celler inuti ett befintligt filter."
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You cannot create overlapping tables."
 msgstr "Du kan inte skapa överlappande tabeller."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"You copied content from a different version of the application. Only text "
+"content will be pasted."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid ""
+"You don't have the rights to export data. Please contact an Administrator."
+msgstr "Du har inte rätt att exportera data. Kontakta en administratör."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11689,15 +11671,16 @@ msgstr "[[FUNCTION_NAME]] utvärderas till ett radvärde %s utanför intervallet
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
-msgstr ""
-"[[FUNCTION_NAME]] förväntar sig icke-tomma intervall för båda parametrarna."
+msgid "[[FUNCTION_NAME]] expects number values."
+msgstr "[[FUNCTION_NAME]] förväntar sig talvärden."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects number values."
-msgstr "[[FUNCTION_NAME]] förväntar sig talvärden."
+msgid ""
+"[[FUNCTION_NAME]] expects the provided values of %(argName)s to be a non-"
+"empty matrix."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11730,12 +11713,6 @@ msgstr "[[FUNCTION_NAME]] har felaktiga intervallstorlekar."
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "[[FUNCTION_NAME]] has no valid input data."
 msgstr "[[FUNCTION_NAME]] har inga giltiga indata."
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
-msgstr "[[FUNCTION_NAME]] behöver minst två värden för båda parametrarna."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11946,6 +11923,12 @@ msgstr "imorgon"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
+msgid "x"
+msgstr "x"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "yesterday"
 msgstr "igår"
@@ -11955,3 +11938,120 @@ msgstr "igår"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "zero"
 msgstr "noll"
+
+#~ msgid ""
+#~ "(0) Exact match. \n"
+#~ "        (-1) Return next smaller item if no match. \n"
+#~ "        (1) Return next greater item if no match. \n"
+#~ "        (2) Wildcard match."
+#~ msgstr ""
+#~ "(0) Exakt matchning.\n"
+#~ "        (-1) Returnerar nästa mindre artikel om ingen matchning.\n"
+#~ "        (1) Returnerar nästa större objekt om ingen matchning.\n"
+#~ "        (2) Matchning med jokertecken."
+
+#~ msgid ""
+#~ "(1) Search starting at first item. \n"
+#~ "      (-1) Search starting at last item. \n"
+#~ "      (2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in ascending order. If not sorted, invalid results will be "
+#~ "returned. \n"
+#~ "      (-2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in descending order. If not sorted, invalid results will be "
+#~ "returned.\n"
+#~ "      "
+#~ msgstr ""
+#~ "(1) Sökningen börjar vid första objektet.\n"
+#~ "      (-1) Sök med början på det sista objektet.\n"
+#~ "      (2) Utför en binär sökning som är beroende av att lookup_array är "
+#~ "sorterad i stigande ordning. Om den inte är sorterad kommer ogiltiga "
+#~ "resultat att returneras.\n"
+#~ "      (-2) Utför en binär sökning som förlitar sig på att lookup_array "
+#~ "sorteras i fallande ordning. Om den inte är sorterad kommer ogiltiga "
+#~ "resultat att returneras.\n"
+#~ "      "
+
+#~ msgid ""
+#~ "An unexpected error occurred while pasting content.\n"
+#~ "          This is probably due to a spreadsheet version mismatch."
+#~ msgstr ""
+#~ "Ett oväntat fel uppstod när du klistrade in innehåll.\n"
+#~ "          Detta beror förmodligen på att kalkylbladets version inte "
+#~ "stämmer överens."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
+#~ "pairs."
+#~ msgstr ""
+#~ "Funktionen [[FUNCTION_NAME]] förväntar sig att criteria_range och "
+#~ "criterion ska vara i par."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range to have the same "
+#~ "dimension"
+#~ msgstr ""
+#~ "Funktionen [[FUNCTION_NAME]] förväntar sig att criteria_range har samma "
+#~ "dimension"
+
+#~ msgid ""
+#~ "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must "
+#~ "be equal to the \n"
+#~ "        number of rows of the second matrix (%s)."
+#~ msgstr ""
+#~ "I [[FUNCTION_NAME]] måste antalet kolumner i den första matrisen (%s) "
+#~ "vara lika med\n"
+#~ "        antalet rader i den andra matrisen (%s)."
+
+#~ msgid ""
+#~ "Whether or not to remove empty text messages from the split results. The "
+#~ "default behavior is to treat \n"
+#~ "        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
+#~ "values are added between consecutive delimiters."
+#~ msgstr ""
+#~ "Om tomma textmeddelanden ska tas bort från splitresultaten eller inte. "
+#~ "Standardbeteendet är att behandla\n"
+#~ "        på varandra följande avgränsare som en (om SANT). Om FALSK läggs "
+#~ "tomma cellvärden till mellan på varandra följande avgränsare."
+
+#~ msgid ""
+#~ "Whether the array should be scanned by column. True scans the array by "
+#~ "column and false (default) \n"
+#~ "      scans the array by row."
+#~ msgstr ""
+#~ "Om matrisen ska skannas per kolumn. True skannar matrisen efter kolumn "
+#~ "och false (standard)\n"
+#~ "      skannar matrisen per rad."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
+#~ msgstr ""
+#~ "Funktion [[FUNCTION_NAME]] förväntar sig talvärden för %s, men fick ett "
+#~ "%s."
+
+#~ msgid ""
+#~ "Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
+#~ "expect a number or a range."
+#~ msgstr ""
+#~ "Värdet för parametern %d saknas, medan funktionen [[FUNCTION_NAME]] "
+#~ "förväntar sig ett tal eller ett intervall."
+
+#~ msgid "Cannot multiply matrices : incompatible matrices size."
+#~ msgstr "Kan inte multiplicera matriser: inkompatibel matrisstorlek."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
+#~ "invertible"
+#~ msgstr ""
+#~ "Funktion [[FUNCTION_NAME]] invertera matris fel, endast kvadratiska "
+#~ "matriser är inverterbara"
+
+#~ msgid "The value should be a scalar or a 1x1 matrix"
+#~ msgstr "Värdet ska vara en skalär eller en 1x1-matris"
+
+#~ msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
+#~ msgstr ""
+#~ "[[FUNCTION_NAME]] förväntar sig icke-tomma intervall för båda "
+#~ "parametrarna."
+
+#~ msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
+#~ msgstr "[[FUNCTION_NAME]] behöver minst två värden för båda parametrarna."

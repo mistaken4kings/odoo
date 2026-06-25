@@ -3,13 +3,14 @@
 # * spreadsheet
 #
 # Dragan Vukosavljevic <dragan.vukosavljevic@gmail.com>, 2025.
+# Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 18:39+0000\n"
-"PO-Revision-Date: 2025-08-26 14:55+0000\n"
-"Last-Translator: Dragan Vukosavljevic <dragan.vukosavljevic@gmail.com>\n"
+"POT-Creation-Date: 2026-04-24 17:39+0000\n"
+"PO-Revision-Date: 2026-04-25 18:01+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Serbian (Latin script) <https://translate.odoo.com/projects/"
 "odoo-18/spreadsheet/sr_Latn/>\n"
 "Language: sr@latin\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.17\n"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -142,7 +143,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (kopija)"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -246,23 +247,20 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(0) Exact match. \n"
-"        (-1) Return next smaller item if no match. \n"
-"        (1) Return next greater item if no match. \n"
-"        (2) Wildcard match."
+"(0) Exact match.         (-1) Return next smaller item if no match.         "
+"(1) Return next greater item if no match.         (2) Wildcard match."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(1) Search starting at first item. \n"
-"      (-1) Search starting at last item. \n"
-"      (2) Perform a binary search that relies on lookup_array being sorted "
-"in ascending order. If not sorted, invalid results will be returned. \n"
-"      (-2) Perform a binary search that relies on lookup_array being sorted "
-"in descending order. If not sorted, invalid results will be returned.\n"
-"      "
+"(1) Search starting at first item.       (-1) Search starting at last "
+"item.       (2) Perform a binary search that relies on lookup_array being "
+"sorted in ascending order. If not sorted, invalid results will be "
+"returned.       (-2) Perform a binary search that relies on lookup_array "
+"being sorted in descending order. If not sorted, invalid results will be "
+"returned.      "
 msgstr ""
 
 #. module: spreadsheet
@@ -323,6 +321,12 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "2 rows"
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "A"
 msgstr ""
 
 #. module: spreadsheet
@@ -556,6 +560,12 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid "Access Error"
+msgstr "Greška u pristupu"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Access to the clipboard denied by the browser. Please enable clipboard "
@@ -566,7 +576,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Accounting"
-msgstr ""
+msgstr "Računovodstvo"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -590,7 +600,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Add"
-msgstr ""
+msgstr "Dodaj"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -802,7 +812,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "All"
-msgstr ""
+msgstr "Sve"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -954,14 +964,6 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"An unexpected error occurred while pasting content.\n"
-"          This is probably due to a spreadsheet version mismatch."
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "An unexpected error occurred. Submit a support ticket at odoo.com/help."
 msgstr ""
 
@@ -1005,7 +1007,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Anonymous"
-msgstr ""
+msgstr "Anoniman"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1072,7 +1074,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Apply"
-msgstr ""
+msgstr "Primenite"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1097,7 +1099,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "April"
-msgstr ""
+msgstr "April"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1194,7 +1196,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "August"
-msgstr ""
+msgstr "Avgust"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1206,7 +1208,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Automatic"
-msgstr ""
+msgstr "Automatski"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1335,7 +1337,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Black"
-msgstr ""
+msgstr "Crna"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1381,7 +1383,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Bottom"
-msgstr ""
+msgstr "Dno"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1518,7 +1520,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Cancel"
-msgstr ""
+msgstr "Otkaži"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1554,12 +1556,6 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Cannot hide all the rows of a sheet."
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Cannot multiply matrices : incompatible matrices size."
 msgstr ""
 
 #. module: spreadsheet
@@ -1674,7 +1670,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/global_filters/components/filter_value/filter_value.xml:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Clear"
-msgstr ""
+msgstr "Očisti"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1728,7 +1724,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Code"
-msgstr ""
+msgstr "Kod"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1758,7 +1754,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Color"
-msgstr ""
+msgstr "Boja"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1848,7 +1844,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Columns"
-msgstr ""
+msgstr "Kolone"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1878,6 +1874,12 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Compare two numeric values, returning 1 if they're equal."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "Compute from totals"
 msgstr ""
 
 #. module: spreadsheet
@@ -1962,14 +1964,14 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Configuration"
-msgstr ""
+msgstr "Podešavanje"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/hooks.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Confirm"
-msgstr ""
+msgstr "Potvrdi"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1983,7 +1985,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Contains"
-msgstr ""
+msgstr "Sadrži"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2073,7 +2075,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/components/share_button/share_button.js:0
 msgid "Copied"
-msgstr ""
+msgstr "Kopirano"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2110,7 +2112,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_helpers.js:0
 msgid "Count"
-msgstr ""
+msgstr "Brojač"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2210,12 +2212,12 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 #: model:ir.model,name:spreadsheet.model_res_currency
 msgid "Currency"
-msgstr ""
+msgstr "Valuta"
 
 #. module: spreadsheet
 #: model:ir.model,name:spreadsheet.model_res_currency_rate
 msgid "Currency Rate"
-msgstr ""
+msgstr "Kurs"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2258,7 +2260,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Custom"
-msgstr ""
+msgstr "Prilagođeno"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2312,7 +2314,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Data"
-msgstr ""
+msgstr "Podaci"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2374,7 +2376,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2518,13 +2520,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Date:"
-msgstr ""
+msgstr "Datum:"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Day"
-msgstr ""
+msgstr "Dan"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2542,7 +2544,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Day of Month"
-msgstr ""
+msgstr "Dan u mesecu"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2579,7 +2581,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "December"
-msgstr ""
+msgstr "Decembar"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2597,14 +2599,14 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Degree"
-msgstr ""
+msgstr "Nivo obrazovanja"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Delete"
-msgstr ""
+msgstr "Obriši"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2975,11 +2977,9 @@ msgid "Doughnut"
 msgstr ""
 
 #. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.js:0
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
 msgid "Download"
-msgstr ""
+msgstr "Preuzmi"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2991,19 +2991,19 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliraj"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Duration"
-msgstr ""
+msgstr "Trajanje"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Edit"
-msgstr ""
+msgstr "Uredi"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3082,7 +3082,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Error"
-msgstr ""
+msgstr "Greška"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3149,7 +3149,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3193,7 +3193,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "File"
-msgstr ""
+msgstr "Datoteka"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3206,7 +3206,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3224,13 +3224,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
 msgid "Filters"
-msgstr ""
+msgstr "Filteri"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Financial"
-msgstr ""
+msgstr "Finansijski"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3351,7 +3351,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3382,7 +3382,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Formula"
-msgstr ""
+msgstr "Formula"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3400,7 +3400,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Friday"
-msgstr ""
+msgstr "Petak"
 
 #. module: spreadsheet
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
@@ -3441,7 +3441,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Function"
-msgstr ""
+msgstr "Funkcija"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3504,29 +3504,22 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
-"pairs."
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a boolean."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range to have the same dimension"
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a string."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
-"invertible"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got an empty "
+"value."
 msgstr ""
 
 #. module: spreadsheet
@@ -3569,7 +3562,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "General"
-msgstr ""
+msgstr "Opšte"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3686,7 +3679,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Group"
-msgstr ""
+msgstr "Grupa"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3715,7 +3708,7 @@ msgstr ""
 #. module: spreadsheet
 #: model:ir.model,name:spreadsheet.model_ir_http
 msgid "HTTP Routing"
-msgstr ""
+msgstr "HTTP rutiranje"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3733,7 +3726,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Hide"
-msgstr ""
+msgstr "Sakrij"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3917,7 +3910,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Image"
-msgstr ""
+msgstr "Slika"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3930,8 +3923,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must be "
-"equal to the \n"
-"        number of rows of the second matrix (%s)."
+"equal to the         number of rows of the second matrix (%s)."
 msgstr ""
 
 #. module: spreadsheet
@@ -3988,13 +3980,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Info"
-msgstr ""
+msgstr "Informacija"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Information"
-msgstr ""
+msgstr "Informacija"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4132,7 +4124,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Invalid"
-msgstr ""
+msgstr "Neispravno"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4370,21 +4362,21 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "January"
-msgstr ""
+msgstr "Januar"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "July"
-msgstr ""
+msgstr "Jul"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "June"
-msgstr ""
+msgstr "Jun"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4401,7 +4393,7 @@ msgstr ""
 #. module: spreadsheet
 #: model:ir.model,name:spreadsheet.model_res_lang
 msgid "Languages"
-msgstr ""
+msgstr "Jezici"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4419,19 +4411,19 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 30 Days"
-msgstr ""
+msgstr "Poslednjih 30 dana"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 365 Days"
-msgstr ""
+msgstr "Poslednjih 365 dana"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 7 Days"
-msgstr ""
+msgstr "Poslednjih 7 dana"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4480,7 +4472,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Left"
-msgstr ""
+msgstr "Levo"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4535,7 +4527,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/chart/odoo_chart/odoo_line_chart.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Line"
-msgstr ""
+msgstr "Linija"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4553,14 +4545,14 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Linear"
-msgstr ""
+msgstr "Linearno"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Link"
-msgstr ""
+msgstr "Veza"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4675,7 +4667,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "March"
-msgstr ""
+msgstr "Mart"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4724,7 +4716,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_helpers.js:0
 msgid "Maximum"
-msgstr ""
+msgstr "Maksimum"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4749,7 +4741,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "May"
-msgstr ""
+msgstr "Maj"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4773,7 +4765,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Medium"
-msgstr ""
+msgstr "Posrednik"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4839,7 +4831,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_helpers.js:0
 msgid "Minimum"
-msgstr ""
+msgstr "Minimum"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4899,13 +4891,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Misc"
-msgstr ""
+msgstr "Ostalo"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Ostalo"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4941,13 +4933,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Monday"
-msgstr ""
+msgstr "Ponedeljak"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Month"
-msgstr ""
+msgstr "Mesec"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5025,7 +5017,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5077,6 +5069,12 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "No"
+msgstr "Ne"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "No Color"
 msgstr ""
@@ -5115,7 +5113,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "No results"
-msgstr ""
+msgstr "Nema rezultata"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5153,7 +5151,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/pivot/pivot_model.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_time_adapters.js:0
 msgid "None"
-msgstr ""
+msgstr "Ništa"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5172,7 +5170,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "November"
-msgstr ""
+msgstr "Novembar"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5191,7 +5189,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Number"
-msgstr ""
+msgstr "Broj"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5276,7 +5274,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "October"
-msgstr ""
+msgstr "Oktobar"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5330,13 +5328,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Operator"
-msgstr ""
+msgstr "Operator"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Options"
-msgstr ""
+msgstr "Opcije"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5410,13 +5408,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Percent"
-msgstr ""
+msgstr "Procenat"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Percentage"
-msgstr ""
+msgstr "Procenat"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5553,7 +5551,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Power"
-msgstr ""
+msgstr "Eksponent"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5577,7 +5575,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Preview"
-msgstr ""
+msgstr "Pregled"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5619,7 +5617,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Progress bar"
-msgstr ""
+msgstr "Traka napretka"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5655,7 +5653,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Quarter"
-msgstr ""
+msgstr "Kvartal"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5697,7 +5695,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Range"
-msgstr ""
+msgstr "Raspon"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5739,7 +5737,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Red"
-msgstr ""
+msgstr "Crveno"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5825,7 +5823,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Replace"
-msgstr ""
+msgstr "Zameni"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5849,7 +5847,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Reset"
-msgstr ""
+msgstr "Resetuj"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6032,7 +6030,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Right"
-msgstr ""
+msgstr "Desno"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6123,13 +6121,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Saturday"
-msgstr ""
+msgstr "Subota"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Save"
-msgstr ""
+msgstr "Sačuvaj"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6147,7 +6145,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Search"
-msgstr ""
+msgstr "Pronađi"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6179,7 +6177,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Second"
-msgstr ""
+msgstr "Drugi"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6203,7 +6201,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Select all"
-msgstr ""
+msgstr "Označi sve"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6235,7 +6233,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "September"
-msgstr ""
+msgstr "Septembar"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6265,13 +6263,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Settings"
-msgstr ""
+msgstr "Podešavanje"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/components/share_button/share_button.xml:0
 msgid "Share"
-msgstr ""
+msgstr "Podeli"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6332,7 +6330,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Show"
-msgstr ""
+msgstr "Prikaži"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6509,17 +6507,17 @@ msgstr ""
 #. module: spreadsheet
 #: model:ir.model.fields,field_description:spreadsheet.field_spreadsheet_mixin__spreadsheet_data
 msgid "Spreadsheet Data"
-msgstr ""
+msgstr "Podaci iz tabele"
 
 #. module: spreadsheet
 #: model:ir.model.fields,field_description:spreadsheet.field_spreadsheet_mixin__spreadsheet_file_name
 msgid "Spreadsheet File Name"
-msgstr ""
+msgstr "Naziv datoteke tabele"
 
 #. module: spreadsheet
 #: model:ir.model.fields,field_description:spreadsheet.field_spreadsheet_mixin__spreadsheet_binary_data
 msgid "Spreadsheet file"
-msgstr ""
+msgstr "Fajl tabele"
 
 #. module: spreadsheet
 #: model:ir.model,name:spreadsheet.model_spreadsheet_mixin
@@ -6590,7 +6588,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Standard"
-msgstr ""
+msgstr "Standard"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6693,7 +6691,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Subtotal"
-msgstr ""
+msgstr "Ukupno"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6736,13 +6734,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Sunday"
-msgstr ""
+msgstr "Nedelja"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Symbol"
-msgstr ""
+msgstr "Simbol"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6756,7 +6754,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Table"
-msgstr ""
+msgstr "Sto"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6781,14 +6779,14 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Text Color"
-msgstr ""
+msgstr "Boja teksta"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -7661,6 +7659,14 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"The first and second arguments of [[FUNCTION_NAME]] must be non-empty "
+"matrices."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The first column index of the columns to be returned."
 msgstr ""
 
@@ -8178,7 +8184,7 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/chart/odoo_menu/figure_component.js:0
+#: code:addons/spreadsheet/static/src/helpers/helpers.js:0
 msgid ""
 "The menu linked to this chart doesn't have an corresponding action. Please "
 "link the chart to another menu."
@@ -9902,12 +9908,6 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "The value should be a scalar or a 1x1 matrix"
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The value the function returns if logical_expression is FALSE."
 msgstr ""
 
@@ -10309,32 +10309,32 @@ msgstr ""
 #. module: spreadsheet
 #: model:ir.model.fields,field_description:spreadsheet.field_spreadsheet_mixin__thumbnail
 msgid "Thumbnail"
-msgstr ""
+msgstr "Sličica"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Thursday"
-msgstr ""
+msgstr "Četvrtak"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Time"
-msgstr ""
+msgstr "Vreme"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Top"
-msgstr ""
+msgstr "Vrh"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10413,13 +10413,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Tuesday"
-msgstr ""
+msgstr "Utorak"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #. module: spreadsheet
 #. odoo-python
@@ -10543,7 +10543,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Untitled spreadsheet"
-msgstr ""
+msgstr "Neimenovana tabela"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10561,7 +10561,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Update"
-msgstr ""
+msgstr "Ažuriraj"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10580,7 +10580,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Value"
-msgstr ""
+msgstr "Vrednost"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10603,9 +10603,7 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
-"expect a number or a range."
+msgid "Value for parameter %s is missing in [[FUNCTION_NAME]]."
 msgstr ""
 
 #. module: spreadsheet
@@ -10738,7 +10736,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Values"
-msgstr ""
+msgstr "Vrijednosti"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10817,13 +10815,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "View"
-msgstr ""
+msgstr "Pregled"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Volume"
-msgstr ""
+msgstr "Obim"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10855,19 +10853,19 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Wednesday"
-msgstr ""
+msgstr "Sreda"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Week"
-msgstr ""
+msgstr "Nedelja"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10885,7 +10883,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Weight"
-msgstr ""
+msgstr "Težina"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10965,9 +10963,8 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether or not to remove empty text messages from the split results. The "
-"default behavior is to treat \n"
-"        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
-"values are added between consecutive delimiters."
+"default behavior is to treat         consecutive delimiters as one (if "
+"TRUE). If FALSE, empty cells values are added between consecutive delimiters."
 msgstr ""
 
 #. module: spreadsheet
@@ -10982,8 +10979,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether the array should be scanned by column. True scans the array by "
-"column and false (default) \n"
-"      scans the array by row."
+"column and false (default)       scans the array by row."
 msgstr ""
 
 #. module: spreadsheet
@@ -11119,7 +11115,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Year"
-msgstr ""
+msgstr "Godina"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11135,6 +11131,12 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "Yes"
+msgstr "Da"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You can't merge cells inside of an existing filter."
 msgstr ""
@@ -11143,6 +11145,21 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You cannot create overlapping tables."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"You copied content from a different version of the application. Only text "
+"content will be pasted."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid ""
+"You don't have the rights to export data. Please contact an Administrator."
 msgstr ""
 
 #. module: spreadsheet
@@ -11166,13 +11183,15 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
+msgid "[[FUNCTION_NAME]] expects number values."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects number values."
+msgid ""
+"[[FUNCTION_NAME]] expects the provided values of %(argName)s to be a non-"
+"empty matrix."
 msgstr ""
 
 #. module: spreadsheet
@@ -11207,15 +11226,9 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "and"
-msgstr ""
+msgstr "i"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11409,12 +11422,18 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "today"
-msgstr ""
+msgstr "danas"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "tomorrow"
+msgstr "sutra"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
+msgid "x"
 msgstr ""
 
 #. module: spreadsheet

@@ -33,12 +33,12 @@ function commonParentGet(node1, node2, root = undefined) {
 //--------------------------------------------------------------------------
 
 const RE_COL_MATCH = /(^| )col(-[\w\d]+)*( |$)/;
-const RE_COMMAS_OUTSIDE_PARENTHESES = /,(?![^(]*?\))/g;
 const RE_OFFSET_MATCH = /(^| )offset(-[\w\d]+)*( |$)/;
 const RE_PADDING_MATCH = /[ ]*padding[^;]*;/g;
 const RE_PADDING = /([\d.]+)/;
 const RE_WHITESPACE = /[\s\u200b]*/;
 const SELECTORS_IGNORE = /(^\*$|:hover|:before|:after|:active|:link|::|'|\([^(),]+[,(])|@page/;
+const RE_THEME_COLOR_CLASS = /^bg-o-color-\d+$/;
 // CSS properties relating to font, which Outlook seem to have trouble inheriting.
 const FONT_PROPERTIES_TO_INHERIT = [
     "color",
@@ -61,7 +61,8 @@ export const TABLE_ATTRIBUTES = {
 };
 // Cancel tables default styles.
 export const TABLE_STYLES = {
-    "border-collapse": "collapse",
+    "border-collapse": "separate",
+    "border-spacing": "0px",
     "text-align": "inherit",
     "font-size": "unset",
     "line-height": "inherit",
@@ -77,6 +78,10 @@ const GROUPED_STYLES = {
         "border-right-style",
         "border-bottom-style",
         "border-left-style",
+        "border-top-color",
+        "border-right-color",
+        "border-bottom-color",
+        "border-left-color",
     ],
     padding: ["padding-top", "padding-bottom", "padding-left", "padding-right"],
     margin: ["margin-top", "margin-bottom", "margin-left", "margin-right"],
@@ -437,6 +442,7 @@ export function cardToTable(element) {
                 col.append(child);
             }
             const subTable = _createTable();
+            subTable.style.height = "100%";
             const superRow = document.createElement("tr");
             const superCol = document.createElement("td");
             row.append(col);
@@ -523,6 +529,7 @@ export function classToStyle(element, cssRules) {
                 style = `${key}:${value};${style}`;
             }
         }
+        style = correctBorderAttributes(style);
         if (Object.keys(style || {}).length === 0) {
             writes.push(() => {
                 node.removeAttribute("style");
@@ -532,6 +539,18 @@ export function classToStyle(element, cssRules) {
                 node.setAttribute("style", style);
                 if (node.style.width) {
                     node.setAttribute("width", node.style.width.replace("px", "").trim());
+                }
+            });
+        }
+
+        const themeColorClasses = [...node.classList].filter((c) => RE_THEME_COLOR_CLASS.test(c));
+        if (themeColorClasses.length) {
+            writes.push(() => {
+                for (const cls of themeColorClasses) {
+                    node.classList.remove(cls);
+                }
+                if (!node.classList.length) {
+                    node.removeAttribute("class");
                 }
             });
         }
@@ -819,9 +838,17 @@ export async function toInline(element, cssRules) {
         imgTop.style.setProperty("height", _getHeight(imgTop) + "px");
     }
 
+    // Fix empty element heights to be always visible as they might have borders
+    // (used as separation) and can be rendered with height 0px.
+    // like having empty div with % height and display inline-block.
+    for (const el of element.querySelectorAll(".o_not_editable[class*='border-']:empty")) {
+        el.style.height = getComputedStyle(el).height;
+    }
+
     attachmentThumbnailToLinkImg(element);
     fontToImg(element);
     await svgToPng(element);
+    await webpToPng(element);
 
     // Fix img-fluid for Outlook.
     for (const image of element.querySelectorAll("img.img-fluid")) {
@@ -1199,6 +1226,26 @@ export function formatTables(element) {
         }
     }
 }
+export function splitSelectors(str) {
+    const result = [];
+    let current = "";
+    let depth = 0;
+    for (const char of str) {
+        if (char === "(") {
+            depth++;
+        } else if (char === ")") {
+            depth--;
+        }
+        if (char === "," && depth === 0) {
+            result.push(current.trim());
+            current = "";
+        } else {
+            current += char;
+        }
+    }
+    result.push(current.trim());
+    return result;
+}
 /**
  * Parse through the given document's stylesheets, preprocess(*) them and return
  * the result as an array of objects, each containing a selector string , a
@@ -1241,7 +1288,7 @@ export function getCSSRules(doc) {
             for (const subRule of subRules) {
                 const selectorText = subRule.selectorText || "";
                 // Split selectors, making sure not to split at commas in parentheses.
-                for (const selector of selectorText.split(RE_COMMAS_OUTSIDE_PARENTHESES)) {
+                for (const selector of splitSelectors(selectorText)) {
                     if (selector && !SELECTORS_IGNORE.test(selector)) {
                         cssRules.push({ selector: selector.trim(), rawRule: subRule });
                         if (selector === "body") {
@@ -1402,38 +1449,73 @@ function responsiveToStaticForOutlook(element) {
     }
 }
 /**
+ * Convert image element to an image element with type png
+ *
+ * @param {HTMLElement} img
+ */
+async function convertToPng(img) {
+    // Make sure the image is loaded before we convert it.
+    await new Promise((resolve) => {
+        img.onload = () => resolve();
+        if (img.complete) {
+            resolve();
+        }
+    });
+    const image = document.createElement("img");
+    const canvas = document.createElement("CANVAS");
+    const width = _getWidth(img);
+    const height = _getHeight(img);
+
+    canvas.setAttribute("width", width);
+    canvas.setAttribute("height", height);
+    canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+
+    for (const attribute of img.attributes) {
+        image.setAttribute(attribute.name, attribute.value);
+    }
+
+    image.setAttribute("src", canvas.toDataURL("png"));
+    image.setAttribute("width", width);
+    image.setAttribute("height", height);
+    return image;
+}
+/**
  * Convert images of type svg to png.
  *
- * @param {HTMLElement} element
+ * @param {HTMLElement} editable
  */
-async function svgToPng(element) {
-    for (const svg of element.querySelectorAll('img[src*=".svg"]')) {
-        // Make sure the svg is loaded before we convert it.
-        await new Promise((resolve) => {
-            svg.onload = () => resolve();
-            if (svg.complete) {
-                resolve();
-            }
-        });
-        const image = document.createElement("img");
-        const canvas = document.createElement("CANVAS");
-        const width = _getWidth(svg);
-        const height = _getHeight(svg);
-
-        canvas.setAttribute("width", width);
-        canvas.setAttribute("height", height);
-        canvas.getContext("2d").drawImage(svg, 0, 0, width, height);
-
-        for (const attribute of svg.attributes) {
-            image.setAttribute(attribute.name, attribute.value);
-        }
-
-        image.setAttribute("src", canvas.toDataURL("png"));
-        image.setAttribute("width", width);
-        image.setAttribute("height", height);
-
+async function svgToPng(editable) {
+    for (const svg of editable.querySelectorAll('img[src*=".svg"]')) {
+        const image = await convertToPng(svg);
         svg.before(image);
         svg.remove();
+    }
+}
+/**
+ * Convert images of type webp to png.
+ *
+ * @param {HTMLElement} editable
+ */
+async function webpToPng(editable) {
+    for (const webp of editable.querySelectorAll('img[src*=".webp"]')) {
+        const image = await convertToPng(webp);
+        webp.before(image);
+        webp.remove();
+    }
+
+    for (const webp of editable.querySelectorAll('[style*="background-image"][style*=".webp"]')) {
+        // Create an image element with the background image and replace the url
+        // with the png converted image url
+        const width = _getWidth(webp);
+        const height = _getHeight(webp);
+        const tempImage = document.createElement("img");
+        tempImage.setAttribute("src", webp.style.backgroundImage.slice(5, -2));
+        tempImage.setAttribute("width", width);
+        tempImage.setAttribute("height", height);
+        webp.before(tempImage);
+        const image = await convertToPng(tempImage);
+        webp.style.backgroundImage = `url(${image.getAttribute("src")})`;
+        tempImage.remove();
     }
 }
 
@@ -1871,7 +1953,11 @@ function _getHeight(element) {
  */
 function _hideForOutlook(node, onlyHideTag = false) {
     if (!onlyHideTag) {
-        node.setAttribute("style", `${node.getAttribute("style") || ""} mso-hide: all;`.trim());
+        let style = (node.getAttribute("style") || "").trim();
+        if (style && !style.endsWith(";")) {
+            style += ";";
+        }
+        node.setAttribute("style", `${style} mso-hide: all;`);
     }
     node[onlyHideTag === "closing" ? "append" : "before"](document.createComment("[if !mso]><!"));
     node[onlyHideTag === "opening" ? "prepend" : "after"](document.createComment("<![endif]"));
@@ -1950,4 +2036,63 @@ function removeBlacklistedStyles(rule, node) {
         styles[key] = value;
     }
     return styles;
+}
+
+/**
+ * Corrects the `border-style` attribute in the provided inline style string.
+ * This is specifically for Outlook, which displays borders even when their widths are set to 0px.
+ * If all border widths are 0, the function updates `border-style` to `none`.
+ *
+ * @param {string} style - The inline style string to correct.
+ * @returns {string} - The corrected inline style string.
+ */
+function correctBorderAttributes(style) {
+    const stylesObject = style
+        .replace(/\s+/g, " ")
+        .split(";")
+        .reduce((styles, styleString) => {
+            const [attribute, value] = styleString.split(":").map((str) => str.trim());
+            if (attribute) {
+                styles[attribute] = value;
+            }
+            return styles;
+        }, {});
+
+    const BORDER_WIDTHS_ATTRIBUTES = [
+        "border-bottom-width",
+        "border-left-width",
+        "border-right-width",
+        "border-top-width",
+    ];
+
+    const isBorderStyleApplied = BORDER_WIDTHS_ATTRIBUTES.some(
+        (attribute) => attribute in stylesObject
+    );
+
+    if (!isBorderStyleApplied) {
+        return style;
+    }
+
+    const totalBorderWidth = BORDER_WIDTHS_ATTRIBUTES.reduce((totalWidth, attribute) => {
+        const widthValue = stylesObject[attribute] || "0px";
+        const numericWidth = parseFloat(widthValue.replace("px", "")) || 0;
+        return totalWidth + numericWidth;
+    }, 0);
+
+    if (totalBorderWidth === 0) {
+        let correctedStyle = style.trim();
+        if (correctedStyle.slice(-1) != ";") {
+            correctedStyle += ";";
+        }
+        correctedStyle = correctedStyle.replace(
+            /(;|^)\s*border-style\s*:[^;]*(;|$)|$/,
+            "$1border-style:none$2"
+        );
+        return correctedStyle;
+    }
+
+    if (/border-style\s*:/i.test(style)) {
+        return style;
+    }
+    return style.trim().replace(/;?$/, "; border-style: solid;");
 }

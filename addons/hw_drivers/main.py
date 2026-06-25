@@ -40,6 +40,7 @@ class Manager(Thread):
         self.domain = self._get_domain()
         self.version = helpers.get_version(detailed_version=True)
         self.previous_iot_devices = {}
+        self.serial_number = helpers.get_serial_number()
 
     def _get_domain(self):
         """
@@ -90,6 +91,7 @@ class Manager(Thread):
                 'identifier': self.mac_address,
                 'ip': self.domain,
                 'token': helpers.get_token(),
+                'serial_number': self.serial_number,
                 'version': self.version,
             }
             devices_list = {}
@@ -164,8 +166,10 @@ class Manager(Thread):
                 _logger.exception("Interface %s could not be started", str(interface))
 
         # Set scheduled actions
-        schedule and schedule.every().day.at("00:00").do(helpers.get_certificate_status)
-        schedule and schedule.every().day.at("00:00").do(helpers.reset_log_level)
+        if schedule:
+            schedule.every().day.at("00:00").do(helpers.get_certificate_status)
+            schedule.every().day.at("00:00").do(helpers.reset_log_level)
+            schedule.every().day.at("00:00").do(helpers.check_git_branch)
 
         # Set up the websocket connection
         if self.server_url and iot_client.iot_channel:

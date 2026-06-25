@@ -9,14 +9,15 @@
 # Wil Odoo, 2025
 # Larissa Manderfeld, 2025
 #
-# "Larissa Manderfeld (lman)" <lman@odoo.com>, 2025.
+# "Larissa Manderfeld (lman)" <lman@odoo.com>, 2025, 2026.
+# Weblate <noreply-mt-weblate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 18:39+0000\n"
-"PO-Revision-Date: 2025-08-25 06:40+0000\n"
-"Last-Translator: \"Larissa Manderfeld (lman)\" <lman@odoo.com>\n"
+"POT-Creation-Date: 2026-04-24 17:39+0000\n"
+"PO-Revision-Date: 2026-05-09 18:00+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: German <https://translate.odoo.com/projects/odoo-18/"
 "spreadsheet/de/>\n"
 "Language: de\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.17\n"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -268,29 +269,24 @@ msgstr "%s Übereinstimmungen in allen Blättern"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(0) Exact match. \n"
-"        (-1) Return next smaller item if no match. \n"
-"        (1) Return next greater item if no match. \n"
-"        (2) Wildcard match."
+"(0) Exact match.         (-1) Return next smaller item if no match.         "
+"(1) Return next greater item if no match.         (2) Wildcard match."
 msgstr ""
-"(0) Exakte Übereinstimmung. \n"
-"        (-1) Rückgabe des nächstkleineren Elements, wenn keine "
-"Übereinstimmung. \n"
-"        (1) Rückgabe des nächstgrößeren Elements, wenn keine "
-"Übereinstimmung. \n"
-"        (2) Wildcard-Übereinstimmung."
+"(0) Exakte Übereinstimmung.         (-1) Das nächstkleinere Element "
+"zurückgeben, wenn keine Übereinstimmung vorliegt.         (1) Das "
+"nächstgrößere Element zurückgeben, wenn keine Übereinstimmung "
+"vorliegt.         (2) Platzhalterübereinstimmung."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(1) Search starting at first item. \n"
-"      (-1) Search starting at last item. \n"
-"      (2) Perform a binary search that relies on lookup_array being sorted "
-"in ascending order. If not sorted, invalid results will be returned. \n"
-"      (-2) Perform a binary search that relies on lookup_array being sorted "
-"in descending order. If not sorted, invalid results will be returned.\n"
-"      "
+"(1) Search starting at first item.       (-1) Search starting at last "
+"item.       (2) Perform a binary search that relies on lookup_array being "
+"sorted in ascending order. If not sorted, invalid results will be "
+"returned.       (-2) Perform a binary search that relies on lookup_array "
+"being sorted in descending order. If not sorted, invalid results will be "
+"returned.      "
 msgstr ""
 "(1) Suche beim ersten Element starten. \n"
 "      (-1) Suche beim letzten Element starten. \n"
@@ -361,6 +357,12 @@ msgstr "2 Spalten"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "2 rows"
 msgstr "2 Zeilen"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "A"
+msgstr "A"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -628,6 +630,12 @@ msgstr "Absoluter Wert"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Absolute value of a number."
 msgstr "Absoluter Wert einer Zahl."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid "Access Error"
+msgstr "Zugriffsfehler"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1083,17 +1091,6 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "An unexpected error occurred during the image transfer"
 msgstr "Ein unerwarteter Fehler ist während der Bildübertragung aufgetreten."
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"An unexpected error occurred while pasting content.\n"
-"          This is probably due to a spreadsheet version mismatch."
-msgstr ""
-"Beim Einfügen von Inhalten ist ein unerwarteter Fehler aufgetreten.\n"
-"          Dies ist wahrscheinlich auf eine nicht übereinstimmende "
-"Tabellenkalkulationsversion zurückzuführen."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1731,13 +1728,6 @@ msgstr "Es können nicht alle Zeilen eines Blatts verborgen werden."
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Cannot multiply matrices : incompatible matrices size."
-msgstr ""
-"Matrizen können nicht multipliziert werden: inkompatible Matrizengröße."
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Cannot open the link because the linked sheet is hidden."
 msgstr ""
 "Konnte den Link nicht öffnen, da das verbundene Blatt ausgeblendet wird."
@@ -2058,6 +2048,12 @@ msgstr "Komma"
 msgid "Compare two numeric values, returning 1 if they're equal."
 msgstr ""
 "Vergleicht zwei numerische Werte und gibt 1 zurück, wenn sie gleich sind."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "Compute from totals"
+msgstr "Aus Gesamtbeträgen berechnen"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3188,8 +3184,6 @@ msgid "Doughnut"
 msgstr "Ringdiagramm"
 
 #. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.js:0
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
 msgid "Download"
 msgstr "Herunterladen"
@@ -3745,37 +3739,29 @@ msgstr "Funktion [[FUNCTION_NAME]] hat keine Ergebnisse gefunden."
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
-"pairs."
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a boolean."
 msgstr ""
-"Die Funktion [[FUNCTION_NAME]] erwartet, dass criteria_range und criterion "
-"paarweise vorliegen."
+"Funktion [[FUNCTION_NAME]] erwartet Zahlenwerte für %s, aber es wurde ein "
+"boolescher Wert zurückgegeben."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range to have the same dimension"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a string."
 msgstr ""
-"Die Funktion [[FUNCTION_NAME]] erwartet, dass criteria_range die gleiche "
-"Dimension hat"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
-msgstr ""
-"Funktion [[FUNCTION_NAME]] erwartet Zahlenwerte für %s, aber hat %s erhalten."
+"Funktion [[FUNCTION_NAME]] erwartet Zahlenwerte für %s, aber es wurde eine "
+"Zeichenkette zurückgegeben."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
-"invertible"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got an empty "
+"value."
 msgstr ""
-"Fehler bei Matrixinvertierung in Funktion [[FUNCTION_NAME]], nur "
-"quadratische Matrizen sind invertierbar"
+"Funktion [[FUNCTION_NAME]] erwartet Zahlenwerte für %s, aber es wurde ein "
+"leerer Wert zurückgegeben."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4203,8 +4189,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must be "
-"equal to the \n"
-"        number of rows of the second matrix (%s)."
+"equal to the         number of rows of the second matrix (%s)."
 msgstr ""
 "In [[FUNCTION_NAME]] muss die Anzahl der Spalten der ersten Matrix (%s) "
 "gleich der \n"
@@ -5082,7 +5067,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Merge cells"
-msgstr "Zellen zuasmmenführen"
+msgstr "Zellen zusammenführen"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5378,6 +5363,12 @@ msgstr "Neue Pivot-Tabelle"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Next coupon date after the settlement date."
 msgstr "Nächstes Kupondatum nach dem Abrechnungsdatum."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "No"
+msgstr "Nein"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -8099,6 +8090,16 @@ msgstr "Der erste Addend."
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"The first and second arguments of [[FUNCTION_NAME]] must be non-empty "
+"matrices."
+msgstr ""
+"Das erste und zweite Argument von [[FUNCTION_NAME]] müssen Matrizen sein, "
+"die nicht leer sind."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The first column index of the columns to be returned."
 msgstr "Der erste Spaltenindex der zurückzugebenden Spalten."
 
@@ -8672,7 +8673,7 @@ msgstr "Der Maxpoint muss eine Zahl sein"
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/chart/odoo_menu/figure_component.js:0
+#: code:addons/spreadsheet/static/src/helpers/helpers.js:0
 msgid ""
 "The menu linked to this chart doesn't have an corresponding action. Please "
 "link the chart to another menu."
@@ -10530,12 +10531,6 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "The value should be a scalar or a 1x1 matrix"
-msgstr "Der Wert sollte ein Skalar oder eine 1x1-Matrix sein"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The value the function returns if logical_expression is FALSE."
 msgstr ""
 "Der Wert, den die Funktion zurückgibt, wenn logical_expression FALSE ist."
@@ -11278,12 +11273,8 @@ msgstr "Wertveränderung vom Schlüsselwert"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
-"expect a number or a range."
-msgstr ""
-"Wert für Parameter %d fehlt, während die Funktion [[FUNCTION_NAME]] eine "
-"Zahl oder einen Bereich erwartet."
+msgid "Value for parameter %s is missing in [[FUNCTION_NAME]]."
+msgstr "Der Wert für den Parameter %s fehlt in [[FUNCTION_NAME]]."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11654,9 +11645,8 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether or not to remove empty text messages from the split results. The "
-"default behavior is to treat \n"
-"        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
-"values are added between consecutive delimiters."
+"default behavior is to treat         consecutive delimiters as one (if "
+"TRUE). If FALSE, empty cells values are added between consecutive delimiters."
 msgstr ""
 "Ob leere Textnachrichten aus den Ergebnissen der Teilung entfernt werden "
 "sollen oder nicht. Das Standardverhalten ist es, \n"
@@ -11677,8 +11667,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether the array should be scanned by column. True scans the array by "
-"column and false (default) \n"
-"      scans the array by row."
+"column and false (default)       scans the array by row."
 msgstr ""
 "Ob das Array spaltenweise gescannt werden soll. Wahr scannt das Array "
 "spaltenweise und Falsch (Standard) \n"
@@ -11848,6 +11837,12 @@ msgstr "Seit Jahresbeginn"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "Yes"
+msgstr "Ja"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You can't merge cells inside of an existing filter."
 msgstr ""
@@ -11858,6 +11853,25 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You cannot create overlapping tables."
 msgstr "Sie können keine sich überschneidenden Tabellen erstellen."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"You copied content from a different version of the application. Only text "
+"content will be pasted."
+msgstr ""
+"Sie haben Inhalte aus einer anderen Version der App kopiert. Es wird nur "
+"Textinhalt eingefügt."
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid ""
+"You don't have the rights to export data. Please contact an Administrator."
+msgstr ""
+"Sie haben nicht die Rechte, um Daten zu exportieren. Bitte wenden Sie sich "
+"an einen Administrator."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11884,14 +11898,18 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
-msgstr "[[FUNCTION_NAME]] erwartet nicht leere Bereiche für beide Parameter."
+msgid "[[FUNCTION_NAME]] expects number values."
+msgstr "[[FUNCTION_NAME]] erwartet Zahlenwerte."
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects number values."
-msgstr "[[FUNCTION_NAME]] erwartet Zahlenwerte."
+msgid ""
+"[[FUNCTION_NAME]] expects the provided values of %(argName)s to be a non-"
+"empty matrix."
+msgstr ""
+"Die Funktion [[FUNCTION_NAME]] erwartet, dass die übergebenen Werte von %"
+"(argName)s eine Matriz ist, die nicht leer ist, sind."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11924,12 +11942,6 @@ msgstr "[[FUNCTION_NAME]] hat abweichende Bereichsgrößen."
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "[[FUNCTION_NAME]] has no valid input data."
 msgstr "[[FUNCTION_NAME]] hat keine gültigen Eingabedaten."
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
-msgstr "[[FUNCTION_NAME]] benötigt mindestens zwei Werte für beide Parameter."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -12144,6 +12156,12 @@ msgstr "morgen"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
+msgid "x"
+msgstr "x"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "yesterday"
 msgstr "gestern"
@@ -12153,3 +12171,124 @@ msgstr "gestern"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "zero"
 msgstr "null"
+
+#~ msgid ""
+#~ "(0) Exact match. \n"
+#~ "        (-1) Return next smaller item if no match. \n"
+#~ "        (1) Return next greater item if no match. \n"
+#~ "        (2) Wildcard match."
+#~ msgstr ""
+#~ "(0) Exakte Übereinstimmung. \n"
+#~ "        (-1) Rückgabe des nächstkleineren Elements, wenn keine "
+#~ "Übereinstimmung. \n"
+#~ "        (1) Rückgabe des nächstgrößeren Elements, wenn keine "
+#~ "Übereinstimmung. \n"
+#~ "        (2) Wildcard-Übereinstimmung."
+
+#~ msgid ""
+#~ "(1) Search starting at first item. \n"
+#~ "      (-1) Search starting at last item. \n"
+#~ "      (2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in ascending order. If not sorted, invalid results will be "
+#~ "returned. \n"
+#~ "      (-2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in descending order. If not sorted, invalid results will be "
+#~ "returned.\n"
+#~ "      "
+#~ msgstr ""
+#~ "(1) Suche beim ersten Element starten. \n"
+#~ "      (-1) Suche beim letzten Element starten. \n"
+#~ "      (2) Führt eine binäre Suche durch, die darauf beruht, dass "
+#~ "lookup_array in aufsteigender Reihenfolge sortiert ist. Wenn nicht "
+#~ "sortiert, werden ungültige Ergebnisse zurückgegeben. \n"
+#~ "      (-2) Führt eine binäre Suche durch, die darauf beruht, dass "
+#~ "lookup_array in absteigender Reihenfolge sortiert ist. Wenn nicht "
+#~ "sortiert, werden ungültige Ergebnisse zurückgegeben..\n"
+#~ "      "
+
+#~ msgid ""
+#~ "An unexpected error occurred while pasting content.\n"
+#~ "          This is probably due to a spreadsheet version mismatch."
+#~ msgstr ""
+#~ "Beim Einfügen von Inhalten ist ein unerwarteter Fehler aufgetreten.\n"
+#~ "          Dies ist wahrscheinlich auf eine nicht übereinstimmende "
+#~ "Tabellenkalkulationsversion zurückzuführen."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
+#~ "pairs."
+#~ msgstr ""
+#~ "Die Funktion [[FUNCTION_NAME]] erwartet, dass criteria_range und "
+#~ "criterion paarweise vorliegen."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range to have the same "
+#~ "dimension"
+#~ msgstr ""
+#~ "Die Funktion [[FUNCTION_NAME]] erwartet, dass criteria_range die gleiche "
+#~ "Dimension hat"
+
+#~ msgid ""
+#~ "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must "
+#~ "be equal to the \n"
+#~ "        number of rows of the second matrix (%s)."
+#~ msgstr ""
+#~ "In [[FUNCTION_NAME]] muss die Anzahl der Spalten der ersten Matrix (%s) "
+#~ "gleich der \n"
+#~ "        Anzahl der Zeilen der zweiten Matrix (%s) sein."
+
+#~ msgid ""
+#~ "Whether or not to remove empty text messages from the split results. The "
+#~ "default behavior is to treat \n"
+#~ "        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
+#~ "values are added between consecutive delimiters."
+#~ msgstr ""
+#~ "Ob leere Textnachrichten aus den Ergebnissen der Teilung entfernt werden "
+#~ "sollen oder nicht. Das Standardverhalten ist es, \n"
+#~ "        aufeinanderfolgende Trennzeichen als eins zu behandeln (falls "
+#~ "TRUE). Bei FALSE werden die Werte leerer Zellen zwischen "
+#~ "aufeinanderfolgenden Trennzeichen hinzugefügt."
+
+#~ msgid ""
+#~ "Whether the array should be scanned by column. True scans the array by "
+#~ "column and false (default) \n"
+#~ "      scans the array by row."
+#~ msgstr ""
+#~ "Ob das Array spaltenweise gescannt werden soll. Wahr scannt das Array "
+#~ "spaltenweise und Falsch (Standard) \n"
+#~ "      scannt das Array zeilenweise."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
+#~ msgstr ""
+#~ "Funktion [[FUNCTION_NAME]] erwartet Zahlenwerte für %s, aber hat %s "
+#~ "erhalten."
+
+#~ msgid ""
+#~ "Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
+#~ "expect a number or a range."
+#~ msgstr ""
+#~ "Wert für Parameter %d fehlt, während die Funktion [[FUNCTION_NAME]] eine "
+#~ "Zahl oder einen Bereich erwartet."
+
+#~ msgid "Cannot multiply matrices : incompatible matrices size."
+#~ msgstr ""
+#~ "Matrizen können nicht multipliziert werden: inkompatible Matrizengröße."
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
+#~ "invertible"
+#~ msgstr ""
+#~ "Fehler bei Matrixinvertierung in Funktion [[FUNCTION_NAME]], nur "
+#~ "quadratische Matrizen sind invertierbar"
+
+#~ msgid "The value should be a scalar or a 1x1 matrix"
+#~ msgstr "Der Wert sollte ein Skalar oder eine 1x1-Matrix sein"
+
+#~ msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
+#~ msgstr ""
+#~ "[[FUNCTION_NAME]] erwartet nicht leere Bereiche für beide Parameter."
+
+#~ msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
+#~ msgstr ""
+#~ "[[FUNCTION_NAME]] benötigt mindestens zwei Werte für beide Parameter."

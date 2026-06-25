@@ -1,11 +1,7 @@
 /** @odoo-module */
 
 import { App } from "@odoo/owl";
-import {
-    defineRootNode,
-    getActiveElement,
-    getCurrentDimensions,
-} from "@web/../lib/hoot-dom/helpers/dom";
+import { getActiveElement, getCurrentDimensions } from "@web/../lib/hoot-dom/helpers/dom";
 import { setupEventActions } from "@web/../lib/hoot-dom/helpers/events";
 import { isInstanceOf } from "@web/../lib/hoot-dom/hoot_dom_utils";
 import { HootError } from "../hoot_utils";
@@ -28,7 +24,8 @@ import { getViewPortHeight, getViewPortWidth } from "../mock/window";
 // Global
 //-----------------------------------------------------------------------------
 
-const { customElements, document, getSelection, HTMLElement, Promise, WeakSet } = globalThis;
+const { customElements, document, getSelection, HTMLElement, MutationObserver, Promise, WeakSet } =
+    globalThis;
 
 //-----------------------------------------------------------------------------
 // Internal
@@ -79,7 +76,7 @@ export function makeFixtureManager(runner) {
 
     function getFixture() {
         if (!allowFixture) {
-            throw new HootError(`Cannot access fixture outside of a test.`);
+            throw new HootError(`cannot access fixture outside of a test.`);
         }
         if (!currentFixture) {
             // Prepare fixture once to not force layouts/reflows
@@ -101,15 +98,6 @@ export function makeFixtureManager(runner) {
         return currentFixture;
     }
 
-    function globalCleanup() {
-        HootFixtureElement.styleElement.remove();
-    }
-
-    function globalSetup() {
-        defineRootNode(getFixture);
-        document.head.appendChild(HootFixtureElement.styleElement);
-    }
-
     function setup() {
         allowFixture = true;
 
@@ -124,8 +112,6 @@ export function makeFixtureManager(runner) {
 
     return {
         cleanup,
-        globalCleanup,
-        globalSetup,
         setup,
         get: getFixture,
     };
@@ -142,6 +128,8 @@ export class HootFixtureElement extends HTMLElement {
 
     static {
         customElements.define(this.TAG_NAME, this);
+
+        this.styleElement.id = "hoot-fixture-style";
         this.styleElement.textContent = /* css */ `
             ${this.TAG_NAME} {
                 position: fixed !important;

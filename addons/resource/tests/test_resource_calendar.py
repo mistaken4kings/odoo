@@ -43,3 +43,64 @@ class TestResourceCalendar(TransactionCase):
         self.assertEqual(end, end_dt, "Output end time should match the input end time")
         self.assertEqual(attendance.duration_hours, 3.0, "Attendance duration should be 3 hours")
         self.assertEqual(attendance.duration_days, 0.125, "Attendance duration should be 0.125 days (3 hours)")
+
+    def test_flexible_calendar_attendance_interval_duration(self):
+        """
+        Test that the duration of an attendance interval for flexible calendar is correctly computed.
+        """
+        flexible_calendar = self.env['resource.calendar'].create({
+            'name': 'Flexible Calendar',
+            'hours_per_day': 7.0,
+            'full_time_required_hours': 30,
+            'flexible_hours': True,
+            'tz': 'UTC',
+        })
+
+        # Case 1: get attendances for the full week.
+        # Expected: 7-7-7-7-2 (30 hours total)
+        expected_hours = [7, 7, 7, 7, 2]
+
+        start_dt = datetime(2025, 6, 2, 0, 0, 0).astimezone(pytz.UTC)
+        end_dt = datetime(2025, 6, 7, 23, 59, 59).astimezone(pytz.UTC)
+        result_per_resource_id = flexible_calendar._attendance_intervals_batch(
+            start_dt, end_dt
+        )
+        self.assertEqual(expected_hours, [(end - start).total_seconds() / 3600 for start, end, dummy_attendance in result_per_resource_id[0]._items])
+        self.assertEqual(expected_hours, [dummy_attendance.duration_hours for start, end, dummy_attendance in result_per_resource_id[0]._items])
+
+        # Case 2: check attendances are all contained between start_dt and end_dt
+        start_dt = datetime(2025, 6, 2, 11, 0, 0).astimezone(pytz.UTC)
+        end_dt = datetime(2025, 6, 7, 13, 0, 0).astimezone(pytz.UTC)
+        result_per_resource_id = flexible_calendar._attendance_intervals_batch(
+            start_dt, end_dt
+        )
+
+        self.assertTrue(start_dt <= result_per_resource_id[0]._items[0][0], "First attendance interval should not start before start_dt")
+        self.assertTrue(end_dt >= result_per_resource_id[0]._items[4][1], "Last attendance interval should not end after end_dt")
+
+    def test_public_holiday_calendar_no_company(self):
+        self.env['resource.calendar.leaves'].create([{
+            'name': "Public Holiday for company",
+            'company_id': self.env.company.id,
+            'date_from': datetime(2019, 5, 29, 0, 0, 0),
+            'date_to': datetime(2019, 5, 30, 0, 0, 0),
+            'resource_id': False,
+            'time_type': "leave",
+        }])
+        calendar = self.env['resource.calendar'].create({
+            'name': '40 hours/week',
+            'hours_per_day': 8,
+            'full_time_required_hours': 40,
+        })
+        calendar.company_id = False
+        date_from = datetime(2019, 5, 27, 0, 0, 0).astimezone(pytz.UTC)
+        date_to = datetime(2019, 5, 31, 23, 59, 59).astimezone(pytz.UTC)
+        days = calendar._get_unusual_days(date_from, date_to, self.env.company)
+        expected_res = {
+            '2019-05-27': False,
+            '2019-05-28': False,
+            '2019-05-29': True,
+            '2019-05-30': False,
+            '2019-05-31': False,
+        }
+        self.assertEqual(days, expected_res)

@@ -332,6 +332,16 @@ class TestRelatedTranslation(odoo.tests.TransactionCase):
         self.assertEqual(child_fr.computed_name, 'fr')
         self.assertEqual(child_en.computed_name, 'en')
 
+        record_real = self.env['test_new_api.related_translation_1'].create({'name': 'en'})
+        record_real.with_context(lang='fr_FR').name = 'fr'
+        result = self.env['test_new_api.related_translation_2'].with_context(lang='fr_FR').onchange({
+            'name': 'new fr',  # updated from 'fr' to 'new fr'
+            'related_id': record_real.id,
+            'computed_name': 'fr',
+            'name_en': 'en',
+        }, ['name'], child_en._get_fields_spec())
+        self.assertEqual(result['value'], {})
+
     def test_new_records_html(self):
         model = self.env['test_new_api.related_translation_1']
 
@@ -348,3 +358,8 @@ class TestRelatedTranslation(odoo.tests.TransactionCase):
         # inconsistent behavior but usually users don't care or may even be happy about it
         self.assertEqual(record_en.html, '<p>Knife</p><p>Fork</p><p>Spoon</p>')
         self.assertEqual(record_fr.html, '<p>Couteau</p><p>Fourchette</p><p>Cuiller</p>')
+
+    def test_edit_translations_related_compute(self):
+        self.patch(self.env['test_new_api.related_translation_2']._fields['name'], 'readonly', True)
+        self.patch(self.env['test_new_api.related_translation_2']._fields['name'], 'inverse', None)
+        self.assertEqual(self.test2.with_context(lang='fr_FR', edit_translations=True).name, 'Couteau')

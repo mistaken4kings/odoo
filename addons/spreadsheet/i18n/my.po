@@ -1,20 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* spreadsheet
+# * spreadsheet
 #
+# Oakarmin Iron <oakarminiron@gmail.com>, 2025, 2026.
+# Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 18:39+0000\n"
-"PO-Revision-Date: 2025-05-14 20:48+0000\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: \n"
+"POT-Creation-Date: 2026-04-24 17:39+0000\n"
+"PO-Revision-Date: 2026-04-25 18:01+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"Language-Team: Burmese <https://translate.odoo.com/projects/odoo-18/"
+"spreadsheet/my/>\n"
+"Language: my\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17\n"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -138,7 +142,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "%s (copy)"
-msgstr ""
+msgstr "(ကူးထားသော) %s"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -242,23 +246,20 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(0) Exact match. \n"
-"        (-1) Return next smaller item if no match. \n"
-"        (1) Return next greater item if no match. \n"
-"        (2) Wildcard match."
+"(0) Exact match.         (-1) Return next smaller item if no match.         "
+"(1) Return next greater item if no match.         (2) Wildcard match."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(1) Search starting at first item. \n"
-"      (-1) Search starting at last item. \n"
-"      (2) Perform a binary search that relies on lookup_array being sorted "
-"in ascending order. If not sorted, invalid results will be returned. \n"
-"      (-2) Perform a binary search that relies on lookup_array being sorted "
-"in descending order. If not sorted, invalid results will be returned.\n"
-"      "
+"(1) Search starting at first item.       (-1) Search starting at last "
+"item.       (2) Perform a binary search that relies on lookup_array being "
+"sorted in ascending order. If not sorted, invalid results will be "
+"returned.       (-2) Perform a binary search that relies on lookup_array "
+"being sorted in descending order. If not sorted, invalid results will be "
+"returned.      "
 msgstr ""
 
 #. module: spreadsheet
@@ -319,6 +320,12 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "2 rows"
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "A"
 msgstr ""
 
 #. module: spreadsheet
@@ -552,6 +559,12 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid "Access Error"
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Access to the clipboard denied by the browser. Please enable clipboard "
@@ -562,7 +575,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Accounting"
-msgstr ""
+msgstr "စာရင်းအင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -586,7 +599,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Add"
-msgstr ""
+msgstr "ထည့်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -798,7 +811,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "All"
-msgstr ""
+msgstr "အားလုံး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -950,14 +963,6 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"An unexpected error occurred while pasting content.\n"
-"          This is probably due to a spreadsheet version mismatch."
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "An unexpected error occurred. Submit a support ticket at odoo.com/help."
 msgstr ""
 
@@ -1068,7 +1073,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Apply"
-msgstr ""
+msgstr "အပလိုင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1093,7 +1098,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "April"
-msgstr ""
+msgstr "ဧပြီ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1165,7 +1170,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Ascending"
-msgstr ""
+msgstr "ငယ်စဉ်ကြီး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1190,7 +1195,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "August"
-msgstr ""
+msgstr "သြဂုတ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1202,7 +1207,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Automatic"
-msgstr ""
+msgstr "အလိုအလျှောက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1289,7 +1294,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/chart/odoo_chart/odoo_bar_chart.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Bar"
-msgstr ""
+msgstr "ဘား"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1331,7 +1336,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Black"
-msgstr ""
+msgstr "အမဲ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1514,7 +1519,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Cancel"
-msgstr ""
+msgstr "ပယ်ဖျက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1550,12 +1555,6 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Cannot hide all the rows of a sheet."
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Cannot multiply matrices : incompatible matrices size."
 msgstr ""
 
 #. module: spreadsheet
@@ -1724,7 +1723,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Code"
-msgstr ""
+msgstr "ကုဒ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1754,7 +1753,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Color"
-msgstr ""
+msgstr "အရောင်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1808,7 +1807,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Colors"
-msgstr ""
+msgstr "အရောင်များ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1844,7 +1843,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Columns"
-msgstr ""
+msgstr "ကော်လံများ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1862,7 +1861,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Combo"
-msgstr ""
+msgstr "ကွန်ဘို"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1874,6 +1873,12 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Compare two numeric values, returning 1 if they're equal."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "Compute from totals"
 msgstr ""
 
 #. module: spreadsheet
@@ -1958,14 +1963,14 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Configuration"
-msgstr ""
+msgstr "ပြင်ဆင်ရန်"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/hooks.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Confirm"
-msgstr ""
+msgstr "အတည်ပြု"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1979,7 +1984,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Contains"
-msgstr ""
+msgstr "ပါသည့်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2075,7 +2080,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Copy"
-msgstr ""
+msgstr "ကူး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2106,7 +2111,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_helpers.js:0
 msgid "Count"
-msgstr ""
+msgstr "အရေအတွက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2206,12 +2211,12 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 #: model:ir.model,name:spreadsheet.model_res_currency
 msgid "Currency"
-msgstr ""
+msgstr "ငွေကြေး"
 
 #. module: spreadsheet
 #: model:ir.model,name:spreadsheet.model_res_currency_rate
 msgid "Currency Rate"
-msgstr ""
+msgstr "ငွေလဲနှုန်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2302,7 +2307,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Dark"
-msgstr ""
+msgstr "အမှောင်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2364,13 +2369,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Database"
-msgstr ""
+msgstr "ဒေတာဘေ့စ်"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Date"
-msgstr ""
+msgstr "နေ့ရက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2520,7 +2525,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Day"
-msgstr ""
+msgstr "နေ့"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2544,7 +2549,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Day of Week"
-msgstr ""
+msgstr "ရက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2575,7 +2580,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "December"
-msgstr ""
+msgstr "ဒီဇင်ဘာ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2600,7 +2605,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Delete"
-msgstr ""
+msgstr "ဖျက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2709,7 +2714,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Descending"
-msgstr ""
+msgstr "ကြီးစဉ်ငယ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2721,13 +2726,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Design"
-msgstr ""
+msgstr "ဒီဇိုင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Detect automatically"
-msgstr ""
+msgstr "အလိုအလျှောက်သိ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2971,11 +2976,9 @@ msgid "Doughnut"
 msgstr ""
 
 #. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.js:0
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
 msgid "Download"
-msgstr ""
+msgstr "ဒေါင်းလုဒ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2987,19 +2990,19 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Duplicate"
-msgstr ""
+msgstr "ပွား"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Duration"
-msgstr ""
+msgstr "ကြာချိန်"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Edit"
-msgstr ""
+msgstr "ပြင်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3078,7 +3081,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Error"
-msgstr ""
+msgstr "အယ်ရာ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3145,7 +3148,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "February"
-msgstr ""
+msgstr "ဖေဖော်ဝါရီ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3189,7 +3192,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "File"
-msgstr ""
+msgstr "ဖိုင်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3202,7 +3205,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Filter"
-msgstr ""
+msgstr "စစ်ထုတ်ခြင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3220,13 +3223,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
 msgid "Filters"
-msgstr ""
+msgstr "စစ်ထုတ်ခြင်းများ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Financial"
-msgstr ""
+msgstr "ဘဏ္ဍာရေး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3347,7 +3350,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Format"
-msgstr ""
+msgstr "ဖော်မက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3396,7 +3399,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Friday"
-msgstr ""
+msgstr "သောကြာ"
 
 #. module: spreadsheet
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
@@ -3500,29 +3503,22 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
-"pairs."
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a boolean."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range to have the same dimension"
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a string."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
-"invertible"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got an empty "
+"value."
 msgstr ""
 
 #. module: spreadsheet
@@ -3682,7 +3678,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Group"
-msgstr ""
+msgstr "အုပ်စု"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3913,7 +3909,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Image"
-msgstr ""
+msgstr "ရုပ်ပုံ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3926,8 +3922,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must be "
-"equal to the \n"
-"        number of rows of the second matrix (%s)."
+"equal to the         number of rows of the second matrix (%s)."
 msgstr ""
 
 #. module: spreadsheet
@@ -3990,7 +3985,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Information"
-msgstr ""
+msgstr "အချက်အလက်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4280,7 +4275,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Is between"
-msgstr ""
+msgstr "နှစ်ခုကြား"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4366,21 +4361,21 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "January"
-msgstr ""
+msgstr "ဇန်နဝါရီ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "July"
-msgstr ""
+msgstr "ဇူလိုင်"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "June"
-msgstr ""
+msgstr "ဇွန်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4397,43 +4392,43 @@ msgstr ""
 #. module: spreadsheet
 #: model:ir.model,name:spreadsheet.model_res_lang
 msgid "Languages"
-msgstr ""
+msgstr "ဘာသာစကားများ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 180 Days"
-msgstr ""
+msgstr "နောက်ဆုံး ရက် ၁၈၀"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 3 Years"
-msgstr ""
+msgstr "နောက်ဆုံး ၃နှစ်"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 30 Days"
-msgstr ""
+msgstr "နောက်ဆုံး ရက် ၃၀"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 365 Days"
-msgstr ""
+msgstr "နောက်ဆုံး ၃၆၅ ရက်"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 7 Days"
-msgstr ""
+msgstr "နောက်ဆုံး ၇ ရက်"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/helpers/constants.js:0
 msgid "Last 90 Days"
-msgstr ""
+msgstr "နောက်ဆုံး ရက် ၉၀"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4512,7 +4507,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Light"
-msgstr ""
+msgstr "အလင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4531,7 +4526,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/chart/odoo_chart/odoo_line_chart.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Line"
-msgstr ""
+msgstr "လိုင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4562,7 +4557,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Link URL"
-msgstr ""
+msgstr "လင့် URL"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4671,7 +4666,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "March"
-msgstr ""
+msgstr "မတ်လ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4720,7 +4715,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_helpers.js:0
 msgid "Maximum"
-msgstr ""
+msgstr "အများဆုံး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4745,7 +4740,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "May"
-msgstr ""
+msgstr "မေ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4757,7 +4752,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Measures"
-msgstr ""
+msgstr "တိုင်းတာချက်များ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4769,7 +4764,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Medium"
-msgstr ""
+msgstr "တဆင့် (သို့) ကြားခံ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4835,7 +4830,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_helpers.js:0
 msgid "Minimum"
-msgstr ""
+msgstr "အနဲဆုံး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4895,13 +4890,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Misc"
-msgstr ""
+msgstr "အထွေထွေ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Miscellaneous"
-msgstr ""
+msgstr "အထွေထွေ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -4937,13 +4932,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Monday"
-msgstr ""
+msgstr "တနင်္လာ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Month"
-msgstr ""
+msgstr "လ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5021,7 +5016,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Name"
-msgstr ""
+msgstr "အမည်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5070,6 +5065,12 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Next coupon date after the settlement date."
 msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "No"
+msgstr "မဟုတ်ဘူး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5149,7 +5150,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/pivot/pivot_model.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_time_adapters.js:0
 msgid "None"
-msgstr ""
+msgstr "(None)မသတ်မှတ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5168,7 +5169,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "November"
-msgstr ""
+msgstr "နိုဝင်ဘာ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5187,7 +5188,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Number"
-msgstr ""
+msgstr "နံပါတ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5272,7 +5273,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "October"
-msgstr ""
+msgstr "အောက်တိုဘာ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5326,7 +5327,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Operator"
-msgstr ""
+msgstr "အော်ပရေတာ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5338,7 +5339,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Orange"
-msgstr ""
+msgstr "လိမ္မော်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5549,7 +5550,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Power"
-msgstr ""
+msgstr "ပါဝါ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5573,7 +5574,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Preview"
-msgstr ""
+msgstr "ပရီဗျူး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5627,7 +5628,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Purple"
-msgstr ""
+msgstr "ပါပယ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5651,7 +5652,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Quarter"
-msgstr ""
+msgstr "ကွာတား"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5735,7 +5736,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Red"
-msgstr ""
+msgstr "အနီ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6119,13 +6120,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Saturday"
-msgstr ""
+msgstr "စနေ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Save"
-msgstr ""
+msgstr "သိမ်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6143,7 +6144,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Search"
-msgstr ""
+msgstr "ရှာဖွေ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6163,7 +6164,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Search..."
-msgstr ""
+msgstr "ရှာပါ..."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6199,14 +6200,14 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Select all"
-msgstr ""
+msgstr "အကုန်ရွေး"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/global_filters/components/filter_date_value/filter_date_value.xml:0
 #: code:addons/spreadsheet/static/src/global_filters/components/filter_value/filter_value.xml:0
 msgid "Select period..."
-msgstr ""
+msgstr "ကာလ ရွေးပါ..."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6231,7 +6232,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/assets_backend/constants.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "September"
-msgstr ""
+msgstr "စက်တင်ဘာ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6261,13 +6262,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Settings"
-msgstr ""
+msgstr "ဆက်တင်များ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/components/share_button/share_button.xml:0
 msgid "Share"
-msgstr ""
+msgstr "ဝေမျှ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6586,7 +6587,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Standard"
-msgstr ""
+msgstr "စံ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6702,7 +6703,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/pivot_helpers.js:0
 msgid "Sum"
-msgstr ""
+msgstr "စုစုပေါင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6732,13 +6733,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Sunday"
-msgstr ""
+msgstr "တနင်္ဂနွေ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Symbol"
-msgstr ""
+msgstr "သင်္ကေတ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -6777,7 +6778,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Text"
-msgstr ""
+msgstr "စာသား"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -7657,6 +7658,14 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"The first and second arguments of [[FUNCTION_NAME]] must be non-empty "
+"matrices."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The first column index of the columns to be returned."
 msgstr ""
 
@@ -8174,7 +8183,7 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/chart/odoo_menu/figure_component.js:0
+#: code:addons/spreadsheet/static/src/helpers/helpers.js:0
 msgid ""
 "The menu linked to this chart doesn't have an corresponding action. Please "
 "link the chart to another menu."
@@ -9898,12 +9907,6 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "The value should be a scalar or a 1x1 matrix"
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The value the function returns if logical_expression is FALSE."
 msgstr ""
 
@@ -10311,7 +10314,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Thursday"
-msgstr ""
+msgstr "ကြာသပတေး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10323,7 +10326,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Title"
-msgstr ""
+msgstr "ခေါင်းစဉ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10337,7 +10340,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/pivot/odoo_pivot.js:0
 msgid "Total"
-msgstr ""
+msgstr "စုစုပေါင်း"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10409,13 +10412,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Tuesday"
-msgstr ""
+msgstr "အင်္ဂါ"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Type"
-msgstr ""
+msgstr "အမျိုးအစား"
 
 #. module: spreadsheet
 #. odoo-python
@@ -10557,7 +10560,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Update"
-msgstr ""
+msgstr "အပ်ဒိတ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10576,7 +10579,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Value"
-msgstr ""
+msgstr "တန်ဖိုး"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10599,9 +10602,7 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
-"expect a number or a range."
+msgid "Value for parameter %s is missing in [[FUNCTION_NAME]]."
 msgstr ""
 
 #. module: spreadsheet
@@ -10734,7 +10735,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Values"
-msgstr ""
+msgstr "တန်ဖိုးများ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10813,13 +10814,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "View"
-msgstr ""
+msgstr "ဗျူး"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Volume"
-msgstr ""
+msgstr "ထုထည်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10857,13 +10858,13 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Wednesday"
-msgstr ""
+msgstr "ဗုဒ္ဓဟူး"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Week"
-msgstr ""
+msgstr "ရက်သတ္တပါတ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10881,7 +10882,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Weight"
-msgstr ""
+msgstr "အလေးချိန်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10961,9 +10962,8 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether or not to remove empty text messages from the split results. The "
-"default behavior is to treat \n"
-"        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
-"values are added between consecutive delimiters."
+"default behavior is to treat         consecutive delimiters as one (if "
+"TRUE). If FALSE, empty cells values are added between consecutive delimiters."
 msgstr ""
 
 #. module: spreadsheet
@@ -10978,8 +10978,7 @@ msgstr ""
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether the array should be scanned by column. True scans the array by "
-"column and false (default) \n"
-"      scans the array by row."
+"column and false (default)       scans the array by row."
 msgstr ""
 
 #. module: spreadsheet
@@ -11115,7 +11114,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Year"
-msgstr ""
+msgstr "နှစ်"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11131,6 +11130,12 @@ msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "Yes"
+msgstr "ဟုတ်တယ်"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You can't merge cells inside of an existing filter."
 msgstr ""
@@ -11139,6 +11144,21 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You cannot create overlapping tables."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"You copied content from a different version of the application. Only text "
+"content will be pasted."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid ""
+"You don't have the rights to export data. Please contact an Administrator."
 msgstr ""
 
 #. module: spreadsheet
@@ -11162,13 +11182,15 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
+msgid "[[FUNCTION_NAME]] expects number values."
 msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects number values."
+msgid ""
+"[[FUNCTION_NAME]] expects the provided values of %(argName)s to be a non-"
+"empty matrix."
 msgstr ""
 
 #. module: spreadsheet
@@ -11199,12 +11221,6 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "[[FUNCTION_NAME]] has no valid input data."
-msgstr ""
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
 msgstr ""
 
 #. module: spreadsheet
@@ -11379,7 +11395,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "symbol"
-msgstr ""
+msgstr "သင်္ကေတ"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11411,6 +11427,12 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "tomorrow"
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
+msgid "x"
 msgstr ""
 
 #. module: spreadsheet

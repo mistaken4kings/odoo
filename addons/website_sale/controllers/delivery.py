@@ -47,7 +47,7 @@ class Delivery(WebsiteSale):
             return {}
 
         dm_id = int(dm_id)
-        if dm_id != order_sudo.carrier_id.id:
+        if dm_id in order_sudo._get_delivery_methods().ids and dm_id != order_sudo.carrier_id.id:
             for tx_sudo in order_sudo.transaction_ids:
                 if tx_sudo.state not in ('draft', 'cancel', 'error'):
                     raise UserError(_(
@@ -212,7 +212,7 @@ class Delivery(WebsiteSale):
             'name': dm.name,
             'description': dm.website_description,
             'minorAmount': payment_utils.to_minor_currency_units(price, order_sudo.currency_id),
-        } for dm, price in Delivery._get_delivery_methods_express_checkout(order_sudo).items()
+        } for dm, price in self._get_delivery_methods_express_checkout(order_sudo).items()
         ], key=lambda dm: dm['minorAmount'])
 
         # Preselect the cheapest method imitating the behavior of the express checkout form.
@@ -229,8 +229,8 @@ class Delivery(WebsiteSale):
         # Return the list of delivery methods available for the sales order.
         return {'delivery_methods': sorted_delivery_methods}
 
-    @staticmethod
-    def _get_delivery_methods_express_checkout(order_sudo):
+    @classmethod
+    def _get_delivery_methods_express_checkout(cls, order_sudo):
         """ Return available delivery methods and their prices for the given order.
 
         :param sale.order order_sudo: The sudoed sales order.

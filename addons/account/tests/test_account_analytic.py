@@ -125,6 +125,42 @@ class TestAccountAnalyticAccount(AccountTestInvoicingCommon, AnalyticCommon):
         out_invoice.button_draft()
         self.assertFalse(self.get_analytic_lines(out_invoice))
 
+    def test_analytic_lines_multicurrency(self):
+        '''Ensures analytic lines are created when the aml has a secondary currency set.'''
+        # set up second currency
+        self.env.ref('base.PYG').write({
+            'rounding': 1.0,
+            'active': True,
+            'rate_ids': [Command.create({
+                'company_rate': 100,
+                'name': '2017-01-01',
+            })]
+        })
+
+        out_invoice = self.env['account.move'].create([{
+            'move_type': 'out_invoice',
+            'partner_id': self.partner_a.id,
+            'date': '2017-08-01',
+            'invoice_date': '2017-08-01',
+            'invoice_line_ids': [Command.create({
+                'product_id': self.product_a.id,
+                'price_unit': 2.00,
+                'analytic_distribution': {
+                    self.analytic_account_a.id: 100,
+                },
+                'currency_id': self.env.ref('base.PYG').id,
+            })],
+            'currency_id': self.env.ref('base.PYG').id,
+        }])
+
+        out_invoice.action_post()
+
+        # Will not show up if the wrong currency is used to round the amount.
+        self.assertRecordValues(self.get_analytic_lines(out_invoice), [{
+            'amount': 0.02,
+            self.default_plan._column_name(): self.analytic_account_a.id,
+        }])
+
     def test_analytic_lines_rounding(self):
         """ Ensures analytic lines rounding errors are spread across all lines, in such a way that summing them gives the right amount.
         For example, when distributing 100% of the the price, the sum of analytic lines should be exactly equal to the price. """
@@ -765,6 +801,19 @@ class TestAccountAnalyticAccount(AccountTestInvoicingCommon, AnalyticCommon):
             f"{self.analytic_account_2.id}": 60,
         })
 
+    def test_zero_balance_invoice_with_analytic_line(self):
+        """ Test that creating an analytic line on a 0-amount invoice does not crash and updates analytic_distribution safely. """
+        self.product_a.list_price = 0.0
+        invoice = self.create_invoice(self.partner_a, self.product_a)
+        invoice.action_post()
+        self.env['account.analytic.line'].create({
+            'name': 'Zero Balance Test',
+            'account_id': self.analytic_account_1.id,
+            'amount': 33.0,
+            'move_line_id': invoice.invoice_line_ids.id,
+        })
+        self.assertEqual(invoice.invoice_line_ids.analytic_distribution, {f"{self.analytic_account_1.id}": 100.0})
+
     def test_analytic_dynamic_update(self):
         plan1 = self.analytic_account_1.plan_id._column_name()
         plan2 = self.analytic_account_3.plan_id._column_name()
@@ -1048,3 +1097,102 @@ class TestAccountAnalyticAccount(AccountTestInvoicingCommon, AnalyticCommon):
         # After posting the move, the analytic line should be created as usual
         journal_entry.action_post()
         self.assertTrue(self.get_analytic_lines(journal_entry))
+
+    def test_analytic_lines_on_post(self):
+        """
+        In some cases (e.g. when there is a purchase lock, the journal has autocheck_on_post=False),
+        when the move state is changed to post, write is first triggered for dependencies while the move
+        state is still 'draft'. In these cases, the analytic lines created should not be deleted.
+        """
+        in_invoice = self.env['account.move'].create([{
+            'move_type': 'in_invoice',
+            'partner_id': self.partner_a.id,
+            'date': '2017-01-01',
+            'invoice_date': '2017-01-01',
+            'invoice_line_ids': [
+                Command.create({
+                    'product_id': self.product_a.id,
+                    'price_unit': 100.0,
+                    'analytic_distribution': {self.analytic_account_1.id: 100},
+                }),
+            ],
+        }])
+        in_invoice.company_id.purchase_lock_date = '2017-01-31'
+        in_invoice.action_post()
+        self.assertTrue(self.get_analytic_lines(in_invoice))
+
+    def test_multicurrency_different_rounding_analytic_line(self):
+        """If using a foreign currency, the rounding of the analytic_line amount should the one from the company currency"""
+        foreign_currency = self.env['res.currency'].create({
+            'name': "Great Currency",
+            'symbol': '🫀',
+            'rounding': 1,
+            'rate_ids': [
+                Command.create({'name': '2025-01-01', 'rate': 3}),
+            ],
+        })
+        invoice = self.env['account.move'].create({
+            'move_type': 'out_invoice',
+            'partner_id': self.partner_a.id,
+            'date': '2025-01-01',
+            'currency_id': foreign_currency.id,
+            'invoice_line_ids': [Command.create({
+                'product_id': self.product_a.id,
+                'price_unit': 10.0,
+                'quantity': 1,
+                'tax_ids': [],
+                'analytic_distribution': {
+                    self.analytic_account_1.id: 100,
+                },
+            })]
+        })
+        invoice.action_post()
+        self.assertEqual(self.get_analytic_lines(invoice).amount, 3.33)
+
+    def test_post_move_with_archived_analytic_account(self):
+        """Ensure that posting an invoice with an archived analytic account
+        in its distribution raises a UserError.
+        """
+        invoice = self.create_invoice(self.partner_a, self.product_a)
+        invoice.invoice_line_ids.analytic_distribution = {
+            str(self.analytic_account_a.id): 100,
+        }
+        # Archive analytic account
+        self.analytic_account_a.active = False
+        with self.assertRaisesRegex(UserError, "archived analytic account"):
+            invoice._post()
+
+    def test_exchange_move_with_mandatory_analytic_plan(self):
+        """ Ensure no mandatory analytic plan validation error is raised when an exchange move is auto-created."""
+
+        # Multi-currency setup
+        test_currency = self.setup_other_currency('CAD', rates=[('2016-01-01', 6.0), ('2017-01-01', 4.0)])
+
+        # Analytic plan setup
+        self.env['account.analytic.applicability'].create({
+            'business_domain': 'general',
+            'applicability': 'mandatory',
+            'analytic_plan_id': self.default_plan.id,
+        })
+
+        # Create an invoice in foreign currency
+        invoice = self.env['account.move'].create({
+            'move_type': 'out_invoice',
+            'partner_id': self.partner_a.id,
+            'currency_id': test_currency.id,
+            'invoice_date': '2016-01-01',
+            'invoice_line_ids': [Command.create({
+                'name': 'test line',
+                'quantity': 1,
+                'price_unit': 100,
+                'analytic_distribution': {self.analytic_account_a.id: 100},
+            })],
+        })
+        invoice.action_post()
+
+        # Create a credit note at a different rate
+        credit_note = invoice._reverse_moves([{'invoice_date': '2017-01-01'}])
+        # Post the credit note with the validate_analytic context key to mimic posting behavior from the form view.
+        credit_note.with_context(validate_analytic=True).action_post()
+
+        self.assertEqual(credit_note.state, 'posted')

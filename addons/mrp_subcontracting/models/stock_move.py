@@ -109,7 +109,7 @@ class StockMove(models.Model):
                 production.qty_producing = 1
                 if not production.lot_producing_id:
                     production.action_generate_serial()
-                production.with_context(cancel_backorder=False).subcontracting_record_component()
+                production.with_context(cancel_backorder=False, skip_consumption=True).subcontracting_record_component()
         else:
             production.qty_producing = qty
             if float_compare(production.qty_producing, production.product_qty, precision_rounding=production.product_uom_id.rounding) > 0:
@@ -120,7 +120,7 @@ class StockMove(models.Model):
             if production.product_tracking == 'lot' and not production.lot_producing_id:
                 production.action_generate_serial()
             production._set_qty_producing()
-            production.with_context(cancel_backorder=False).subcontracting_record_component()
+            production.with_context(cancel_backorder=False, skip_consumption=True).subcontracting_record_component()
 
     def copy_data(self, default=None):
         default = dict(default or {})
@@ -136,7 +136,7 @@ class StockMove(models.Model):
         subcontract order to the new quantity.
         """
         self._check_access_if_subcontractor(values)
-        if 'product_uom_qty' in values and self.env.context.get('cancel_backorder') is not False and not self._context.get('extra_move_mode'):
+        if 'product_uom_qty' in values and self.env.context.get('cancel_backorder') is not False and not self._context.get('extra_move_mode') and not self.env.context.get('do_not_unreserve'):
             self.filtered(
                 lambda m: m.is_subcontract and m.state not in ['draft', 'cancel', 'done']
                 and float_compare(m.product_uom_qty, values['product_uom_qty'], precision_rounding=m.product_uom.rounding) != 0
@@ -330,6 +330,11 @@ class StockMove(models.Model):
         # Cancel productions until reach new_quantity
         for production in (productions - wip_production):
             if float_compare(quantity_to_remove, production.product_qty, precision_rounding=production.product_uom_id.rounding) >= 0:
+                if len(productions + wip_production) == 1:
+                    production.qty_producing = 0
+                    production.subcontracting_has_been_recorded = False
+                    production._set_qty_producing()
+                    break  # Never cancel the last MO if there's still a subcontracting move
                 quantity_to_remove -= production.product_qty
                 production.with_context(skip_activity=True).action_cancel()
             else:

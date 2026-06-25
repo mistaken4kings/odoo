@@ -1081,3 +1081,86 @@ class TestUnbuild(TestMrpCommon):
 
         self.assertEqual(self.env['stock.quant']._get_available_quantity(p1, self.stock_location), 7)
         self.assertEqual(self.env['stock.quant']._get_available_quantity(p1, self.stock_location, owner_id=consigned_partner), 4)
+
+    def test_unbuild_non_storable_product(self):
+        """Check that the move values of an unbuild of a non-storable product are correct.
+        """
+        self.product_4.is_storable = False
+        self.product_3.is_storable = False
+
+        self.env['mrp.bom.byproduct'].create({
+            'bom_id': self.bom_1.id,
+            'product_id': self.product_3.id,
+            'product_qty': 1,
+            'product_uom_id': self.product_3.uom_id.id
+        })
+
+        # Create mo
+        mo_form = Form(self.env['mrp.production'])
+        mo_form.product_id = self.product_4
+        mo_form.bom_id = self.bom_1
+        mo_form.product_uom_id = self.product_4.uom_id
+        mo_form.product_qty = 4.0
+        mo = mo_form.save()
+        mo.action_confirm()
+
+        # Produce the final product
+        mo_form = Form(mo)
+        mo_form.qty_producing = 4.0
+        mo_form.save()
+
+        mo.button_mark_done()
+
+        unbuild_wizard = Form(self.env['mrp.unbuild'])
+        unbuild_wizard.mo_id = mo
+        unbuild = unbuild_wizard.save()
+        unbuild.action_unbuild()
+
+        self.assertRecordValues(unbuild.produce_line_ids, [
+                    {'product_id': self.product_4.id, 'quantity': 4, 'state': 'done'},   # Stick
+                    {'product_id': self.product_3.id, 'quantity': 12, 'state': 'done'},  # Stone
+                    {'product_id': self.product_2.id, 'quantity': 24, 'state': 'done'},  # Wood
+                    {'product_id': self.product_1.id, 'quantity': 48, 'state': 'done'},  # Courage
+                ])
+
+    def test_unbuild_more_than_manufactured(self):
+        mo, bom, p_final, p1, p2 = self.generate_mo()
+
+        self.env['stock.quant']._update_available_quantity(p1, self.stock_location, 100)
+        self.env['stock.quant']._update_available_quantity(p2, self.stock_location, 5)
+        mo.action_assign()
+
+        mo_form = Form(mo)
+        mo_form.qty_producing = 5.0
+        mo = mo_form.save()
+        mo.button_mark_done()
+        self.assertEqual(mo.state, 'done', "Production order should be in done state.")
+
+        # Check quantity in stock before unbuild.
+        self.assertEqual(self.env['stock.quant']._get_available_quantity(p_final, self.stock_location), 5, 'You should have the 5 final product in stock')
+        self.assertEqual(self.env['stock.quant']._get_available_quantity(p1, self.stock_location), 80, 'You should have 80 products in stock')
+        self.assertEqual(self.env['stock.quant']._get_available_quantity(p2, self.stock_location), 0, 'You should have consumed all the 5 product in stock')
+
+        # ---------------------------------------------------
+        #       unbuild
+        # ---------------------------------------------------
+
+        x = Form(self.env['mrp.unbuild'])
+        x.product_id = p_final
+        x.bom_id = bom
+        unbuild = x.save()
+
+        unbuild.mo_id = mo.id
+        unbuild.product_qty = 7
+        unbuild.action_unbuild()
+
+        self.assertEqual(self.env['stock.quant']._get_available_quantity(p_final, self.stock_location, allow_negative=True), -2, 'You should have 2 less final product in stock than what you started with')
+        self.assertEqual(self.env['stock.quant']._get_available_quantity(p1, self.stock_location), 108, 'You should have gained back 8 more products than what you started with')
+        self.assertEqual(self.env['stock.quant']._get_available_quantity(p2, self.stock_location), 7, 'You should have gained back 2 more products than what you started with')
+
+        move_lines = unbuild.produce_line_ids.move_line_ids.sorted(lambda ml: ml.product_id.id)
+        self.assertRecordValues(move_lines, [
+            {'reference': unbuild.name, 'quantity': 7, 'product_id': p_final.id, 'state': 'done'},
+            {'reference': unbuild.name, 'quantity': 28, 'product_id': p1.id, 'state': 'done'},
+            {'reference': unbuild.name, 'quantity': 7, 'product_id': p2.id, 'state': 'done'},
+        ])

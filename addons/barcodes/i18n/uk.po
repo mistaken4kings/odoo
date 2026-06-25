@@ -4,13 +4,13 @@
 #
 # Translators:
 # Wil Odoo, 2024
-# Alina Lisnenko <alina.lisnenko@erp.co.ua>, 2025
+# Alina Lisnenko <alina.lisnenko@erp.co.ua>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-23 18:39+0000\n"
-"PO-Revision-Date: 2025-08-12 22:21+0000\n"
+"POT-Creation-Date: 2025-12-29 18:37+0000\n"
+"PO-Revision-Date: 2026-02-14 09:05+0000\n"
 "Last-Translator: Alina Lisnenko <alina.lisnenko@erp.co.ua>\n"
 "Language-Team: Ukrainian <https://translate.odoo.com/projects/odoo-18/"
 "barcodes/uk/>\n"
@@ -19,10 +19,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 "
-"? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > "
-"14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % "
-"100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
-"X-Generator: Weblate 5.12.2\n"
+"? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && "
+"(n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && "
+"(n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 ))"
+" ? 2: 3);\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. module: barcodes
 #. odoo-python
@@ -33,21 +34,28 @@ msgstr " '*' недійсний паттерн штрих-коду Regex. Ви �
 #. module: barcodes
 #: model_terms:ir.ui.view,arch_db:barcodes.view_barcode_nomenclature_form
 msgid ""
-"<i>Barcodes Nomenclatures</i> define how barcodes are recognized and categorized.\n"
-"                                When a barcode is scanned it is associated to the <i>first</i> rule with a matching\n"
-"                                pattern. The pattern syntax is that of regular expression, and a barcode is matched\n"
-"                                if the regular expression matches a prefix of the barcode."
+"<i>Barcodes Nomenclatures</i> define how barcodes are recognized and "
+"categorized.\n"
+"                                When a barcode is scanned it is associated "
+"to the <i>first</i> rule with a matching\n"
+"                                pattern. The pattern syntax is that of "
+"regular expression, and a barcode is matched\n"
+"                                if the regular expression matches a prefix "
+"of the barcode."
 msgstr ""
-"<i>Номенклатури штрих-кодів</i> визначте, як штрих-коди будуть зчитуватися та сортуватися.\n"
-"Просканований штрих-код пов'язується з <i>першим</i> правилом відповідним шаблоном.\n"
-"Синтаксис шаблона належить до регулярних виразів, а штрих-коди співпадають, \n"
+"<i>Номенклатури штрих-кодів</i> визначте, як штрих-коди будуть зчитуватися "
+"та сортуватися.\n"
+"Просканований штрих-код пов'язується з <i>першим</i> правилом відповідним "
+"шаблоном.\n"
+"Синтаксис шаблона належить до регулярних виразів, а штрих-коди співпадають, "
+"\n"
 "якщо регулярний вираз співпадає з префіксом штрих-кода."
 
 #. module: barcodes
 #: model_terms:ir.actions.act_window,help:barcodes.action_barcode_nomenclature_form
 msgid ""
-"A barcode nomenclature defines how the point of sale identify and interprets"
-" barcodes"
+"A barcode nomenclature defines how the point of sale identify and interprets "
+"barcodes"
 msgstr ""
 "Номенклатура штрих-кодів визначає, як точка продажу буде їх ідентифікувати "
 "та зчитувати"
@@ -219,18 +227,27 @@ msgstr "Номенклатура"
 #. module: barcodes
 #: model_terms:ir.ui.view,arch_db:barcodes.view_barcode_nomenclature_form
 msgid ""
-"Patterns can also define how numerical values, such as weight or price, can be\n"
-"                                encoded into the barcode. They are indicated by <code>{NNN}</code> where the N's\n"
-"                                define where the number's digits are encoded. Floats are also supported with the\n"
-"                                decimals indicated with D's, such as <code>{NNNDD}</code>. In these cases,\n"
-"                                the barcode field on the associated records <i>must</i> show these digits as\n"
+"Patterns can also define how numerical values, such as weight or price, can "
+"be\n"
+"                                encoded into the barcode. They are indicated "
+"by <code>{NNN}</code> where the N's\n"
+"                                define where the number's digits are "
+"encoded. Floats are also supported with the\n"
+"                                decimals indicated with D's, such as "
+"<code>{NNNDD}</code>. In these cases,\n"
+"                                the barcode field on the associated records "
+"<i>must</i> show these digits as\n"
 "                                zeroes."
 msgstr ""
-"Шаблони також можуть визначати, як числові значення, такі як вага або ціна, можуть бути закодовані\n"
+"Шаблони також можуть визначати, як числові значення, такі як вага або ціна, "
+"можуть бути закодовані\n"
 " в штрих-коді. Вони ідентифікуцються за <code>{NNN}</code> де N\n"
-"                                визначає де кодуються цифри. Числа з плаваючою точкою також підтримуються \n"
-"десятковими дробами, позначеними D, наприклад <code>{NNNDD}</code>. У такому випадку\n"
-"                                поле штрих-коду на пов'язаних записах <i>має</i> показувати ці цифри як\n"
+"                                визначає де кодуються цифри. Числа з "
+"плаваючою точкою також підтримуються \n"
+"десятковими дробами, позначеними D, наприклад <code>{NNNDD}</code>. У такому "
+"випадку\n"
+"                                поле штрих-коду на пов'язаних записах "
+"<i>має</i> показувати ці цифри як\n"
 "                                нулі."
 
 #. module: barcodes
@@ -333,8 +350,8 @@ msgstr "Тип"
 #: model:ir.model.fields,help:barcodes.field_barcode_nomenclature__upc_ean_conv
 msgid ""
 "UPC Codes can be converted to EAN by prefixing them with a zero. This "
-"setting determines if a UPC/EAN barcode should be automatically converted in"
-" one way or another when trying to match a rule with the other encoding."
+"setting determines if a UPC/EAN barcode should be automatically converted in "
+"one way or another when trying to match a rule with the other encoding."
 msgstr ""
 "UPC коди можна конвертувати у EAN, дописуючи нулі спочатку. Це налаштування "
 "вказує, чи конвертувати автоматично UPC/EAN штрих-коди в тому чи іншому "
@@ -368,8 +385,7 @@ msgstr "Невідома команда штрих-коду"
 
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule__sequence
-msgid ""
-"Used to order rules such that rules with a smaller sequence match first"
+msgid "Used to order rules such that rules with a smaller sequence match first"
 msgstr ""
 "Використовується для впорядкування правил. Правила з меншим значенням будуть "
 "відображатися першими"
@@ -378,3 +394,12 @@ msgstr ""
 #: model:ir.model.fields,help:barcodes.field_barcodes_barcode_events_mixin___barcode_scanned
 msgid "Value of the last barcode scanned."
 msgstr "Значення останнього відсканованого штрих-коду."
+
+#. module: barcodes
+#. odoo-python
+#: code:addons/barcodes/models/barcode_nomenclature.py:0
+msgid ""
+"You cannot delete '%(name)s' because it's the default barcode nomenclature."
+msgstr ""
+"Ви не можете видалити '%(name)s', оскільки це штрих-код номенклатури за "
+"замовчуванням."

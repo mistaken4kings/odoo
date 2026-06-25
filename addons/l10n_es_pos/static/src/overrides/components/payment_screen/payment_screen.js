@@ -28,11 +28,19 @@ patch(PaymentScreen.prototype, {
                 if (!order.partner_id && order.to_invoice) {
                     const setPricelist =
                         this.pos.config.pricelist_id?.id != order.pricelist_id?.id
-                            ? order.pricelist_id.id
+                            ? order.pricelist_id
+                            : false;
+                    const setFiscalPosition =
+                        this.pos.config.default_fiscal_position_id?.id !=
+                        order.fiscal_position_id?.id
+                            ? order.fiscal_position_id?.id
                             : false;
                     order.set_partner(this.pos.config.simplified_partner_id);
                     if (setPricelist) {
                         order.set_pricelist(setPricelist);
+                    }
+                    if (setFiscalPosition !== false) {
+                        order.update({ fiscal_position_id: setFiscalPosition });
                     }
                 }
             }

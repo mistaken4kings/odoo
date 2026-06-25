@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* spreadsheet
+# * spreadsheet
 #
 # Translators:
 # 敬雲 林 <chingyun@yuanchih-consult.com>, 2024
@@ -8,21 +8,23 @@
 # Martin Trigaux, 2024
 # Wil Odoo, 2025
 # Tony Ng, 2025
-#
+# "Tony Ng (ngto)" <ngto@odoo.com>, 2025.
+# Weblate <noreply-mt-weblate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 18:39+0000\n"
-"PO-Revision-Date: 2024-09-25 09:41+0000\n"
-"Last-Translator: Tony Ng, 2025\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/odoo/teams/41243/"
-"zh_TW/)\n"
+"POT-Creation-Date: 2026-04-24 17:39+0000\n"
+"PO-Revision-Date: 2026-04-25 18:00+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"Language-Team: Chinese (Traditional Han script) <https://translate.odoo.com/"
+"projects/odoo-18/spreadsheet/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17\n"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -254,35 +256,21 @@ msgstr "所有試算表找到 %s 項符合"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(0) Exact match. \n"
-"        (-1) Return next smaller item if no match. \n"
-"        (1) Return next greater item if no match. \n"
-"        (2) Wildcard match."
+"(0) Exact match.         (-1) Return next smaller item if no match.         "
+"(1) Return next greater item if no match.         (2) Wildcard match."
 msgstr ""
-"(0) 完全相符。 \n"
-"        (-1) 若無符合項目，傳回下一個較小的項目。 \n"
-"        (1) 若無符合項目，傳回下一個較大的項目。 \n"
-"        (2) 萬用字元配對。"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"(1) Search starting at first item. \n"
-"      (-1) Search starting at last item. \n"
-"      (2) Perform a binary search that relies on lookup_array being sorted "
-"in ascending order. If not sorted, invalid results will be returned. \n"
-"      (-2) Perform a binary search that relies on lookup_array being sorted "
-"in descending order. If not sorted, invalid results will be returned.\n"
-"      "
+"(1) Search starting at first item.       (-1) Search starting at last "
+"item.       (2) Perform a binary search that relies on lookup_array being "
+"sorted in ascending order. If not sorted, invalid results will be "
+"returned.       (-2) Perform a binary search that relies on lookup_array "
+"being sorted in descending order. If not sorted, invalid results will be "
+"returned.      "
 msgstr ""
-"(1) 從第一個項目開始搜索。\n"
-"      (-1) 從最後一項開始搜索。\n"
-"      (2) 執行二進制搜索，依賴於 lookup_array 按升序排序。如果未排序，將傳回"
-"無效結果。\n"
-"      (-2) 執行二進制搜索，依賴於 lookup_array 按降序排序。如果未排序，將傳回"
-"無效結果。\n"
-"      "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -343,6 +331,12 @@ msgstr "2 欄"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "2 rows"
 msgstr "2 列"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "A"
+msgstr "A"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -581,6 +575,12 @@ msgstr "絕對值"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Absolute value of a number."
 msgstr "一個數字的絕對值。"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid "Access Error"
+msgstr "存取錯誤"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -984,16 +984,6 @@ msgstr "日期範圍與 cashflow_amounts 中的現金流量相對應。"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "An unexpected error occurred during the image transfer"
 msgstr "圖像傳輸時發生意外錯誤"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"An unexpected error occurred while pasting content.\n"
-"          This is probably due to a spreadsheet version mismatch."
-msgstr ""
-"貼上內容時，發生意外錯誤。\n"
-"          可能因為試算表版本不配合而造成。"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -1603,12 +1593,6 @@ msgstr "不可隱藏工作表內的所有列。"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Cannot multiply matrices : incompatible matrices size."
-msgstr "無法進行矩陣乘法運算：矩陣大小不兼容。"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Cannot open the link because the linked sheet is hidden."
 msgstr "未能開啟連結，因為連結的試算表已被隱藏。"
 
@@ -1923,6 +1907,12 @@ msgstr "逗號"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Compare two numeric values, returning 1 if they're equal."
 msgstr "比較兩個數值，如果它們相等，則傳回 1。"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "Compute from totals"
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -2563,7 +2553,7 @@ msgstr "日期至⋯"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Date:"
-msgstr "日期:"
+msgstr "日期："
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3024,8 +3014,6 @@ msgid "Doughnut"
 msgstr "環形"
 
 #. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.js:0
 #: model_terms:ir.ui.view,arch_db:spreadsheet.public_spreadsheet_layout
 msgid "Download"
 msgstr "下載"
@@ -3558,30 +3546,23 @@ msgstr "函數 [[FUNCTION_NAME]] 找不到任何結果。"
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
-"pairs."
-msgstr "函數 [[FUNCTION_NAME]] 要求 criteria_range 與 criteria 互相成對。"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a boolean."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] expects criteria_range to have the same dimension"
-msgstr "函數 [[FUNCTION_NAME]] 要求 criteria_range 及 criteria 有同樣維度。"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
-msgstr "函數 [[FUNCTION_NAME]] 要求的值為 %s，但收到的是 %s。"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got a string."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
-"Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
-"invertible"
-msgstr "函數 [[FUNCTION_NAME]]逆矩陣錯誤，只有方陣是可逆的"
+"Function [[FUNCTION_NAME]] expects number values for %s, but got an empty "
+"value."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -3992,11 +3973,8 @@ msgstr "計算 [[FUNCTION_NAME]] 時，無法在 '%s' 中找到 '%s'。"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must be "
-"equal to the \n"
-"        number of rows of the second matrix (%s)."
+"equal to the         number of rows of the second matrix (%s)."
 msgstr ""
-"在 [[FUNCTION_NAME]] 中，第一個矩陣 (%s) 的欄數\n"
-"        必須等於第二個矩陣 (%s) 的列數。"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -5143,6 +5121,12 @@ msgstr "新樞紐"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Next coupon date after the settlement date."
 msgstr "結算日期之後的下一優惠券日期。"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "No"
+msgstr "否"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -7758,6 +7742,14 @@ msgstr "第一個補充。"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"The first and second arguments of [[FUNCTION_NAME]] must be non-empty "
+"matrices."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The first column index of the columns to be returned."
 msgstr "要傳回的欄的第一個欄索引。"
 
@@ -8284,7 +8276,7 @@ msgstr "最大點必須是一個數字"
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/chart/odoo_menu/figure_component.js:0
+#: code:addons/spreadsheet/static/src/helpers/helpers.js:0
 msgid ""
 "The menu linked to this chart doesn't have an corresponding action. Please "
 "link the chart to another menu."
@@ -10020,12 +10012,6 @@ msgstr "要使用分隔符追加的一個或多個值。"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "The value should be a scalar or a 1x1 matrix"
-msgstr "該值應該是標量或 1x1 矩陣"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The value the function returns if logical_expression is FALSE."
 msgstr "如果 logical_expression 為 FALSE，函數傳回的值。"
 
@@ -10726,10 +10712,8 @@ msgstr "鍵值的值變化"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid ""
-"Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
-"expect a number or a range."
-msgstr "缺漏參數 %d 的值。函數 [[FUNCTION_NAME]] 要求的值是一個數字或範圍。"
+msgid "Value for parameter %s is missing in [[FUNCTION_NAME]]."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11090,13 +11074,9 @@ msgstr "是否在分隔符包含的每個字符周圍分割文本。"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether or not to remove empty text messages from the split results. The "
-"default behavior is to treat \n"
-"        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
-"values are added between consecutive delimiters."
+"default behavior is to treat         consecutive delimiters as one (if "
+"TRUE). If FALSE, empty cells values are added between consecutive delimiters."
 msgstr ""
-"是否刪除分割結果中的空文本訊息。預設做法是將\n"
-"        連續分隔符視為一個（如果為 TRUE）。如果為 FALSE，則會在連續分隔符之間"
-"加入空的儲存格值。"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11110,11 +11090,8 @@ msgstr "是否在每期期末（0）或期初（1）付款。"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid ""
 "Whether the array should be scanned by column. True scans the array by "
-"column and false (default) \n"
-"      scans the array by row."
+"column and false (default)       scans the array by row."
 msgstr ""
-"數組是否應按列進行掃描。True表示按列掃描數組，False（預設）表示\n"
-"      按行掃描數組。"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11269,6 +11246,12 @@ msgstr "年初至今"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/hooks.js:0
+msgid "Yes"
+msgstr "是"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You can't merge cells inside of an existing filter."
 msgstr "你無法合併現有篩選器內的儲存格。"
@@ -11278,6 +11261,21 @@ msgstr "你無法合併現有篩選器內的儲存格。"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "You cannot create overlapping tables."
 msgstr "你不可建立重疊的表格。"
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
+msgid ""
+"You copied content from a different version of the application. Only text "
+"content will be pasted."
+msgstr ""
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/actions/spreadsheet_download_action.js:0
+msgid ""
+"You don't have the rights to export data. Please contact an Administrator."
+msgstr "您沒有權限匯出資料. 請聯繫系統管理員."
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11300,14 +11298,16 @@ msgstr "[[FUNCTION_NAME]] 計算得出一個超出範圍的列值 %s。"
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
-msgstr "[[FUNCTION_NAME]] 對兩個參數都要求非空白範圍。"
+msgid "[[FUNCTION_NAME]] expects number values."
+msgstr "[[FUNCTION_NAME]] 要求數字值。"
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] expects number values."
-msgstr "[[FUNCTION_NAME]] 要求數字值。"
+msgid ""
+"[[FUNCTION_NAME]] expects the provided values of %(argName)s to be a non-"
+"empty matrix."
+msgstr ""
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11338,12 +11338,6 @@ msgstr "[[FUNCTION_NAME]] 有不匹配的範圍大小。"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "[[FUNCTION_NAME]] has no valid input data."
 msgstr "[[FUNCTION_NAME]] 沒有有效的輸入數據。"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
-msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
-msgstr "[[FUNCTION_NAME]] 的兩個參數需要最少兩個值。"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11553,6 +11547,12 @@ msgstr "明天"
 
 #. module: spreadsheet
 #. odoo-javascript
+#: code:addons/spreadsheet/static/src/public_readonly_app/public_readonly.xml:0
+msgid "x"
+msgstr "x"
+
+#. module: spreadsheet
+#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "yesterday"
 msgstr "昨天"
@@ -11562,3 +11562,102 @@ msgstr "昨天"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "zero"
 msgstr "零"
+
+#~ msgid ""
+#~ "(0) Exact match. \n"
+#~ "        (-1) Return next smaller item if no match. \n"
+#~ "        (1) Return next greater item if no match. \n"
+#~ "        (2) Wildcard match."
+#~ msgstr ""
+#~ "(0) 完全相符。 \n"
+#~ "        (-1) 若無符合項目，傳回下一個較小的項目。 \n"
+#~ "        (1) 若無符合項目，傳回下一個較大的項目。 \n"
+#~ "        (2) 萬用字元配對。"
+
+#~ msgid ""
+#~ "(1) Search starting at first item. \n"
+#~ "      (-1) Search starting at last item. \n"
+#~ "      (2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in ascending order. If not sorted, invalid results will be "
+#~ "returned. \n"
+#~ "      (-2) Perform a binary search that relies on lookup_array being "
+#~ "sorted in descending order. If not sorted, invalid results will be "
+#~ "returned.\n"
+#~ "      "
+#~ msgstr ""
+#~ "(1) 從第一個項目開始搜索。\n"
+#~ "      (-1) 從最後一項開始搜索。\n"
+#~ "      (2) 執行二進制搜索，依賴於 lookup_array 按升序排序。如果未排序，將傳"
+#~ "回無效結果。\n"
+#~ "      (-2) 執行二進制搜索，依賴於 lookup_array 按降序排序。如果未排序，將"
+#~ "傳回無效結果。\n"
+#~ "      "
+
+#~ msgid ""
+#~ "An unexpected error occurred while pasting content.\n"
+#~ "          This is probably due to a spreadsheet version mismatch."
+#~ msgstr ""
+#~ "貼上內容時，發生意外錯誤。\n"
+#~ "          可能因為試算表版本不配合而造成。"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range and criterion to be in "
+#~ "pairs."
+#~ msgstr "函數 [[FUNCTION_NAME]] 要求 criteria_range 與 criteria 互相成對。"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects criteria_range to have the same "
+#~ "dimension"
+#~ msgstr "函數 [[FUNCTION_NAME]] 要求 criteria_range 及 criteria 有同樣維度。"
+
+#~ msgid ""
+#~ "In [[FUNCTION_NAME]], the number of columns of the first matrix (%s) must "
+#~ "be equal to the \n"
+#~ "        number of rows of the second matrix (%s)."
+#~ msgstr ""
+#~ "在 [[FUNCTION_NAME]] 中，第一個矩陣 (%s) 的欄數\n"
+#~ "        必須等於第二個矩陣 (%s) 的列數。"
+
+#~ msgid ""
+#~ "Whether or not to remove empty text messages from the split results. The "
+#~ "default behavior is to treat \n"
+#~ "        consecutive delimiters as one (if TRUE). If FALSE, empty cells "
+#~ "values are added between consecutive delimiters."
+#~ msgstr ""
+#~ "是否刪除分割結果中的空文本訊息。預設做法是將\n"
+#~ "        連續分隔符視為一個（如果為 TRUE）。如果為 FALSE，則會在連續分隔符"
+#~ "之間加入空的儲存格值。"
+
+#~ msgid ""
+#~ "Whether the array should be scanned by column. True scans the array by "
+#~ "column and false (default) \n"
+#~ "      scans the array by row."
+#~ msgstr ""
+#~ "數組是否應按列進行掃描。True表示按列掃描數組，False（預設）表示\n"
+#~ "      按行掃描數組。"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] expects number values for %s, but got a %s."
+#~ msgstr "函數 [[FUNCTION_NAME]] 要求的值為 %s，但收到的是 %s。"
+
+#~ msgid ""
+#~ "Value for parameter %d is missing, while the function [[FUNCTION_NAME]] "
+#~ "expect a number or a range."
+#~ msgstr "缺漏參數 %d 的值。函數 [[FUNCTION_NAME]] 要求的值是一個數字或範圍。"
+
+#~ msgid "Cannot multiply matrices : incompatible matrices size."
+#~ msgstr "無法進行矩陣乘法運算：矩陣大小不兼容。"
+
+#~ msgid ""
+#~ "Function [[FUNCTION_NAME]] invert matrix error, only square matrices are "
+#~ "invertible"
+#~ msgstr "函數 [[FUNCTION_NAME]]逆矩陣錯誤，只有方陣是可逆的"
+
+#~ msgid "The value should be a scalar or a 1x1 matrix"
+#~ msgstr "該值應該是標量或 1x1 矩陣"
+
+#~ msgid "[[FUNCTION_NAME]] expects non-empty ranges for both parameters."
+#~ msgstr "[[FUNCTION_NAME]] 對兩個參數都要求非空白範圍。"
+
+#~ msgid "[[FUNCTION_NAME]] needs at least two values for both parameters."
+#~ msgstr "[[FUNCTION_NAME]] 的兩個參數需要最少兩個值。"

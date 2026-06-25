@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* sale_loyalty
-# 
+# * sale_loyalty
+#
 # Translators:
 # lhmflexerp <lhm@flexerp.dk>, 2024
 # Mads Søndergaard, 2024
@@ -9,20 +9,22 @@
 # Martin Trigaux, 2024
 # Sammi Iversen <sammi@vkdata.dk>, 2025
 # Kira Petersen, 2025
-# 
+# Weblate <noreply-mt-weblate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-19 20:37+0000\n"
-"PO-Revision-Date: 2024-09-25 09:41+0000\n"
-"Last-Translator: Kira Petersen, 2025\n"
-"Language-Team: Danish (https://app.transifex.com/odoo/teams/41243/da/)\n"
+"POT-Creation-Date: 2026-03-20 18:37+0000\n"
+"PO-Revision-Date: 2026-03-21 18:01+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"Language-Team: Danish <https://translate.odoo.com/projects/odoo-18/"
+"sale_loyalty/da/>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: da\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #. module: sale_loyalty
 #. odoo-python
@@ -159,12 +161,6 @@ msgid "Expired Date:"
 msgstr "Udløbsdato:"
 
 #. module: sale_loyalty
-#. odoo-python
-#: code:addons/sale_loyalty/models/sale_order.py:0
-msgid "Free Product - %(product)s"
-msgstr "Gratis produkt - %(product)s"
-
-#. module: sale_loyalty
 #: model_terms:ir.ui.view,arch_db:sale_loyalty.sale_purchased_gift_card
 msgid "Gift #"
 msgstr "Gave #"
@@ -225,6 +221,11 @@ msgid "Issued :"
 msgstr "Udstedt:"
 
 #. module: sale_loyalty
+#: model:ir.model,name:sale_loyalty.model_account_move_line
+msgid "Journal Item"
+msgstr "Posteringslinje"
+
+#. module: sale_loyalty
 #: model:ir.model.fields,field_description:sale_loyalty.field_sale_loyalty_coupon_wizard__write_uid
 #: model:ir.model.fields,field_description:sale_loyalty.field_sale_loyalty_reward_wizard__write_uid
 #: model:ir.model.fields,field_description:sale_loyalty.field_sale_order_coupon_points__write_uid
@@ -283,11 +284,11 @@ msgstr "Multi-produkt"
 #. odoo-python
 #: code:addons/sale_loyalty/models/sale_order.py:0
 msgid ""
-"No card found for this loyalty program and no points will be given with this"
-" order."
+"No card found for this loyalty program and no points will be given with this "
+"order."
 msgstr ""
-"Ingen loyalitetskort er knyttet til programmet, så ordren udløser ikke nogen"
-" point."
+"Ingen loyalitetskort er knyttet til programmet, så ordren udløser ikke nogen "
+"point."
 
 #. module: sale_loyalty
 #. odoo-python
@@ -493,8 +494,8 @@ msgid ""
 "This discount (%(discount)s) is not compatible with \"%(other_discount)s\". "
 "Please remove it in order to apply this one."
 msgstr ""
-"Rabatten (%(discount)s) er ikke kompatibel med \"%(other_discount)s\". Fjern"
-" den venligst for at anvende denne i stedet."
+"Rabatten (%(discount)s) er ikke kompatibel med \"%(other_discount)s\". Fjern "
+"den venligst for at anvende denne i stedet."
 
 #. module: sale_loyalty
 #. odoo-python
@@ -557,3 +558,6 @@ msgid ""
 msgstr ""
 "Din gavekortkode er vist nedenfor. Den er også sendt til dig via e-mail og "
 "kan bruges med det samme."
+
+#~ msgid "Free Product - %(product)s"
+#~ msgstr "Gratis produkt - %(product)s"

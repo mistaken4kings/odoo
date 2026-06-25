@@ -9,6 +9,7 @@ from werkzeug.datastructures import FileStorage
 
 from odoo import Command
 from odoo.exceptions import ValidationError
+from odoo.http import Response
 from odoo.tests import Form, tagged
 from odoo.tools.misc import file_open
 
@@ -99,9 +100,8 @@ class TestPDFQuoteBuilder(BaseUsersCommon, SaleManagementCommon):
             new_form_fields[3]: "",  # datetime missing
             new_form_fields[4]: "1.0",  # float
             new_form_fields[5]: "1",  # integer
-            new_form_fields[6]: "Quotation",  # selection
+            new_form_fields[6]: dict(self.sale_order._fields['state'].selection)['draft'],  # selection
             new_form_fields[7]: "$\xa0725.00",  # monetary
-
             new_form_fields[8]: f"{sol_1.display_name}, {sol_2.display_name}",  # one2many
             new_form_fields[9]: f"{self.sale_order.company_id.display_name}",  # many2one
             new_form_fields[10]: f"{self.sale_order.company_id.display_name}",  # many2many
@@ -145,9 +145,8 @@ class TestPDFQuoteBuilder(BaseUsersCommon, SaleManagementCommon):
             'datetime_test': "12/21/2121 13:21:12",
             'float_test': "4.99",
             'integer_test': "0",
-            'selection_test': "Quotation",
+            'selection_test': dict(self.sale_order._fields['state'].selection)['draft'],
             'monetary_test': self.sale_order.currency_id.format(720.01),
-
             'one2many_test': f"{sol_1.display_name}, {sol_2.display_name}",
             'many2one_test': self.sale_order.company_id.display_name,
             'many2many_test': "test tax1, test tax2",
@@ -295,6 +294,14 @@ class TestPDFQuoteBuilder(BaseUsersCommon, SaleManagementCommon):
             MockRequest(self.env) as request,
             file_open(plain_pdf, 'rb') as file,
             patch.object(request.httprequest.files, 'getlist', lambda _key: [FileStorage(file)]),
+            patch.object(request, 'make_json_response',
+                lambda data, status=200, headers=None: Response(
+                    json.dumps(data),
+                    status=status,
+                    headers=headers,
+                    mimetype='application/json',
+                ),
+            ),
         ):
             request.params['allowed_company_ids'] = json.dumps(allowed_company_ids)
             res = self.QuotationDocumentController.upload_document(ufile=FileStorage(file))
@@ -325,6 +332,14 @@ class TestPDFQuoteBuilder(BaseUsersCommon, SaleManagementCommon):
             MockRequest(self.env) as request,
             file_open(forms_pdf, 'rb') as file,
             patch.object(request.httprequest.files, 'getlist', lambda _key: [FileStorage(file)]),
+            patch.object(request, 'make_json_response',
+                lambda data, status=200, headers=None: Response(
+                    json.dumps(data),
+                    status=status,
+                    headers=headers,
+                    mimetype='application/json',
+                ),
+            ),
         ):
             request.params['allowed_company_ids'] = json.dumps(allowed_company_ids)
             res = self.QuotationDocumentController.upload_document(

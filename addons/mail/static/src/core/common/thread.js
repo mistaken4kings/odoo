@@ -24,8 +24,7 @@ import { Transition } from "@web/core/transition";
 import { useBus, useRefListener, useService } from "@web/core/utils/hooks";
 import { escape } from "@web/core/utils/strings";
 
-export const PRESENT_VIEWPORT_THRESHOLD = 3;
-const PRESENT_MESSAGE_THRESHOLD = 10;
+export const PRESENT_VIEWPORT_THRESHOLD = 1;
 
 /**
  * @typedef {Object} Props
@@ -78,6 +77,7 @@ export class Thread extends Component {
         });
         this.lastJumpPresent = this.props.jumpPresent;
         this.orm = useService("orm");
+        this.ui = useService("ui");
         /** @type {ReturnType<import('@mail/utils/common/hooks').useMessageHighlight>|null} */
         this.messageHighlight = this.env.messageHighlight
             ? useState(this.env.messageHighlight)
@@ -91,6 +91,9 @@ export class Thread extends Component {
         this.present = useRef("load-newer");
         this.jumpPresentRef = useRef("jump-present");
         this.root = useRef("messages");
+        this.visibleState = useVisible("messages", () => {
+            this.updateShowJumpPresent();
+        });
         /**
          * This is the reference element with the scrollbar. The reference can
          * either be the chatter scrollable (if chatter) or the thread
@@ -260,7 +263,7 @@ export class Thread extends Component {
             this.env.inChatter ? 22 : width - ps - pe - 22
         }px, ${
             this.env.inChatter && !this.env.inChatter.aside
-                ? 0
+                ? -22
                 : height - pt - pb - (this.env.inChatter?.aside ? 75 : 0)
         }px)`;
     }
@@ -493,13 +496,7 @@ export class Thread extends Component {
     }
 
     get PRESENT_THRESHOLD() {
-        const viewportHeight = (this.getViewportEl?.clientHeight ?? 0) * PRESENT_VIEWPORT_THRESHOLD;
-        const messagesHeight = [...this.props.thread.nonEmptyMessages]
-            .reverse()
-            .slice(0, PRESENT_MESSAGE_THRESHOLD)
-            .map((message) => this.refByMessageId.get(message.id))
-            .reduce((totalHeight, message) => totalHeight + (message?.el?.clientHeight ?? 0), 0);
-        const threshold = Math.max(viewportHeight, messagesHeight);
+        const threshold = (this.viewportEl?.clientHeight ?? 0) * PRESENT_VIEWPORT_THRESHOLD;
         return this.state.showJumpPresent ? threshold - 200 : threshold;
     }
 
@@ -520,7 +517,8 @@ export class Thread extends Component {
 
     updateShowJumpPresent() {
         this.state.showJumpPresent =
-            this.props.thread.loadNewer || this.presentThresholdState.isVisible === false;
+            this.visibleState.isVisible &&
+            (this.props.thread.loadNewer || this.presentThresholdState.isVisible === false);
     }
 
     onClickLoadOlder() {
@@ -531,6 +529,22 @@ export class Thread extends Component {
         const actionDescription = await this.orm.call("res.users", "action_get");
         actionDescription.res_id = this.store.self.userId;
         this.env.services.action.doAction(actionDescription);
+    }
+
+    async onParentMessageClick(parentMessage) {
+        if (!parentMessage) {
+            return;
+        }
+        const targetThread = parentMessage.thread;
+        if (!targetThread) {
+            return;
+        }
+        if (targetThread.eq(this.props.thread)) {
+            this.env.messageHighlight?.highlightMessage(parentMessage, targetThread);
+        } else {
+            targetThread.highlightMessage = parentMessage;
+            await targetThread.open({ focus: true });
+        }
     }
 
     getMessageClassName(message) {
@@ -546,6 +560,9 @@ export class Thread extends Component {
         this.props.thread.scrollTop = "bottom";
         this.state.showJumpPresent = false;
         this.scrollingToHighlight = false;
+        if (!this.ui.isSmall) {
+            this.props.thread.composer.autofocus++;
+        }
     }
 
     async onClickUnreadMessagesBanner() {

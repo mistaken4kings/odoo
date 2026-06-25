@@ -1,22 +1,24 @@
-import { describe, expect, test } from "@odoo/hoot";
 import {
+    animationFrame,
     click,
-    waitFor,
-    queryOne,
+    describe,
+    drag,
+    edit,
+    expect,
     hover,
     press,
-    waitUntil,
-    edit,
-    queryAllValues,
     queryAll,
-    manuallyDispatchProgrammaticEvent,
-} from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+    queryAllValues,
+    queryOne,
+    test,
+    waitFor,
+    waitUntil,
+} from "@odoo/hoot";
+import { contains } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
-import { contains } from "@web/../tests/web_test_helpers";
-import { execCommand } from "./_helpers/userCommands";
 import { expectElementCount } from "./_helpers/ui_expectations";
+import { execCommand } from "./_helpers/userCommands";
 
 test("can set foreground color", async () => {
     const { el } = await setupEditor("<p>[test]</p>");
@@ -83,6 +85,25 @@ test("should add opacity to custom background colors but not to theme colors", a
     // Verify computed background color has no opacity.
     const backgroundColor = getComputedStyle(el.querySelector("p font")).backgroundColor;
     expect(backgroundColor).toBe("rgb(113, 75, 103)");
+});
+
+test("default opacity should get applied when applying background color to icon", async () => {
+    const { el } = await setupEditor('<p>[ab<span class="fa fa-glass"></span>cd]</p>');
+
+    await waitFor(".o-we-toolbar");
+    expect(".o_font_color_selector").toHaveCount(0);
+
+    await click(".o-select-color-background");
+    await animationFrame();
+    expect(".o_font_color_selector").toHaveCount(1);
+
+    await click(".o_color_button[data-color='#FF0000']");
+    await animationFrame();
+    await expectElementCount(".o-we-toolbar", 1);
+    expect(".o_font_color_selector").toHaveCount(0); // selector closed
+    expect(getContent(el)).toBe(
+        `<p><font style="background-color: rgba(255, 0, 0, 0.6);">[ab</font><font style="background-color: rgba(255, 0, 0, 0.6);">\ufeff<span class="fa fa-glass" contenteditable="false">\u200b</span>\ufeff</font><font style="background-color: rgba(255, 0, 0, 0.6);">cd]</font></p>`
+    );
 });
 
 test("can render and apply color theme", async () => {
@@ -183,7 +204,7 @@ test("applied custom color should be shown in colorpicker after switching tab", 
     await animationFrame();
     expect(".o_hex_input").toHaveValue("#FF0000");
     const newColor = "#00FF00";
-    await contains(".o_hex_input").edit(newColor);
+    await contains(".o_hex_input").edit(newColor, { confirm: false });
     expect(".o_hex_input").toHaveValue(newColor);
     expect(getContent(el)).toBe(
         '<p><font style="background-color: rgb(0, 255, 0);">[test]</font></p>'
@@ -610,12 +631,12 @@ describe("color preview", () => {
             <table class="table table-bordered o_table o_selected_table">
                 <tbody>
                     <tr>
-                        <td class="" style="background-color: rgb(206, 0, 0); ${defaultTextColor}">
+                        <td class="o_selected_td o_selected_td_bg_color_preview" style="background-color: rgba(206, 0, 0, 0.6); ${defaultTextColor}">
                             <p>[<br></p>
                         </td>
                     </tr>
                     <tr>
-                        <td class="" style="background-color: rgb(206, 0, 0); ${defaultTextColor}">
+                        <td class="o_selected_td o_selected_td_bg_color_preview" style="background-color: rgba(206, 0, 0, 0.6); ${defaultTextColor}">
                             <p>]<br></p>
                         </td>
                     </tr>
@@ -678,12 +699,12 @@ describe("color preview", () => {
             <table class="table table-bordered o_table o_selected_table">
                 <tbody>
                     <tr>
-                        <td class="bg-black" style="${defaultTextColor}">
+                        <td class="o_selected_td o_selected_td_bg_color_preview bg-black" style="${defaultTextColor}">
                             <p>[<br></p>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-black" style="${defaultTextColor}">
+                        <td class="o_selected_td o_selected_td_bg_color_preview bg-black" style="${defaultTextColor}">
                             <p>]<br></p>
                         </td>
                     </tr>
@@ -718,21 +739,9 @@ describe("color preview", () => {
         await click(".o-select-color-background");
         await animationFrame();
         await click(".btn:contains('Custom')");
-        const newColor = "#FF0000";
-        await contains(".o_hex_input").edit(newColor);
-        const slider = document.querySelector(".o_opacity_slider");
-        const rect = slider.getBoundingClientRect();
-        const middleY = rect.top + rect.height / 2;
-        manuallyDispatchProgrammaticEvent(slider, "mousedown", {
-            clientX: rect.left,
-            clientY: middleY,
-        });
-        const fontEl = queryOne("font");
-        const bgColor = fontEl.style.backgroundColor;
-        expect(bgColor).toMatch(/^rgba\(255,\s*0,\s*0,\s*0\.\d+\)$/);
-        manuallyDispatchProgrammaticEvent(slider, "mouseup", {
-            clientX: rect.left,
-            clientY: middleY,
-        });
+        await contains(".o_hex_input").edit("#FF0000", { confirm: false });
+        const { drop } = await drag(".o_opacity_slider");
+        expect("font").toHaveStyle({ backgroundColor: /rgba\(255, 0, 0, 0\.\d+\)/ });
+        await drop();
     });
 });

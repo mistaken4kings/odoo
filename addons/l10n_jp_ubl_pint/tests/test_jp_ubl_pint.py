@@ -15,7 +15,7 @@ class TestJpUBLPint(AccountTestInvoicingCommon):
     @AccountTestInvoicingCommon.setup_country('jp')
     def setUpClass(cls):
         super().setUpClass()
-
+        cls.env['ir.config_parameter'].set_param('account_edi_ubl_cii.use_new_dict_to_xml_helpers', 'False')
         cls.other_currency = cls.setup_other_currency('USD')
 
         # TIN number is required
@@ -41,6 +41,7 @@ class TestJpUBLPint(AccountTestInvoicingCommon):
         cls.startClassPatcher(freeze_time(cls.fakenow))
 
     def test_invoice(self):
+        self.env['ir.config_parameter'].set_param('account_edi_ubl_cii.use_new_dict_to_xml_helpers', 'True')
         invoice = self.init_invoice('out_invoice', currency=self.other_currency, products=self.product_a)
         invoice.action_post()
 

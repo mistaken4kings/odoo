@@ -207,6 +207,13 @@
                                 <td>Delivery Date</td>
                                 <td><t t-out="o.delivery_date" t-options="{'widget': 'date'}"/></td>
                             </tr>
+                            <tr t-if="o.invoice_incoterm_id">
+                                <td>Incoterm</td>
+                                <td t-if="o.incoterm_location">
+                                    <span t-out="o.invoice_incoterm_id.code"/> - <span t-out="o.incoterm_location"/>
+                                </td>
+                                <td t-else="" t-out="o.invoice_incoterm_id.code"/>
+                            </tr>
                             <tr t-if="o.invoice_origin">
                                 <td>Source</td>
                                 <td><t t-out="o.invoice_origin"/></td>
@@ -215,6 +222,13 @@
                                 <td>Reference</td>
                                 <td><t t-out="o.ref"/></td>
                             </tr>
+                            <div t-if="o.partner_id">
+                                <tr><td colspan="2" style="height:20px;"></td></tr>
+                                <tr t-if="o.partner_id.commercial_partner_id == o.partner_id and o.partner_id.commercial_partner_id.vat">
+                                    <td>VAT</td>
+                                    <td><t t-out="o.partner_id.commercial_partner_id.vat"/></td>
+                                </tr>
+                            </div>
                         </table>
                     </div>
                 </t>

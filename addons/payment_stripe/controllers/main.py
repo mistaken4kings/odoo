@@ -15,7 +15,7 @@ from odoo.tools import file_open, mute_logger
 
 from odoo.addons.payment import utils as payment_utils
 from odoo.addons.payment_stripe import utils as stripe_utils
-from odoo.addons.payment_stripe.const import HANDLED_WEBHOOK_EVENTS
+from odoo.addons.payment_stripe.const import CURRENCY_DECIMALS, HANDLED_WEBHOOK_EVENTS
 
 _logger = logging.getLogger(__name__)
 
@@ -115,6 +115,9 @@ class StripeController(http.Controller):
                     stripe_object['payment_method'] = payment_method
                     self._include_setup_intent_in_notification_data(stripe_object, data)
                 elif event['type'] == 'charge.refunded':  # Refund operation (refund creation).
+                    if not stripe_object['captured']:  # The charge was authorized and then voided
+                        return request.make_json_response('')  # Don't process void-related events
+
                     refunds = stripe_object['refunds']['data']
 
                     # The refunds linked to this charge are paginated, fetch the remaining refunds.
@@ -184,7 +187,9 @@ class StripeController(http.Controller):
         """
         amount_to_refund = refund_object['amount']
         converted_amount = payment_utils.to_major_currency_units(
-            amount_to_refund, source_tx_sudo.currency_id
+            amount_to_refund,
+            source_tx_sudo.currency_id,
+            arbitrary_decimal_number=CURRENCY_DECIMALS.get(source_tx_sudo.currency_id.name),
         )
         return source_tx_sudo._create_child_transaction(converted_amount, is_refund=True)
 

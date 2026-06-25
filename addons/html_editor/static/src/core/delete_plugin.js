@@ -190,6 +190,9 @@ export class DeletePlugin extends Plugin {
      */
     delete(direction, granularity) {
         const selection = this.dependencies.selection.getEditableSelection();
+
+        this.dependencies.history.stageSelection();
+
         this.dispatchTo("before_delete_handlers");
 
         if (!selection.isCollapsed) {
@@ -268,6 +271,22 @@ export class DeletePlugin extends Plugin {
 
     getRangeForDelete(node, offset, direction, granularity) {
         let destContainer, destOffset;
+        if (granularity === "word") {
+            // In some browsers such as Firefox or Safari, if the cursor
+            // is at the start of a block (when direction is "backward") or
+            // at the end of a block (when direction is "forward"),
+            // Selection.modify("extend", direction, "word") ends up
+            // selecting the previous or next adjacent text node, respectively.
+            // To handle such cases, the granularity should be "character".
+            const blockEl = closestBlock(node);
+            if (
+                (direction === "backward" &&
+                    this.isCursorAtStartOfElement(blockEl, node, offset)) ||
+                (direction === "forward" && this.isCursorAtEndOfElement(blockEl, node, offset))
+            ) {
+                granularity = "character";
+            }
+        }
         switch (granularity) {
             case "character":
                 [destContainer, destOffset] = this.findAdjacentPosition(node, offset, direction);
@@ -1088,9 +1107,16 @@ export class DeletePlugin extends Plugin {
             // TODO ABD: add test
             return true;
         }
-        const isZwnbspLinkPad = (node) =>
-            isButton(node.previousSibling) || isButton(node.nextSibling);
-        if (isZwnbsp(textNode) && isZwnbspLinkPad(textNode)) {
+        // Return true for FEFFs to the right of a button, such that the user
+        // can backspace the cursor into the button without deleting its first
+        // character. Return true for FEFFs to the left of an *empty* button,
+        // such that the user can delete the empty button without deleting also
+        // the first visible character to its left.
+        const isEmptyButton = (node) => isButton(node) && /^\ufeff*$/.test(node.textContent);
+        if (
+            isZwnbsp(textNode) &&
+            (isButton(textNode.previousSibling) || isEmptyButton(textNode.nextSibling))
+        ) {
             return true;
         }
         // ZWS and ZWNBSP are invisible.

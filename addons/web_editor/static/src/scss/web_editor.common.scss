@@ -148,8 +148,6 @@ ul.o_checklist {
     >li {
         list-style: none;
         position: relative;
-        margin-left: $o-checklist-margin-left;
-        margin-right: $o-checklist-margin-left;
 
         &:not(.oe-nested)::before {
             content: '';
@@ -615,6 +613,10 @@ pre {
                 }
             }
         }
+
+        .btn-close {
+            filter: unset;
+        }
     }
 }
 @for $index from 1 through length($o-color-combinations) {
@@ -718,6 +720,12 @@ pre {
                     background-color: $-btn-primary-color;
                     color: color-contrast($-btn-primary-color);
                     border-color: $-btn-primary-color;
+                }
+            }
+
+            .btn-close {
+                @if (lightness($-bg-color) < 50) {
+                    @include btn-close-white();
                 }
             }
         }

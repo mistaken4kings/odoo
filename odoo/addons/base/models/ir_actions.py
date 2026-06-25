@@ -119,7 +119,7 @@ class IrActions(models.Model):
            NOTE: ondelete cascade will not work on ir.actions.actions so we will need to do it manually."""
         todos = self.env['ir.actions.todo'].search([('action_id', 'in', self.ids)])
         todos.unlink()
-        filters = self.env['ir.filters'].search([('action_id', 'in', self.ids)])
+        filters = self.env['ir.filters'].with_context(active_test=False).search([('action_id', 'in', self.ids)])
         filters.unlink()
         res = super(IrActions, self).unlink()
         # self.get_bindings() depends on action records
@@ -1197,14 +1197,6 @@ class IrActionsActClient(models.Model):
         for record in self:
             params = record.params
             record.params_store = repr(params) if isinstance(params, dict) else params
-
-    def _get_default_form_view(self):
-        doc = super(IrActionsActClient, self)._get_default_form_view()
-        params = doc.find(".//field[@name='params']")
-        params.getparent().remove(params)
-        params_store = doc.find(".//field[@name='params_store']")
-        params_store.getparent().remove(params_store)
-        return doc
 
 
     def _get_readable_fields(self):
