@@ -96,6 +96,7 @@ def main() -> None:
             "list_price": product["price"],
             "categ_id": categ_id[0],
             "type": "consu",
+            "is_storable": True,
             "sale_ok": True,
             "purchase_ok": True,
             "description_sale": f"{product['brand']} — Sam West pricelist sample",
