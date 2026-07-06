@@ -24,10 +24,22 @@ services:
       USER: odoo
       PASSWORD: ${ODOO_DB_PASSWORD:-odoo}
       ODOO_ADMIN_PASSWD: ${ODOO_ADMIN_PASSWORD:-admin}
+      ODOO_MAZURI_CLIENT_SECRET: ${ODOO_MAZURI_CLIENT_SECRET:-}
     volumes:
       - odoo-data:/var/lib/odoo
       - ./scripts:/mnt/scripts:ro
+      - ../custom_addons:/mnt/custom-addons:ro
+    command: >
+      odoo --config=/etc/odoo/odoo.conf
+    configs:
+      - source: odoo_conf
+        target: /etc/odoo/odoo.conf
     restart: unless-stopped
+
+configs:
+  odoo_conf:
+    file: ./config/odoo.conf.template
+
 
 volumes:
   odoo-db:
