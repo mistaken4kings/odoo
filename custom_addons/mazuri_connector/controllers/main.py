@@ -165,7 +165,7 @@ class MazuriConnectorController(http.Controller):
         ]
         group_ids = []
         for xmlid in xmlids:
-            group = self.env.ref(xmlid, raise_if_not_found=False)
+            group = request.env.ref(xmlid, raise_if_not_found=False)
             if group:
                 group_ids.append(group.id)
         return group_ids
