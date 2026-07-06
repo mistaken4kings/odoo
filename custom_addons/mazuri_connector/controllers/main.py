@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import secrets
+from urllib.parse import urlparse
 
 from odoo import _, fields, http
 from odoo.exceptions import AccessDenied, UserError
@@ -11,6 +12,17 @@ _logger = logging.getLogger(__name__)
 MAZURI_CLIENT_ID = 'mazuri-app'
 API_LOGIN = 'mazuri_api'
 API_NAME = 'Mazuri Integration API'
+ALLOWED_REDIRECT_SUFFIXES = (
+    '.mazuri.app',
+    '.vercel.app',
+)
+ALLOWED_REDIRECT_HOSTS = {
+    'mazuri.app',
+    'brand.mazuri.app',
+    'lend.mazuri.app',
+    'localhost',
+    '127.0.0.1',
+}
 
 
 class MazuriConnectorController(http.Controller):
@@ -29,9 +41,10 @@ class MazuriConnectorController(http.Controller):
             return request.render('mazuri_connector.connect_error', {
                 'error': _('Unknown Mazuri application. Update the Mazuri Connector module.'),
             })
-        if not redirect_uri or not redirect_uri.startswith(('https://', 'http://')):
+        redirect_error = self._redirect_uri_error(redirect_uri)
+        if redirect_error:
             return request.render('mazuri_connector.connect_error', {
-                'error': _('Invalid redirect URI.'),
+                'error': redirect_error,
             })
 
         if not request.env.user.has_group('base.group_system'):
@@ -55,6 +68,10 @@ class MazuriConnectorController(http.Controller):
             raise AccessDenied(_('Invalid client.'))
         if not request.env.user.has_group('base.group_system'):
             raise AccessDenied(_('Administrator access required.'))
+
+        redirect_error = self._redirect_uri_error(redirect_uri)
+        if redirect_error:
+            raise UserError(redirect_error)
 
         Users = request.env['res.users'].sudo()
         api_user, api_password = self._ensure_api_user(Users)
@@ -169,3 +186,23 @@ class MazuriConnectorController(http.Controller):
             if group:
                 group_ids.append(group.id)
         return group_ids
+
+    def _redirect_uri_error(self, redirect_uri):
+        if not redirect_uri or not redirect_uri.startswith(('https://', 'http://')):
+            return _('Invalid redirect URI.')
+
+        parsed = urlparse(redirect_uri)
+        host = (parsed.hostname or '').lower()
+        if not host:
+            return _('Invalid redirect URI.')
+
+        odoo_host = (request.httprequest.host or '').split(':', 1)[0].lower()
+        if host == odoo_host:
+            return _('Redirect URI must point to Mazuri, not this Odoo server.')
+
+        if host in ALLOWED_REDIRECT_HOSTS:
+            return None
+        if any(host.endswith(suffix) for suffix in ALLOWED_REDIRECT_SUFFIXES):
+            return None
+
+        return _('Redirect URI must be a Mazuri application URL.')
