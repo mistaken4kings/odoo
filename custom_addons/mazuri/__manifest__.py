@@ -1,6 +1,6 @@
 {
     'name': 'Mazuri',
-    'version': '18.0.1.1.0',
+    'version': '18.0.1.1.1',
     'category': 'Sales/Sales',
     'summary': 'AI supply-chain copilot: one-click connect, catalog & inventory sync, sales orders, and embedded Pay-in-30 financing',
     'description': """

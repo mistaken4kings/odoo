@@ -39,7 +39,7 @@ class MazuriConnectorController(http.Controller):
     def connect(self, client_id=None, redirect_uri=None, state=None, org_id=None, org_name=None, **kwargs):
         if client_id != MAZURI_CLIENT_ID:
             return request.render('mazuri.connect_error', {
-                'error': _('Unknown Mazuri application. Update the Mazuri Connector module.'),
+                'error': _('Unknown Mazuri application. Update the Mazuri module.'),
             })
         redirect_error = self._redirect_uri_error(redirect_uri)
         if redirect_error:
