@@ -31,28 +31,28 @@ class MazuriConnectorController(http.Controller):
     def status(self):
         return {
             'installed': True,
-            'version': '18.0.1.0.0',
+            'version': '18.0.1.1.0',
             'client_id': MAZURI_CLIENT_ID,
         }
 
     @http.route('/mazuri/connect', type='http', auth='user', website=False, sitemap=False)
     def connect(self, client_id=None, redirect_uri=None, state=None, org_id=None, org_name=None, **kwargs):
         if client_id != MAZURI_CLIENT_ID:
-            return request.render('mazuri_connector.connect_error', {
+            return request.render('mazuri.connect_error', {
                 'error': _('Unknown Mazuri application. Update the Mazuri Connector module.'),
             })
         redirect_error = self._redirect_uri_error(redirect_uri)
         if redirect_error:
-            return request.render('mazuri_connector.connect_error', {
+            return request.render('mazuri.connect_error', {
                 'error': redirect_error,
             })
 
         if not request.env.user.has_group('base.group_system'):
-            return request.render('mazuri_connector.connect_error', {
+            return request.render('mazuri.connect_error', {
                 'error': _('Only Odoo administrators can connect Mazuri.'),
             })
 
-        return request.render('mazuri_connector.connect_authorize', {
+        return request.render('mazuri.connect_authorize', {
             'client_id': client_id,
             'redirect_uri': redirect_uri,
             'state': state or '',

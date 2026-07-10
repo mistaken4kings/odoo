@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_mazuri_auth_code,access_mazuri_auth_code,model_mazuri_auth_code,base.group_system,1,1,1,1
 access_mazuri_connection,access_mazuri_connection,model_mazuri_connection,base.group_system,1,1,1,1
 access_mazuri_connection_user,access_mazuri_connection_user,model_mazuri_connection,base.group_user,1,0,0,0
+access_mazuri_financing,access_mazuri_financing,model_mazuri_financing,base.group_system,1,1,1,1
+access_mazuri_financing_user,access_mazuri_financing_user,model_mazuri_financing,base.group_user,1,0,0,0

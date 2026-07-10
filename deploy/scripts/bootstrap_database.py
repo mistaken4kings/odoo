@@ -65,7 +65,7 @@ def main() -> None:
         raise SystemExit("Could not authenticate admin user")
 
     models = xmlrpc.client.ServerProxy(f"{url}/xmlrpc/2/object")
-    for module in ("stock", "sale_management", "mazuri_connector"):
+    for module in ("stock", "sale_management", "mazuri"):
         state = models.execute_kw(
             db, uid, admin_password,
             "ir.module.module", "search_read",
