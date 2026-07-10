@@ -65,6 +65,23 @@ def main() -> None:
         raise SystemExit("Could not authenticate admin user")
 
     models = xmlrpc.client.ServerProxy(f"{url}/xmlrpc/2/object")
+
+    # Remove legacy connector module if present (replaced by unified mazuri app).
+    for legacy_module in ("mazuri_connector",):
+        legacy = models.execute_kw(
+            db, uid, admin_password,
+            "ir.module.module", "search_read",
+            [[["name", "=", legacy_module]]],
+            {"fields": ["state", "id"], "limit": 1},
+        )
+        if legacy and legacy[0]["state"] == "installed":
+            models.execute_kw(
+                db, uid, admin_password,
+                "ir.module.module", "button_immediate_uninstall",
+                [[legacy[0]["id"]]],
+            )
+            print(f"Uninstalled legacy module {legacy_module}")
+
     for module in ("stock", "sale_management", "mazuri"):
         state = models.execute_kw(
             db, uid, admin_password,

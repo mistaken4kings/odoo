@@ -55,9 +55,16 @@ for i in $(seq 1 60); do
   sleep 5
 done
 
+echo "Bootstrapping database (stock + sale_management + mazuri)..."
+docker compose exec -T odoo python3 /mnt/scripts/bootstrap_database.py || {
+  echo "Bootstrap script failed — create database 'mazuri' manually if needed."
+}
+
 PUBLIC_IP="$(curl -sf ifconfig.me || hostname -I | awk '{print $1}')"
 echo ""
 echo "=== Mazuri Odoo ==="
 echo "URL: http://${PUBLIC_IP}:8069"
-echo "Admin master password: see ${DEPLOY_DIR}/deploy/.env (ODOO_ADMIN_PASSWORD)"
-echo "Next: create database 'mazuri' via web UI, install Inventory + Sales, run seed script."
+echo "Database: mazuri"
+echo "Admin password: see ${DEPLOY_DIR}/deploy/.env (ODOO_ADMIN_PASSWORD)"
+echo "Modules: stock, sale_management, mazuri (legacy mazuri_connector removed if present)"
+echo "Optional: docker compose exec odoo python3 /mnt/scripts/seed_sam_west.py"
