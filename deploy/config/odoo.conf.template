@@ -4,6 +4,6 @@ db_host = db
 db_port = 5432
 db_user = odoo
 db_password = odoo
-addons_path = /usr/lib/python3/dist-packages/odoo/addons
+addons_path = /usr/lib/python3/dist-packages/odoo/addons,/mnt/custom-addons
 proxy_mode = True
 list_db = True

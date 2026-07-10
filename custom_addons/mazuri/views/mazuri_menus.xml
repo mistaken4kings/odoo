@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <menuitem id="menu_mazuri_root"
+            name="Mazuri"
+            sequence="90"/>
+
+  <menuitem id="menu_mazuri_connections"
+            name="Connections"
+            parent="menu_mazuri_root"
+            action="action_mazuri_connections"
+            sequence="10"/>
+
+  <menuitem id="menu_mazuri_financing"
+            name="Financing"
+            parent="menu_mazuri_root"
+            action="action_mazuri_financing"
+            sequence="20"/>
+</odoo>

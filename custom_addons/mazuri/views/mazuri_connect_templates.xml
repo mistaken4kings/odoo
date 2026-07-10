@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="connect_authorize" name="Mazuri Connect Authorize">
+    <t t-call="web.layout">
+      <t t-set="head">
+        <style>
+          .mazuri-connect-wrap { max-width: 520px; margin: 48px auto; padding: 32px; border-radius: 16px;
+            border: 1px solid #e5e7eb; background: #fff; font-family: system-ui, sans-serif; }
+          .mazuri-connect-wrap h1 { font-size: 22px; margin: 0 0 8px; color: #111; }
+          .mazuri-connect-wrap p { color: #4b5563; line-height: 1.5; }
+          .mazuri-perms { margin: 20px 0; padding: 16px; background: #f9fafb; border-radius: 12px; }
+          .mazuri-perms li { margin: 6px 0; color: #374151; }
+          .mazuri-actions { display: flex; gap: 12px; margin-top: 24px; }
+          .mazuri-btn { border: none; border-radius: 10px; padding: 12px 18px; font-size: 15px; cursor: pointer; }
+          .mazuri-btn-primary { background: #111; color: #fff; }
+          .mazuri-btn-secondary { background: #f3f4f6; color: #111; text-decoration: none; display: inline-block; }
+        </style>
+      </t>
+      <div class="mazuri-connect-wrap">
+        <h1>Connect Mazuri to <t t-esc="company_name"/></h1>
+        <p>
+          <strong t-esc="org_name"/> wants to access your Odoo data through Mazuri.
+          Signed in as <strong t-esc="user_name"/>.
+        </p>
+        <div class="mazuri-perms">
+          <p><strong>Mazuri will be able to:</strong></p>
+          <ul>
+            <li>Read product catalog and stock levels</li>
+            <li>Create sales orders on your behalf</li>
+            <li>Sync inventory for retailer search</li>
+          </ul>
+        </div>
+        <form action="/mazuri/connect/approve" method="post">
+          <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+          <input type="hidden" name="client_id" t-att-value="client_id"/>
+          <input type="hidden" name="redirect_uri" t-att-value="redirect_uri"/>
+          <input type="hidden" name="state" t-att-value="state"/>
+          <input type="hidden" name="org_id" t-att-value="org_id"/>
+          <input type="hidden" name="org_name" t-att-value="org_name"/>
+          <div class="mazuri-actions">
+            <button type="submit" class="mazuri-btn mazuri-btn-primary">Authorize Mazuri</button>
+            <a t-att-href="redirect_uri" class="mazuri-btn mazuri-btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </t>
+  </template>
+
+  <template id="connect_error" name="Mazuri Connect Error">
+    <t t-call="web.layout">
+      <div style="max-width:520px;margin:48px auto;padding:32px;border-radius:16px;border:1px solid #fecaca;background:#fff;">
+        <h1 style="color:#b91c1c;">Could not connect Mazuri</h1>
+        <p t-esc="error"/>
+      </div>
+    </t>
+  </template>
+</odoo>
