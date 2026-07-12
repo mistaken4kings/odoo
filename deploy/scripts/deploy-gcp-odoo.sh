@@ -8,7 +8,8 @@ PROJECT="${GCP_PROJECT_ID:-spiro-445121}"
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 REMOTE_DIR="${REMOTE_ODOO_DIR:-/opt/mazuri-odoo}"
 DEPLOY_DIR="${REMOTE_DIR}/deploy"
-ADDONS_DST="${DEPLOY_DIR}/custom_addons"
+# docker-compose mounts ../custom_addons → /mnt/custom-addons (not deploy/custom_addons)
+ADDONS_DST="${REMOTE_DIR}/custom_addons"
 SCRIPTS_DST="${DEPLOY_DIR}/scripts"
 
 echo "==> Sync Odoo from ${REPO_ROOT} to ${INSTANCE}"
