@@ -23,7 +23,7 @@ Install this module, then click **Connect Odoo** in Mazuri to authorize.
     """,
     'author': 'Mazuri',
     'website': 'https://mazuri.app',
-    'depends': ['base', 'web', 'sale_management', 'stock', 'account'],
+    'depends': ['base', 'web', 'sale_management', 'stock', 'account', 'crm'],
     'data': [
         'security/ir.model.access.csv',
         'views/mazuri_connection_views.xml',

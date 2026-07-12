@@ -82,7 +82,7 @@ def main() -> None:
             )
             print(f"Uninstalled legacy module {legacy_module}")
 
-    for module in ("stock", "sale_management", "mazuri"):
+    for module in ("stock", "sale_management", "crm", "mazuri"):
         state = models.execute_kw(
             db, uid, admin_password,
             "ir.module.module", "search_read",
