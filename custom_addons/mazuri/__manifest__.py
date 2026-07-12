@@ -2,7 +2,7 @@
     'name': 'Mazuri',
     'version': '18.0.1.1.1',
     'category': 'Sales/Sales',
-    'summary': 'AI supply-chain copilot: one-click connect, catalog & inventory sync, sales orders, and embedded Pay-in-30 financing',
+    'summary': 'Connect Mazuri for Cloud Agents, catalog sync, sales orders, and Pay-in-30 financing',
     'description': """
 Mazuri for Odoo
 ===============

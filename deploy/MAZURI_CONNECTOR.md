@@ -13,4 +13,4 @@ MAZURI_ODOO_CLIENT_SECRET=your-long-random-secret
 MAZURI_APP_URL=https://mazuri.app
 ```
 
-After `docker compose up`, install **Mazuri Connector** from Odoo Apps (or run `bootstrap_database.py`).
+After `docker compose up`, install **Mazuri** from Odoo Apps (or run `bootstrap_database.py`).
