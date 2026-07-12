@@ -1,0 +1,46 @@
+name: Deploy Odoo to GCP
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  GCP_INSTANCE: vendai-gcp-1
+  GCP_ZONE: us-central1-a
+  GCP_PROJECT: spiro-445121
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate GCP service account secret
+        run: |
+          if [ -z "${{ secrets.GCP_SERVICE_ACCOUNT_JSON }}" ]; then
+            echo "::error::Missing GCP_SERVICE_ACCOUNT_JSON"
+            exit 1
+          fi
+
+      - name: Install Google Cloud SDK
+        run: |
+          echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
+          curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+          sudo apt-get update -qq && sudo apt-get install -y -qq google-cloud-cli
+
+      - name: Authenticate gcloud
+        env:
+          GCP_SA_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_JSON }}
+        run: |
+          printf '%s' "$GCP_SA_JSON" > /tmp/gcp-sa.json
+          gcloud auth activate-service-account --key-file=/tmp/gcp-sa.json --project="$GCP_PROJECT"
+          rm -f /tmp/gcp-sa.json
+
+      - name: Deploy Mazuri module to GCP Odoo
+        run: bash deploy/scripts/deploy-gcp-odoo.sh
+
+      - name: Verify Odoo is up
+        run: curl -sf --max-time 20 http://35.202.115.233:8069/web/database/selector
