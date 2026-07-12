@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_operational_patch_user,operational.patch.user,model_operational_patch,base.group_user,1,1,1,0
+access_operational_patch_manager,operational.patch.manager,model_operational_patch,base.group_system,1,1,1,1

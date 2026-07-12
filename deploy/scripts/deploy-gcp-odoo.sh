@@ -35,6 +35,7 @@ if docker compose ps odoo >/dev/null 2>&1; then
     sleep 5
   done
   docker compose exec -T odoo python3 /mnt/scripts/upgrade_mazuri_module.py
+  docker compose exec -T odoo python3 /mnt/scripts/upgrade_operational_patch.py || true
   docker compose exec -T odoo python3 /mnt/scripts/seed_mahitaji.py --url http://127.0.0.1:8069 || true
 else
   echo 'Odoo compose not running at ${DEPLOY_DIR}'

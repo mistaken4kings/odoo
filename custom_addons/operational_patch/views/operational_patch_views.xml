@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_operational_patch_tree" model="ir.ui.view">
+    <field name="name">operational.patch.tree</field>
+    <field name="model">operational.patch</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="title"/>
+        <field name="mazuri_proposal_id"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_operational_patch_form" model="ir.ui.view">
+    <field name="name">operational.patch.form</field>
+    <field name="model">operational.patch</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button name="action_approve" type="object" string="Approve" class="btn-primary"/>
+          <button name="action_reject" type="object" string="Reject"/>
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="title"/>
+            <field name="mazuri_proposal_id"/>
+            <field name="mazuri_org_id"/>
+          </group>
+          <group>
+            <field name="summary"/>
+            <field name="patch_payload" widget="text"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_operational_patch" model="ir.actions.act_window">
+    <field name="name">Operational Patches</field>
+    <field name="res_model">operational.patch</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_operational_patch_root" name="Mazuri Ops" sequence="90"/>
+  <menuitem id="menu_operational_patch" name="Operational Patches"
+            parent="menu_operational_patch_root" action="action_operational_patch"/>
+</odoo>
