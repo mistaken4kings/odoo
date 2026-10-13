@@ -1,6 +1,6 @@
 {
     'name': 'Mazuri',
-    'version': '18.0.1.1.1',
+    'version': '18.0.1.1.2',
     'category': 'Sales/Sales',
     'summary': 'Connect Mazuri for Cloud Agents, catalog sync, sales orders, and Pay-in-30 financing',
     'description': """

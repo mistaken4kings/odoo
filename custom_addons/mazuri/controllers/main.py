@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
+# Copy to mistaken4kings/odoo/custom_addons/mazuri/controllers/main.py
+# and mistaken4kings/mazuri-odoo-apps (branch 18.0, path mazuri/controllers/main.py)
+import json
 import logging
 import secrets
+import urllib.error
+import urllib.request
 from urllib.parse import urlparse
 
 from odoo import _, fields, http
@@ -12,6 +17,7 @@ _logger = logging.getLogger(__name__)
 MAZURI_CLIENT_ID = 'mazuri-app'
 API_LOGIN = 'mazuri_api'
 API_NAME = 'Mazuri Integration API'
+DEFAULT_REGISTER_URL = 'https://agents.mazuri.app/api/integrations?action=odoo-register-instance'
 ALLOWED_REDIRECT_SUFFIXES = (
     '.mazuri.app',
     '.vercel.app',
@@ -19,6 +25,7 @@ ALLOWED_REDIRECT_SUFFIXES = (
 ALLOWED_REDIRECT_HOSTS = {
     'mazuri.app',
     'brand.mazuri.app',
+    'agents.mazuri.app',
     'lend.mazuri.app',
     'localhost',
     '127.0.0.1',
@@ -31,7 +38,7 @@ class MazuriConnectorController(http.Controller):
     def status(self):
         return {
             'installed': True,
-            'version': '18.0.1.1.0',
+            'version': '18.0.1.1.2',
             'client_id': MAZURI_CLIENT_ID,
         }
 
@@ -108,6 +115,15 @@ class MazuriConnectorController(http.Controller):
                 'connected_by_id': request.env.user.id,
             })
 
+        icp = request.env['ir.config_parameter'].sudo()
+        db_secret = icp.get_param('mazuri.client_secret', '')
+        self._register_instance_with_mazuri(
+            org_id=org_id or '',
+            state=state or '',
+            odoo_url=request.httprequest.url_root.rstrip('/'),
+            instance_secret=db_secret,
+        )
+
         from werkzeug.urls import url_encode
         params = url_encode({'code': auth_code.code, 'state': state or ''})
         separator = '&' if '?' in redirect_uri else '?'
@@ -151,6 +167,32 @@ class MazuriConnectorController(http.Controller):
             'org_id': record.org_id,
             'org_name': record.org_name,
         }
+
+    def _register_instance_with_mazuri(self, org_id, state, odoo_url, instance_secret):
+        """Server-to-server: register this database's client secret with Mazuri (no user copy-paste)."""
+        if not org_id or not state or not instance_secret:
+            return
+        register_url = request.env['ir.config_parameter'].sudo().get_param(
+            'mazuri.register_url', DEFAULT_REGISTER_URL,
+        )
+        payload = json.dumps({
+            'orgId': org_id,
+            'odooUrl': odoo_url,
+            'instanceSecret': instance_secret,
+            'state': state,
+        }).encode('utf-8')
+        req = urllib.request.Request(
+            register_url,
+            data=payload,
+            headers={'Content-Type': 'application/json'},
+            method='POST',
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                if resp.status >= 300:
+                    _logger.warning('Mazuri instance registration HTTP %s', resp.status)
+        except urllib.error.URLError as error:
+            _logger.warning('Mazuri instance registration failed: %s', error)
 
     def _ensure_api_user(self, Users):
         api_password = secrets.token_urlsafe(24)
